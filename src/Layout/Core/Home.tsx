@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const Welcome = () => {
   const handleSubmit = (event: any) => {
     event.preventDefault();

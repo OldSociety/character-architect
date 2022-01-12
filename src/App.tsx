@@ -1,7 +1,12 @@
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap'
+
 import * as React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import AppLayout from 'Layout/AppLayout';
-import './App.css';
+import './App.css'
+
 
 export function timesThree(numberToMultiply: number) {
   return numberToMultiply * 3
