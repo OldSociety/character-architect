@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Clock from '../Clock/Clock'
+//import Clock from '../Clock/Clock'
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <footer className="bd-footer mt-5 py-2 bg-dark">
       <div className="container py-1">
@@ -33,7 +33,7 @@ export const Footer = () => {
             <h5>Guides</h5>
           </div>
           <div className="col-6 col-lg-2 text-light mb-3 text-end">
-            <h5><Clock /></h5>
+            {/* <h5><Clock /></h5> */}
             <ul className="list-unstyled small text-muted">
               <li className="mb-2 text-light align-items-center text-end">
                 until the next game 
@@ -47,3 +47,5 @@ export const Footer = () => {
     </footer>
   )
 }
+
+export default Footer

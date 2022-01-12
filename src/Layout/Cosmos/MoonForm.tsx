@@ -36,7 +36,7 @@ const MoonForm: React.FC<LayoutProps> = ({ Moons }) => {
 
   let navigate = useNavigate()
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault()
     if (formData !== 'default') {
       handleDetails(formData)
