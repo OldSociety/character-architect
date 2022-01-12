@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "Larimar",
+    "type": "moon",
+    "color": "green",
+    "description": "Named after the Seraph of arcana and prophecy, the small green moon is barely a dot in the night sky."
+  },
+  {
+    "id": 2,
+    "name": "Udreth-sol",
+    "type": "moon",
+    "color": "grey",
+    "description": "Udreth-sol is both Seraph of the afterlife and the largest moon surrounding Pandem. Udreth-Sol is only visible during the day, standing out like a dark grey scar across an otherwise blue sky."
+  },
+  {
+    "id": 3,
+    "name": "Pan-shi",
+    "type": "moon",
+    "color": "white",
+    "description": "Pan-shi is the Seraph of debauchery who favors the outcasts of society. Its moon is easily mistaken to its sister moon, Sen-Shi, as they share equal color and size. The two white moons have opposing orbits and never appear together."
+  },
+  {
+    "id": 4,
+    "name": "Nassenti",
+    "type": "moon",
+    "color": "blue",
+    "description": "This blue moon has 3 visible rings that form a halo in the night sky. It is ruled by the Seraph of the Tempest, known for nature's duality as both nurturer and unforgiving wrath."
+  },
+  {
+    "id": 5,
+    "name": "Zyry",
+    "type": "moon",
+    "color": "gold",
+    "description": "Half the size of Udreth-Sol, yet still larger than the rest, Zyry's moon has a warm yellow light which halos the moon at night. As Seraph of aspiration and invention, Zyry is said to inspire the great works of artistry"
+  },
+  {
+    "id": 6,
+    "name": "Sen-shi",
+    "type": "moon",
+    "color": "white",
+    "description": "Twin Seraph to Pan-shi, Sen-shi is both Seraph of light and defender against the Bloodlands. Likewise, it's moon is identical to Pan-Shi, but when gazed upon carefully, has surface patterns opposite of those across Pan-Shi."
+  },
+  {
+    "id": 7,
+    "name": "Oth-orleth",
+    "type": "moon",
+    "color": "red",
+    "description": "This small red moon is easily identifiable in the night sky, except when Veris, Meridian's red sun rises. Its Seraph of War revels in battle and blesses the continued bloodlines of his most favored warriors."
+  }
+]

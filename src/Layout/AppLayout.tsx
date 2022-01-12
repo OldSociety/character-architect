@@ -1,8 +1,15 @@
 import * as React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Header from './Header';
-// import NotFound from './NotFound';
-import Home from './Home';
+
+//Core Components
+import Home from './Core/Home';
+import Header from './Core/Header';
+import NotFound from './Core/NotFound';
+import EndForm from './Core/EndForm';
+
+// Cosmos Components
+import MoonForm from './Cosmos/MoonForm';
+import Moons from './Cosmos/Moons.json';
 
 const Layout = () => {
   // Sets up the web address routes
@@ -12,7 +19,10 @@ const Layout = () => {
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route element={<NotFound />} /> */}
+
+          <Route path="/moonform" element={<MoonForm Moons={Moons} />} />
+          <Route path="/endform" element={<EndForm />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </div>
     </div>
