@@ -1,7 +1,8 @@
-import * as React from 'react'
-//import Clock from '../Clock/Clock'
+import React from 'react'
+import Clock from '../Clock/Clock'
 
 const Footer = () => {
+
   return (
     <footer className="bd-footer mt-5 py-2 bg-dark">
       <div className="container py-1">
@@ -36,6 +37,7 @@ const Footer = () => {
             {/* <h5><Clock /></h5> */}
             <ul className="list-unstyled small text-muted">
               <li className="mb-2 text-light align-items-center text-end">
+              <Clock />
                 until the next game 
               </li>
               <li className="mb-2 text-secondary text-end">License <a href="https://support.worldwildlife.org/site/Donation2?df_id=15146&15146.donation=form1&s_src=AWE1800OQ18695A01430RX&msclkid=63d9e45b1bb814e1dd078596e1cf2f58&utm_source=bing&utm_medium=cpc&utm_campaign=Brand&utm_term=worldwildlifefund.org&utm_content=WorldWildlife.Org" className="d-inline-flex text-decoration-none link-secondary">©</a>2022</li>

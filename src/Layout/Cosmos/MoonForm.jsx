@@ -2,20 +2,15 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-interface LayoutProps {
-  Moons?: any;
-}
 
-const MoonForm: React.FC<LayoutProps> = ({ Moons }) => {
+const MoonForm= ({ Moons }) => {
   const [formData, setFormData] = useState('default');
 
-  const handleChange = (event: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
+  const handleChange = (event) => {
     setFormData(event.target.value);
   };
 
-  const handleText = (optionText: string) => {
+  const handleText = (optionText) => {
     switch (formData) {
       case 'larimar':
         return Moons[0].description;
@@ -38,10 +33,10 @@ const MoonForm: React.FC<LayoutProps> = ({ Moons }) => {
 
   let navigate = useNavigate();
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     if (formData !== 'default') {
-      handleDetails(formData);
+      // handleDetails(formData);
       navigate('/nationform');
     }
   };
@@ -108,7 +103,9 @@ dragon from the human religion Solace, based on color and size.`}
   );
 };
 
+// function handleDetails(formData) {
+//   throw new Error('Function not implemented.');
+// }
+
 export default MoonForm;
-function handleDetails(formData: string) {
-  throw new Error('Function not implemented.');
-}
+

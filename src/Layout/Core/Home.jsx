@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Welcome = () => {
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     navigate('/moonform');
   };

@@ -8,7 +8,7 @@ import AppLayout from 'Layout/AppLayout';
 import './App.css'
 
 
-export function timesThree(numberToMultiply: number) {
+export function timesThree(numberToMultiply) {
   return numberToMultiply * 3
 }
 

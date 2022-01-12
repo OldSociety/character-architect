@@ -3,18 +3,14 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-interface LayoutProps {
-  Nations?: any;
-}
-
-const NationForm: React.FC<LayoutProps> = ({  Nations }) => {
+const NationForm = ({  Nations }) => {
   const [formData, setFormData] = useState('default')
 
-  const handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
+  const handleChange = (event) => {
     setFormData(event.target.value)
   }
 
-  const handleText = (optionText: string) => {
+  const handleText = (optionText) => {
     switch (formData) {
       case 'fairbourne':
         return `I am ${Nations[0].nationality}.`
@@ -43,10 +39,10 @@ const NationForm: React.FC<LayoutProps> = ({  Nations }) => {
 
   let navigate = useNavigate()
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
     if (formData !== 'default') {
-      handleDetails(formData)
+      // handleDetails(formData)
       navigate('/endform')
     }
   }
@@ -97,6 +93,6 @@ const NationForm: React.FC<LayoutProps> = ({  Nations }) => {
 
 export default NationForm
 
-function handleDetails(formData: string) {
-  throw new Error('Function not implemented.')
-}
+// function handleDetails(formData) {
+//   throw new Error('Function not implemented.')
+// }
