@@ -16,7 +16,7 @@ describe('The timesThree function', () => {
   })
 })
 
-describe('Header', () => {
+describe('Footer', () => {
   test('should be see on every page', () => {
     const expected = 6
     expect(timesThree(2)).toBe(expected)

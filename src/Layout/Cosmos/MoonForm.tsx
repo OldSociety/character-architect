@@ -1,50 +1,53 @@
-import * as React from 'react'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import * as React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface LayoutProps {
   Moons?: any;
 }
 
 const MoonForm: React.FC<LayoutProps> = ({ Moons }) => {
-  const [formData, setFormData] = useState('default')
+  const [formData, setFormData] = useState('default');
 
-  const handleChange = (event: { target: { value: React.SetStateAction<string> } }) => {
-    setFormData(event.target.value)
-  }
+  const handleChange = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setFormData(event.target.value);
+  };
 
   const handleText = (optionText: string) => {
     switch (formData) {
       case 'larimar':
-        return Moons[0].description
+        return Moons[0].description;
       case 'udrethsol':
-        return Moons[1].description
+        return Moons[1].description;
       case 'panshi':
-        return Moons[2].description
+        return Moons[2].description;
       case 'nassenti':
-        return Moons[3].description
+        return Moons[3].description;
       case 'zyry':
-        return Moons[4].description
+        return Moons[4].description;
       case 'senshi':
-        return Moons[5].description
+        return Moons[5].description;
       case 'othorleth':
-        return Moons[6].description
+        return Moons[6].description;
       default:
-        return ''
+        return '';
     }
-  }
+  };
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const handleSubmit = (event: any) => {
-    event.preventDefault()
+    event.preventDefault();
     if (formData !== 'default') {
-      handleDetails(formData)
-      navigate('/nationform')
+      handleDetails(formData);
+      navigate('/nationform');
     }
-  }
+  };
 
   return (
+<div>
     <form onSubmit={handleSubmit}>
       <div className="container">
         <div className="row">
@@ -67,6 +70,8 @@ dragon from the human religion Solace, based on color and size.`}
           <div className="col-5">
             Under which moon were you born?
             <div className="row g-3">
+             
+
               <select
                 name="moonText"
                 id="moonText"
@@ -91,19 +96,19 @@ dragon from the human religion Solace, based on color and size.`}
         </div>
         <div className="row">
           <br />
-          <p/>
+          <p />
+
           <button type="submit" className="btn btn-outline-dark">
             Submit
           </button>
         </div>
       </div>
     </form>
-  )
-}
+    </div>
+  );
+};
 
-export default MoonForm
+export default MoonForm;
 function handleDetails(formData: string) {
-  throw new Error('Function not implemented.')
+  throw new Error('Function not implemented.');
 }
-
-
