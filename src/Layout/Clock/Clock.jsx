@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const calculateTimeLeft = () => {
-  let target = new Date('01/05/22 05:30')
+  let target = new Date('01/12/22 1:30')
 
   let difference = +target - +new Date()
 
@@ -29,18 +29,20 @@ const Clock = () => {
     return () => clearTimeout(timer)
   })
 
-  const timerComponents = []
+  const timerComponents = [];
+
   Object.keys(timeLeft).forEach((interval) => {
     if (!timeLeft[interval]) {
-      return
+      return;
     }
-
+  
     timerComponents.push(
       <span>
-        {timeLeft[interval]} {interval}{''}
+        {timeLeft[interval]} {interval}{" "}
       </span>
-    )
-  })
+    );
+  });
+
   return <div>{timerComponents.length ? timerComponents : <p>7 days</p>}</div>
 }
 

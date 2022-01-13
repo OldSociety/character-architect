@@ -3,8 +3,10 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-const MoonForm= ({ Moons }) => {
+const MoonForm= ({ Moons, userData, handleDetails }) => {
   const [formData, setFormData] = useState('default');
+
+  console.log(userData)
 
   const handleChange = (event) => {
     setFormData(event.target.value);
@@ -36,9 +38,10 @@ const MoonForm= ({ Moons }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (formData !== 'default') {
-      // handleDetails(formData);
+      handleDetails(formData)
       navigate('/nationform');
     }
+    //setFormData(userData)
   };
 
   return (

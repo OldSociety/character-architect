@@ -3,8 +3,9 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-const NationForm = ({  Nations }) => {
+const NationForm = ({  Nations, userData }) => {
   const [formData, setFormData] = useState('default')
+  console.log(userData)
 
   const handleChange = (event) => {
     setFormData(event.target.value)
@@ -42,7 +43,7 @@ const NationForm = ({  Nations }) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     if (formData !== 'default') {
-      // handleDetails(formData)
+      userData.nation = formData
       navigate('/endform')
     }
   }
