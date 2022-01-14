@@ -19,6 +19,7 @@ import Nations from './Nations/Nations.json';
 
 //Sidebar Components
 import Sidebar from 'Layout/Sidebar/Sidebar';
+import Form from './Cosmos/Form'
 
 console.log(UserData);
 
@@ -63,6 +64,7 @@ const Layout = () => {
               }
             />
             <Route path="/endform" element={<EndForm />} />
+            <Route path="/form" element={<Form />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </div>

@@ -77,13 +77,13 @@ dragon from the human religion Solace, based on color and size.`}
                 value={formData}
               >
                 <option value="">Select...</option>
-                <option value="larimar">Larimar</option>
-                <option value="udrethsol">Udreth-sol</option>
-                <option value="panshi">Pan-shi</option>
-                <option value="nassenti">Nassenti</option>
-                <option value="zyry">Zyry</option>
-                <option value="senshi">Sen-shi</option>
-                <option value="othorleth">Oth-orleth</option>
+                <option value="Larimar">Larimar</option>
+                <option value="Udreth-sol">Udreth-sol</option>
+                <option value="Pan-shi">Pan-shi</option>
+                <option value="Nassenti">Nassenti</option>
+                <option value="Zyry">Zyry</option>
+                <option value="Sen-shi">Sen-shi</option>
+                <option value="Oth-orleth">Oth-orleth</option>
               </select>
             </div>
           </div>

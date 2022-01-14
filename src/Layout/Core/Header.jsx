@@ -9,7 +9,7 @@ const Header = () => {
           <a href="/" className="d-inline-flex text-decoration-none link-light">
             <div className="col-2"></div>
             <div className="col-1">
-              
+              {/* Bootstrap icon */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"

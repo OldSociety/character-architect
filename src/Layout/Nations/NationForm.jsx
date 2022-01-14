@@ -1,52 +1,51 @@
-import * as React from 'react'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import * as React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-
-const NationForm = ({  Nations, userData }) => {
-  const [formData, setFormData] = useState('default')
-  console.log(userData)
+const NationForm = ({ Nations, userData, handleDetails }) => {
+  const [formData, setFormData] = useState('default');
+  console.log(userData);
 
   const handleChange = (event) => {
-    setFormData(event.target.value)
-  }
+    setFormData(event.target.value);
+  };
 
   const handleText = (optionText) => {
     switch (formData) {
       case 'fairbourne':
-        return `I am ${Nations[0].nationality}.`
+        return `I am ${Nations[0].nationality}.`;
       case 'whitepine':
-        return `I bow to no king.`
+        return `I bow to no king.`;
       case 'uruban':
-        return `I am ${Nations[2].nationality}.`
+        return `I am ${Nations[2].nationality}.`;
       case 'ashahla':
-        return `I am ${Nations[3].nationality}.`
+        return `I am ${Nations[3].nationality}.`;
       case 'egress':
-        return `I am ${Nations[4].nationality}.`
+        return `I am ${Nations[4].nationality}.`;
       case 'medina':
-        return `I am ${Nations[5].nationality}.`
+        return `I am ${Nations[5].nationality}.`;
       case 'medun':
-        return `I bow to no king.`
+        return `I bow to no king.`;
       case 'karaj':
-        return `I am ${Nations[7].nationality}.`
+        return `I am ${Nations[7].nationality}.`;
       case 'zemer':
-        return `I am ${Nations[8].nationality}.`
+        return `I am ${Nations[8].nationality}.`;
       case 'seneka':
-        return `I am ${Nations[9].nationality}.`
+        return `I am ${Nations[9].nationality}.`;
       default:
-        return ''
+        return '';
     }
-  }
+  };
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     if (formData !== 'default') {
-      userData.nation = formData
-      navigate('/endform')
+      handleDetails(formData);
+      navigate('/endform');
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -62,16 +61,16 @@ const NationForm = ({  Nations, userData }) => {
                 value={formData}
               >
                 <option value="">--Select an Option--</option>
-                <option value="fairbourne">Fairbourne</option>
-                <option value="whitepine">Whitepine</option>
-                <option value="uruban">Uruban</option>
-                <option value="egress">Egress</option>
-                <option value="ashahla">Ash'ahla</option>
-                <option value="medina">Medina</option>
-                <option value="medun">Medun</option>
-                <option value="karaj">Karaj</option>
-                <option value="zemer">Zemér</option>
-                <option value="seneka">Seneka</option>
+                <option value="Fairbourne">Fairbourne</option>
+                <option value="Whitepine">Whitepine</option>
+                <option value="Uruban">Uruban</option>
+                <option value="Egress">Egress</option>
+                <option value="Ash'ahla">Ash'ahla</option>
+                <option value="Medina">Medina</option>
+                <option value="Medun">Medun</option>
+                <option value="Karaj">Karaj</option>
+                <option value="Zemér">Zemér</option>
+                <option value="Seneka">Seneka</option>
               </select>
             </div>
           </div>
@@ -89,10 +88,10 @@ const NationForm = ({  Nations, userData }) => {
         </div>
       </div>
     </form>
-  )
-}
+  );
+};
 
-export default NationForm
+export default NationForm;
 
 // function handleDetails(formData) {
 //   throw new Error('Function not implemented.')

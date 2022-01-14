@@ -1,16 +1,17 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
+//continue button
 const Welcome = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     navigate('/moonform');
   };
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
+    // Web Landing Page
     <form onSubmit={handleSubmit}>
       <div className="container">
         <div className="row g-3">
@@ -25,8 +26,7 @@ const Welcome = () => {
             was waged and as the age of men came to an end, the elves erected an
             empire that would survive millennia.`}
           <br />
-          {`Yet, that was long ago. Now the
-            world carries the scars of both pasts, but has moved on. Through the
+          {`Yet, that was long ago. Now the world carries the scars of both pasts, but has moved on. Through the
             same genetic experiments that sired half-elves, the so-called
             “Lesser Races” have diversified culture, art and politics. Nations
             war for modern reasons. Sending armies into battle against both
@@ -42,7 +42,6 @@ const Welcome = () => {
           <div className="row g-3">
             {`Welcome to the Meridian Character Creator. We will walk you through
             the process of creating a character from scratch suitable for the world of Meridian using the rules of 5th Edition Dungeons & Dragons.`}
-
             <button className="btn btn-outline-dark" type="submit">
               Continue
             </button>
