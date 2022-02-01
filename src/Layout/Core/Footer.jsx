@@ -18,7 +18,7 @@ const Footer = () => {
             <ul className="list-unstyled small text-muted">
               <li className="mb-2">
                 Designed and built by the legendary{' '}
-                <a href="https://github.com/JThacker93" className="d-inline-flex text-decoration-none link-light">Thackalicous</a> and the
+                <a href="https://github.com/JThacker93" className="d-inline-flex text-decoration-none link-light">Thackalicious</a> and the
                 notorious <a href="https://github.com/Oldsociety" className="d-inline-flex text-decoration-none link-light">OldSociety</a>{' '}
                 with help of our contributors.
               </li>
