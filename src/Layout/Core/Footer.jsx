@@ -19,8 +19,8 @@ const Footer = () => {
             <ul className="list-unstyled small text-muted">
               <li className="mb-2 text-dark">
                 Designed and built by the legendary{' '}
-                <a href="https://github.com/JThacker93" className="d-inline-flex text-decoration-none link-dark fw-bold">Thackalicous</a> and the
-                notorious <a href="https://github.com/Oldsociety" className="d-inline-flex text-decoration-none link-dark fw-bold">OldSociety</a>{' '}
+                <a href="https://github.com/JThacker93" className="d-inline-flex text-decoration-none link-light">Thackalicious</a> and the
+                notorious <a href="https://github.com/Oldsociety" className="d-inline-flex text-decoration-none link-light">OldSociety</a>{' '}
                 with help of our contributors.
               </li>
             </ul>
