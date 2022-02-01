@@ -96,7 +96,7 @@ dragon from the human religion Solace, based on color and size.`}
           <br />
           <p />
 
-          <button type="submit" className="btn btn-outline-dark">
+          <button type="submit" className="btn btn-outline-light">
             Submit
           </button>
         </div>

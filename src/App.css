@@ -8,9 +8,29 @@
 
 html,
 body {
+  color: white;
   height: 100%;
-  position: relative;
-  background-color: darkgray;
+  background: linear-gradient(
+    360deg,
+    hsla(7, 83%, 50%, 0.8) 0%,
+    rgb(223, 135, 68) 8%,
+    hsla(211, 49%, 15%, 1) 50%,
+    hsla(216, 83%, 2%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E91B00", endColorstr="#E27928", GradientType=1 );
+/* 
+  background: linear-gradient(
+    360deg,
+    hsla(7, 100%, 46%, 0.8) 0%,
+    hsla(26, 76%, 52%, 1) 8%,
+    hsla(211, 49%, 15%, 1) 50%,
+    hsla(216, 83%, 2%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E91B00", endColorstr="#E27928", GradientType=1 ); */
+
+
 }
 
 .main-container {
@@ -20,8 +40,9 @@ body {
   position: relative;
   padding-bottom: 100px; /* height of your footer */
 }
+
 footer {
-  position:absolute;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }

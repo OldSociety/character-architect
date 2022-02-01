@@ -36,9 +36,10 @@ const Layout = () => {
     <div className="Layout">
       <Header />
       <div className="container">
-        <div className="row">
+      {/* <div className="row">
           <Sidebar userData={userData} />
-        </div>
+        </div> */}
+        <div className='bImage' />
         <div className="col-lg-8 col-12">
           <Routes>
             <Route path="/" element={<Home />} />

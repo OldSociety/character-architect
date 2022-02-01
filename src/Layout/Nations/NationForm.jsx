@@ -82,7 +82,7 @@ const NationForm = ({ Nations, userData, handleDetails }) => {
         <div className="row">
           <br />
           <p />
-          <button type="submit" className="btn btn-outline-dark">
+          <button type="submit" className="btn btn-outline-light">
             Submit
           </button>
         </div>

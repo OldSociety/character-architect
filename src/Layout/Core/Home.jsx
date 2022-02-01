@@ -13,7 +13,7 @@ const Welcome = () => {
   return (
     // Web Landing Page
     <form onSubmit={handleSubmit}>
-      <div className="container">
+      <div className="container mb-5 py-3">
         <div className="row g-3">
           {`In the beginning, Meridian was a world of fantasy. Humans lived
             simple lives beside their goddess, Miira, and her dragons. Together
@@ -42,7 +42,7 @@ const Welcome = () => {
           <div className="row g-3">
             {`Welcome to the Meridian Character Creator. We will walk you through
             the process of creating a character from scratch suitable for the world of Meridian using the rules of 5th Edition Dungeons & Dragons.`}
-            <button className="btn btn-outline-dark" type="submit">
+            <button className="btn btn-outline-light " type="submit">
               Continue
             </button>
           </div>
