@@ -7,7 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import AppLayout from 'Layout/AppLayout';
 import './App.css'
 
-
+//Test Code used for JEST !!! DO NOT DELETE !!!
 export function timesThree(numberToMultiply) {
   return numberToMultiply * 3
 }
