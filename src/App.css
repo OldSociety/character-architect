@@ -12,14 +12,14 @@ body {
   height: 100%;
   background: linear-gradient(
     360deg,
-    hsla(7, 83%, 50%, 0.8) 0%,
-    rgb(223, 135, 68) 8%,
-    hsla(211, 49%, 15%, 1) 50%,
+    hsla(7, 79%, 46%, 0.9) 0%,
+    hsla(26, 60%, 43%, 0.9) 10%,
+    hsla(211, 49%, 15%, 1) 30%,
     hsla(216, 83%, 2%, 1) 100%
   );
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E91B00", endColorstr="#E27928", GradientType=1 );
-/* 
+  /* 
   background: linear-gradient(
     360deg,
     hsla(7, 100%, 46%, 0.8) 0%,
@@ -29,8 +29,6 @@ body {
   );
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E91B00", endColorstr="#E27928", GradientType=1 ); */
-
-
 }
 
 .main-container {
@@ -45,4 +43,9 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.warrior-pic {
+  background-image: url("https://i.pinimg.com/originals/77/58/e6/7758e6a6f2fa36603fc4d10d6c47c873.png");
+  size: 50%;
 }

@@ -18,7 +18,7 @@ import NationForm from './Nations/NationForm';
 import Nations from './Nations/Nations.json';
 
 //Sidebar Components
-import Sidebar from 'Layout/Sidebar/Sidebar';
+//import Sidebar from 'Layout/Sidebar/Sidebar';
 import Form from './Cosmos/Form'
 
 console.log(UserData);
@@ -39,8 +39,7 @@ const Layout = () => {
       {/* <div className="row">
           <Sidebar userData={userData} />
         </div> */}
-        <div className='bImage' />
-        <div className="col-lg-8 col-12">
+        <div>
           <Routes>
             <Route path="/" element={<Home />} />
 
