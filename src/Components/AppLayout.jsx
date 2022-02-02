@@ -9,17 +9,19 @@ import Footer from './Core/Footer';
 import NotFound from './Core/NotFound';
 import EndForm from './Core/EndWarning';
 
-// Cosmos Components
-import MoonForm from './Cosmos/MoonForm';
-import Moons from './Cosmos/Moons.json';
+// Builder Components
+import BuildWelcome from './Builder/BuildWelcome';
+import MoonForm from './Builder/Cosmos/MoonForm';
+import Moons from './Builder/Cosmos/Moons.json';
+import NationForm from './Builder/Nations/NationForm';
+import Nations from './Builder/Nations/Nations.json';
+import Form from './Builder/Cosmos/Form'
 
-// Nations Components
-import NationForm from './Nations/NationForm';
-import Nations from './Nations/Nations.json';
+//Lore Componenets
+import LoreWelcome from './Lorebook/LoreWelcome'
 
-//Sidebar Components
-//import Sidebar from 'Layout/Sidebar/Sidebar';
-import Form from './Cosmos/Form'
+//Map Componenets
+import MapWelcome from './Maps/MapWelcome'
 
 console.log(UserData);
 
@@ -36,13 +38,12 @@ const Layout = () => {
     <div className="Layout">
       <Header />
       <div className="container">
-      {/* <div className="row">
-          <Sidebar userData={userData} />
-        </div> */}
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
-
+            <Route path="/characters/builder" element={<BuildWelcome />} />
+            <Route path="/lore" element={<LoreWelcome />} />
+            <Route path="/maps" element={<MapWelcome />} />
             <Route
               path="/moonform"
               element={
