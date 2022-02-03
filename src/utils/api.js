@@ -2,7 +2,7 @@
  * Defines the base URL for the API.
  * The default values is overridden by the `API_BASE_URL` environment variable.
  */
-const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:5001';
+const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:9000';
 
 /**
  * Defines the default headers for these functions to work with `json-server`
@@ -54,4 +54,14 @@ async function getRaces(signal) {
   return await fetchJson(url, options);
 }
 
-module.exports = getRaces;
+//CALL API IS STRICTLY FOR TESTING 
+
+// function callAPI() {
+//   fetch(`${API_BASE_URL}/testAPI`)
+//       .then(res => res.text())
+//       .then(res => this.setState({ apiResponse: res }))
+//       .catch(err => err)
+// }
+
+
+module.exports = {getRaces};
