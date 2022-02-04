@@ -1,16 +1,31 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { API_BASE_URL } from 'utils/api';
 
 //continue button
 const BuildWelcome = () => {
+  let [fetchedData, updateFetchedData] = useState([]);
+  let [apiPage, setApiPage] = useState("races")
+  // let { info, results } = fetchedData;
+
+  let api = `${API_BASE_URL}/${apiPage}`;
+
+  useEffect(() => {
+    (async function () {
+      let data = await fetch(api).then((res) => res.json());
+      updateFetchedData(data);
+    })();
+  }, [api]);
+
+  console.log("fetched Data", fetchedData)
+
+  ///////////////////////////////////////////////////////
 
   //Change page when button is clicked
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate('/moonform');
+    setApiPage("moons")
   };
-
-  const navigate = useNavigate();
 
   return (
     // Builder Landing Page
@@ -42,10 +57,10 @@ const BuildWelcome = () => {
             day.`}
           <br />
 
-              <button className="btn btn-outline-light " type="submit">
-                Continue
-              </button>
-            </div>
+          <button className="btn btn-outline-light " type="submit">
+            Continue
+          </button>
+        </div>
       </div>
     </form>
   );

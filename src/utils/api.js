@@ -64,4 +64,4 @@ async function getRaces(signal) {
 // }
 
 
-module.exports = {getRaces};
+module.exports = {getRaces, API_BASE_URL};

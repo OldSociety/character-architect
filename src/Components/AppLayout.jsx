@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import UserData from 'UserData/UserData.json';
 
+//AppLayout replaces App.jsx as the central hub of this the Application. 
+
 //Core Components
 import Home from './Core/Home';
 import Header from './Core/Header';
