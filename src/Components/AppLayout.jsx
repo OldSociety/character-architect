@@ -13,7 +13,9 @@ import NotFound from './Core/NotFound';
 import EndForm from './Core/EndWarning';
 
 // Builder Components
-import BuildWelcome from './Builder/BuildWelcome';
+import Start from './Builder/Start';
+import MoonForm from './Builder/MoonForm';
+import NationForm from './Builder/NationForm'
 
 //Lore Componenets
 import LoreWelcome from './Lorebook/LoreWelcome'
@@ -37,7 +39,12 @@ const Layout = () => {
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/characters/builder" element={<BuildWelcome />} />
+
+            {/* Character Build Routing */}
+            <Route path="/characters/builder" element={<Start />} />
+            <Route path="/characters/builder/1" element={<MoonForm />} />
+            <Route path="/characters/builder/2" element={<NationForm />} />
+
             <Route path="/lore" element={<LoreWelcome />} />
             <Route path="/maps" element={<MapWelcome />} />
             <Route path="/endform" element={<EndForm />} />
