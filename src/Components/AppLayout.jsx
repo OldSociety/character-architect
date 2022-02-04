@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import * as React from 'react'
+// import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import UserData from 'UserData/UserData.json';
+// import UserData from 'UserData/UserData.json';
 
 //AppLayout replaces App.jsx as the central hub of this the Application. 
 
@@ -13,11 +14,6 @@ import EndForm from './Core/EndWarning';
 
 // Builder Components
 import BuildWelcome from './Builder/BuildWelcome';
-import MoonForm from './Builder/Cosmos/MoonForm';
-import Moons from './Builder/Cosmos/Moons.json';
-import NationForm from './Builder/Nations/NationForm';
-import Nations from './Builder/Nations/Nations.json';
-import Form from './Builder/Cosmos/Form'
 
 //Lore Componenets
 import LoreWelcome from './Lorebook/LoreWelcome'
@@ -25,14 +21,12 @@ import LoreWelcome from './Lorebook/LoreWelcome'
 //Map Componenets
 import MapWelcome from './Maps/MapWelcome'
 
-console.log(UserData);
-
 const Layout = () => {
-  const [userData, setUserData] = useState(UserData);
+  // const [userData, setUserData] = useState(UserData);
 
-  const handleDetails = (newData) => {
-    setUserData([...userData, newData]);
-  };
+  // const handleDetails = (newData) => {
+  //   setUserData([...userData, newData]);
+  // };
 
   // Sets up the web address routes
 
@@ -46,28 +40,7 @@ const Layout = () => {
             <Route path="/characters/builder" element={<BuildWelcome />} />
             <Route path="/lore" element={<LoreWelcome />} />
             <Route path="/maps" element={<MapWelcome />} />
-            <Route
-              path="/moonform"
-              element={
-                <MoonForm
-                  Moons={Moons}
-                  handleDetails={handleDetails}
-                  userData={userData}
-                />
-              }
-            />
-            <Route
-              path="/nationform"
-              element={
-                <NationForm
-                  Nations={Nations}
-                  handleDetails={handleDetails}
-                  userData={userData}
-                />
-              }
-            />
             <Route path="/endform" element={<EndForm />} />
-            <Route path="/form" element={<Form />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
         </div>
