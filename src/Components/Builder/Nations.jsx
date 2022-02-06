@@ -56,25 +56,25 @@ const NationForm = ({ Moons, userData, handleDetails }) => {
   const handleUserData = (optionText) => {
     switch (formData) {
       case 'Fairbourne':
-        return data[0];
+        return data[0].nationality;
       case 'Whitepine':
-        return data[1];
+        return data[1].nationality;
       case 'Uruban':
-        return data[2];
+        return data[2].nationality;
       case 'Ashahla':
-        return data[3];
+        return data[3].nationality;
       case 'Egress':
-        return data[4];
+        return data[4].nationality;
       case 'Medina':
-        return data[5];
+        return data[5].nationality;
       case 'Medun':
-        return data[6];
+        return data[6].nationality;
       case 'Karaj':
-        return data[7];
+        return data[7].nationality;
       case 'Zemér':
-        return data[8];
+        return data[8].nationality;
       case 'Seneka':
-        return data[9];
+        return data[9].nationality;
       default:
         return '';
     }

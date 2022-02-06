@@ -14,8 +14,8 @@ import EndForm from './Core/EndWarning';
 
 // Builder Components
 import Start from './Builder/Start';
-import MoonForm from './Builder/MoonForm';
-import NationForm from './Builder/NationForm'
+import MoonForm from './Builder/Moons';
+import NationForm from './Builder/Nations'
 
 //Lore Componenets
 import LoreWelcome from './Lorebook/LoreWelcome'

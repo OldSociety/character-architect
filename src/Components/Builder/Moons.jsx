@@ -55,19 +55,19 @@ const MoonForm = ({ Moons, userData, handleDetails }) => {
   const handleText = (optionText) => {
     switch (formData) {
       case 'Larimar':
-        return data[0].description;
+        return data[1].sphere[0].description;
       case 'Udreth-sol':
-        return data[1].description;
+        return data[2].sphere[0].description;
       case 'Pan-shi':
-        return data[2].description;
+        return data[3].sphere[0].description;
       case 'Nassenti':
-        return data[3].description;
+        return data[4].sphere[0].description;
       case 'Zyry':
-        return data[4].description;
+        return data[5].sphere[0].description;
       case 'Sen-shi':
-        return data[5].description;
+        return data[6].sphere[0].description;
       case 'Oth-orleth':
-        return data[6].description;
+        return data[7].sphere[0].description;
       default:
         return '';
     }
