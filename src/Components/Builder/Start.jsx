@@ -2,10 +2,10 @@ import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //continue button
-const Welcome = () => {
+const Start = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate('/moonform');
+    navigate('/characters/builder/1');
   };
 
   const navigate = useNavigate();
@@ -39,17 +39,18 @@ const Welcome = () => {
             needed. Even if only to keep this fragile world spinning for another
             day.`}
           <br />
-          <div className="row g-3">
-            {`Welcome to the Meridian Character Creator. We will walk you through
+
+          {`Welcome to the Meridian Character Creator. We will walk you through
             the process of creating a character from scratch suitable for the world of Meridian using the rules of 5th Edition Dungeons & Dragons.`}
-            <button className="btn btn-outline-dark" type="submit">
-              Continue
-            </button>
-          </div>
+          <br />
+
+          <button className="btn btn-outline-light " type="submit">
+            Continue
+          </button>
         </div>
       </div>
     </form>
   );
 };
 
-export default Welcome;
+export default Start;
