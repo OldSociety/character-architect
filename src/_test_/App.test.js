@@ -6,7 +6,7 @@ import App, {timesThree} from '../App';
 
 test('renders learn react link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText(/numberToMultiply/i);
   expect(linkElement).toBeInTheDocument();
 });
 
@@ -18,10 +18,3 @@ describe('The timesThree function', () => {
   })
 })
 
-//
-describe('Footer', () => {
-  test('should be see on every page', () => {
-    const expected = 6
-    expect(timesThree(2)).toBe(expected)
-  })
-})

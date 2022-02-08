@@ -10,7 +10,7 @@ import Home from './Core/Home';
 import Header from './Core/Header';
 import Footer from './Core/Footer';
 import NotFound from './Core/NotFound';
-import EndForm from './Core/EndWarning';
+import EndForm from './Builder/EndWarning';
 
 // Builder Components
 import Start from './Builder/Start';

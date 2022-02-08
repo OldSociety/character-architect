@@ -45,14 +45,6 @@ async function fetchJson(url, options) {
   }
 }
 
-async function getRaces(signal) {
-  const url = `${API_BASE_URL}/races`;
-  const options = {
-    headers,
-    signal,
-  };
-  return await fetchJson(url, options);
-}
 
 //CALL API IS STRICTLY FOR TESTING 
 
@@ -64,4 +56,4 @@ async function getRaces(signal) {
 // }
 
 
-module.exports = {getRaces, API_BASE_URL};
+module.exports = API_BASE_URL;

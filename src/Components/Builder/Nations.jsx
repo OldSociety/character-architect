@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from 'utils/api';
 import UserData from '../../UserData/UserData.json';
 
-const NationForm = ({ Moons, userData, handleDetails }) => {
+const NationForm = ({ handleDetails }) => {
   const [formData, setFormData] = useState('default');
   const [fetchedData, updateFetchedData] = useState([]);
   const { data } = fetchedData;
@@ -84,13 +84,13 @@ const NationForm = ({ Moons, userData, handleDetails }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (formData !== 'default' && !UserData[1]) {
+    if (formData !== 'default' && !UserData[0] && !UserData[1] ) {
       UserData.push(handleUserData(formData));
-      console.log(UserData);
+      console.log("Character Sheet",UserData);
       navigate(`${baseUrl}/2`);
     } else {
-      UserData[0] = handleUserData(formData);
-      console.log(UserData);
+      UserData[1] = handleUserData(formData);
+      console.log("Character Sheet",UserData);
       navigate(`${baseUrl}/2`);
     }
   };

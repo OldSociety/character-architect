@@ -32,19 +32,19 @@ const MoonForm = ({ Moons, userData, handleDetails }) => {
   const handleUserData = (optionText) => {
     switch (formData) {
       case 'Larimar':
-        return data[0];
+        return data[1].name;
       case 'Udreth-sol':
-        return data[1];
+        return data[2].name;
       case 'Pan-shi':
-        return data[2];
+        return data[3].name;
       case 'Nassenti':
-        return data[3];
+        return data[4].name;
       case 'Zyry':
-        return data[4];
+        return data[5].name;
       case 'Sen-shi':
-        return data[5];
+        return data[6].name;
       case 'Oth-orleth':
-        return data[6];
+        return data[7].name;
       default:
         return '';
     }
@@ -77,11 +77,11 @@ const MoonForm = ({ Moons, userData, handleDetails }) => {
     event.preventDefault();
     if (formData !== 'default' && !UserData[0]) {
       UserData.push(handleUserData(formData));
-      console.log(UserData);
+      console.log("Character Sheet", UserData);
       navigate(`${baseUrl}/2`);
     } else {
-      UserData[0] = handleUserData(formData);
-      console.log(UserData);
+      UserData[1] = handleUserData(formData);
+      console.log("Character Sheet", UserData);
       navigate(`${baseUrl}/2`);
     }
   };
