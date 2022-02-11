@@ -23,25 +23,25 @@ headers.append('Content-Type', 'application/json');
  *  a promise that resolves to the `json` data or an error.
  *  If the response is not in the 200 - 399 range the promise is rejected.
  */
-async function fetchJson(url, options) {
-  try {
-    const response = await fetch(url);
-    if (response.status === 204) {
-      return null;
-    }
+// async function fetchJson(url, options) {
+//   try {
+//     const response = await fetch(url);
+//     if (response.status === 204) {
+//       return null;
+//     }
 
-    const payload = await response.json();
+//     const payload = await response.json();
 
-    if (payload.error) {
-      return Promise.reject({ message: payload.error });
-    }
-    return payload.data;
-  } catch (error) {
-    if (error.name !== 'AbortError') {
-      console.error(error.stack);
-    }
-  }
-}
+//     if (payload.error) {
+//       return Promise.reject({ message: payload.error });
+//     }
+//     return payload.data;
+//   } catch (error) {
+//     if (error.name !== 'AbortError') {
+//       console.error(error.stack);
+//     }
+//   }
+// }
 
 //CALL API IS STRICTLY FOR TESTING
 
@@ -52,4 +52,4 @@ async function fetchJson(url, options) {
 //       .catch(err => err)
 // }
 
-module.exports = { API_BASE_URL, fetchJson };
+module.exports = { API_BASE_URL };
