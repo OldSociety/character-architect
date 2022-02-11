@@ -8,9 +8,9 @@ const NationForm = ({ handleDetails }) => {
   const [formData, setFormData] = useState('default');
   const [fetchedData, updateFetchedData] = useState([]);
   const { data } = fetchedData;
-  const baseUrl = `/characters/builder`;
+  // const baseUrl = `/characters/builder`;
 
-  let api = `${API_BASE_URL}/races`;
+  let api = `${API_BASE_URL}/moons`;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,14 +28,14 @@ const NationForm = ({ handleDetails }) => {
 
   const handleText = (optionText) => {
     switch (formData) {
+      case 'Solace':
+        return `I follow Miira and her seven Seraphs.`;
+      case 'Nobility':
+        return `There is no god. I believe in the Elven Nobles who transcended mortality.`;
+      case 'Exclusionism':
+        return `I trust in Miira alone to lead us from the darkness.`;
       case 'Asha':
-        return `${data[0].entries[0].entries[0]} ${data[0].entries[3].entries[0]} ${data[0].entries[4].entries[0]}`;
-      case 'Nyxen':
-        return `${data[1].entries[0].entries[0]}`;
-      case 'Siiq':
-        return `${data[2].entries[0].entries[0]}`;
-      case 'Thesian':
-        return `${data[3].entries[0].entries[0]}`;
+        return `The god-Queen Aurora protects Meridian from the true evil that is man.`;
       default:
         return '';
     }
@@ -43,13 +43,13 @@ const NationForm = ({ handleDetails }) => {
 
   const handleUserData = (optionText) => {
     switch (formData) {
-      case 'Asha':
+      case 'Solace':
         return data[0].name;
-      case 'Nyxen':
+      case 'Nobility':
         return data[1].name;
-      case 'Siiq':
+      case 'Exclusionism':
         return data[2].name;
-      case 'Thesian':
+      case 'Asha':
         return data[3].name;
       default:
         return '';
@@ -63,11 +63,11 @@ const NationForm = ({ handleDetails }) => {
     if (formData !== 'default' && !UserData[0] && !UserData[1] ) {
       UserData.push(handleUserData(formData));
       console.log("Character Sheet",UserData);
-      navigate(`${baseUrl}/4`);
+      navigate(`/endform`);
     } else {
       UserData[1] = handleUserData(formData);
       console.log("Character Sheet",UserData);
-      navigate(`${baseUrl}/4`);
+      navigate(`/endform`);
     }
   };
 
@@ -76,7 +76,7 @@ const NationForm = ({ handleDetails }) => {
       <div className="container">
         <div className="row">
           <div className="col-5">
-            {`Choose your Race?`}
+            {`Choose your Religion?`}
             <div className="row g-3">
               <select
                 name="moonText"
@@ -85,10 +85,10 @@ const NationForm = ({ handleDetails }) => {
                 value={formData}
               >
                 <option value="">--Select an Option--</option>
+                <option value="Solace">Solace</option>
+                <option value="Nobility">Noblity</option>
+                <option value="Exclusionism">Exclusionism</option>
                 <option value="Asha">Ash'a</option>
-                <option value="Nyxen">Nyxen</option>
-                <option value="Siiq">Siiq</option>
-                <option value="Thesian">Thesian</option>
               </select>
             </div>
           </div>
