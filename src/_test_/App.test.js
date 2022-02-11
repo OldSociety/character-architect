@@ -4,12 +4,6 @@ import App, {timesThree} from '../App';
 
 // NPM TEST files
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/numberToMultiply/i);
-  expect(linkElement).toBeInTheDocument();
-});
-
 // THREE TIMES THREE is a starter test to ensure Jest is properly working.
 describe('The timesThree function', () => {
   test('should multiply by 3', () => {
@@ -17,4 +11,3 @@ describe('The timesThree function', () => {
     expect(timesThree(2)).toBe(expected)
   })
 })
-

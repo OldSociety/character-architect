@@ -1,27 +1,17 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { API_BASE_URL } from 'utils/api';
+import { API_BASE_URL, fetchJson } from 'utils/api';
 import { useNavigate } from 'react-router-dom';
 
 const LoreWelcome = () => {
-  const [fetchedData, updateFetchedData] = useState([]);
-  const { data } = fetchedData;
   const navigate = useNavigate();
-
-  let api = `${API_BASE_URL}/races`;
+  let data = `${API_BASE_URL}/races`;
+  fetchJson(data);
   //Change page when button is clicked
   const handleSubmit = (event) => {
     event.preventDefault();
     navigate('/');
   };
-
-  useEffect(() => {
-    (async function () {
-      let data = await fetch(api).then((res) => res.json());
-      console.log('fetched', data);
-      updateFetchedData(data);
-    })();
-  }, [api]);
 
   return (
     // Builder Landing Page

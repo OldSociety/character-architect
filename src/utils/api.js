@@ -25,8 +25,7 @@ headers.append('Content-Type', 'application/json');
  */
 async function fetchJson(url, options) {
   try {
-    const response = await fetch(url, options);
-
+    const response = await fetch(url);
     if (response.status === 204) {
       return null;
     }
@@ -40,13 +39,11 @@ async function fetchJson(url, options) {
   } catch (error) {
     if (error.name !== 'AbortError') {
       console.error(error.stack);
-      return Promise.reject({ message: error.message });
     }
   }
 }
 
-
-//CALL API IS STRICTLY FOR TESTING 
+//CALL API IS STRICTLY FOR TESTING
 
 // function callAPI() {
 //   fetch(`${API_BASE_URL}/testAPI`)
@@ -55,5 +52,4 @@ async function fetchJson(url, options) {
 //       .catch(err => err)
 // }
 
-
-module.exports = API_BASE_URL;
+module.exports = { API_BASE_URL, fetchJson };

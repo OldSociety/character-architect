@@ -4,11 +4,11 @@ import Clock from '../Clock/Clock'
 const Footer = () => {
 
   return (
-    <footer className="bd-footer mt-5 py-2 ">
+    <footer className="bd-footer mt-5 py-2" id="footer">
       <div id="footer-border" className="container border border-light shadow-lg p-3 mb-2 py-1">
 
         <div className="row">
-          <div className="col-lg-3 mb-3">
+          <div className="col-12 col-lg-3 mb-3">
             <a
               href="/"
               className="d-inline-flex align-items-center mb-3 link-light text-decoration-none"
