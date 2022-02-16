@@ -1,6 +1,4 @@
-import * as React from 'react'
-import { render, screen } from '@testing-library/react';
-import App, {timesThree} from '../App';
+import {timesThree} from '../App';
 
 // NPM TEST files
 
