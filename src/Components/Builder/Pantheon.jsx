@@ -8,9 +8,9 @@ const NationForm = ({ handleDetails }) => {
   const [formData, setFormData] = useState('default');
   const [fetchedData, updateFetchedData] = useState([]);
   const { data } = fetchedData;
-  const baseUrl = `/characters/builder`;
+  // const baseUrl = `/characters/builder`;
 
-  let api = `${API_BASE_URL}/nations`;
+  let api = `${API_BASE_URL}/moons`;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,26 +28,14 @@ const NationForm = ({ handleDetails }) => {
 
   const handleText = (optionText) => {
     switch (formData) {
-      case 'Fairbourne':
-        return `I am ${data[0].nationality}.`;
-      case 'Whitepine':
-        return `${data[1].nationality}`;
-      case 'Uruban':
-        return `I am ${data[2].nationality}.`;
-      case 'Ashahla':
-        return `I am ${data[3].nationality}.`;
-      case 'Egress':
-        return `I am ${data[4].nationality}.`;
-      case 'Medina':
-        return `${data[5].nationality}.`;
-      case 'Medun':
-        return `${data[6].nationality}`;
-      case 'Karaj':
-        return `I am ${data[7].nationality}.`;
-      case 'Zemér':
-        return `I am ${data[8].nationality}.`;
-      case 'Seneka':
-        return `I am ${data[9].nationality}.`;
+      case 'Solace':
+        return `I follow Miira and her seven Seraphs.`;
+      case 'Nobility':
+        return `There is no god. I believe in the Elven Nobles who transcended mortality.`;
+      case 'Exclusionism':
+        return `I trust in Miira alone to lead us from the darkness.`;
+      case 'Asha':
+        return `The god-Queen Aurora protects Meridian from the true evil that is man.`;
       default:
         return '';
     }
@@ -55,26 +43,14 @@ const NationForm = ({ handleDetails }) => {
 
   const handleUserData = (optionText) => {
     switch (formData) {
-      case 'Fairbourne':
-        return data[0].nationality;
-      case 'Whitepine':
-        return data[1].nationality;
-      case 'Uruban':
-        return data[2].nationality;
-      case 'Ashahla':
-        return data[3].nationality;
-      case 'Egress':
-        return data[4].nationality;
-      case 'Medina':
-        return data[5].nationality;
-      case 'Medun':
-        return data[6].nationality;
-      case 'Karaj':
-        return data[7].nationality;
-      case 'Zemér':
-        return data[8].nationality;
-      case 'Seneka':
-        return data[9].nationality;
+      case 'Solace':
+        return data[0].name;
+      case 'Nobility':
+        return data[1].name;
+      case 'Exclusionism':
+        return data[2].name;
+      case 'Asha':
+        return data[3].name;
       default:
         return '';
     }
@@ -87,11 +63,11 @@ const NationForm = ({ handleDetails }) => {
     if (formData !== 'default' && !UserData[0] && !UserData[1] ) {
       UserData.push(handleUserData(formData));
       console.log("Character Sheet",UserData);
-      navigate(`${baseUrl}/3`);
+      navigate(`/endform`);
     } else {
       UserData[1] = handleUserData(formData);
       console.log("Character Sheet",UserData);
-      navigate(`${baseUrl}/3`);
+      navigate(`/endform`);
     }
   };
 
@@ -100,7 +76,7 @@ const NationForm = ({ handleDetails }) => {
       <div className="container">
         <div className="row">
           <div className="col-5">
-            From which nation do you hail?
+            {`Choose your Religion?`}
             <div className="row g-3">
               <select
                 name="moonText"
@@ -109,16 +85,10 @@ const NationForm = ({ handleDetails }) => {
                 value={formData}
               >
                 <option value="">--Select an Option--</option>
-                <option value="Fairbourne">Fairbourne</option>
-                <option value="Whitepine">Whitepine</option>
-                <option value="Uruban">Uruban</option>
-                <option value="Egress">Egress</option>
-                <option value="Ashahla">Ash'ahla</option>
-                <option value="Medina">Medina</option>
-                <option value="Medun">Medun</option>
-                <option value="Karaj">Karaj</option>
-                <option value="Zemér">Zemér</option>
-                <option value="Seneka">Seneka</option>
+                <option value="Solace">Solace</option>
+                <option value="Nobility">Noblity</option>
+                <option value="Exclusionism">Exclusionism</option>
+                <option value="Asha">Ash'a</option>
               </select>
             </div>
           </div>
