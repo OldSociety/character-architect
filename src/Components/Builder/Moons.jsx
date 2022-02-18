@@ -10,7 +10,7 @@ const MoonForm = ({ Moons, userData, handleDetails }) => {
   const { data } = fetchedData;
   const baseUrl = `/characters/builder`;
 
-  let api = `${API_BASE_URL}/moons`;
+  let api = `${API_BASE_URL}/pantheon`;
   const navigate = useNavigate();
 
   useEffect(() => {

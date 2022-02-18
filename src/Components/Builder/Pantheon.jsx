@@ -10,7 +10,7 @@ const NationForm = ({ handleDetails }) => {
   const { data } = fetchedData;
   // const baseUrl = `/characters/builder`;
 
-  let api = `${API_BASE_URL}/moons`;
+  let api = `${API_BASE_URL}/pantheon`;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const NationForm = ({ handleDetails }) => {
               >
                 <option value="">--Select an Option--</option>
                 <option value="Solace">Solace</option>
-                <option value="Nobility">Noblity</option>
+                <option value="Nobility">Nobility</option>
                 <option value="Exclusionism">Exclusionism</option>
                 <option value="Asha">Ash'a</option>
               </select>
