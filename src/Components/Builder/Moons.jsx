@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { API_BASE_URL } from 'utils/api';
+import { API_BASE_URL } from '../../utils/api';
 import UserData from '../../UserData/UserData.json';
 
-const MoonForm = ({ Moons, userData, handleDetails }) => {
+const MoonForm = () => {
   const [formData, setFormData] = useState('default');
   const [fetchedData, updateFetchedData] = useState([]);
   const { data } = fetchedData;
   const baseUrl = `/characters/builder`;
 
-  let api = `${API_BASE_URL}/moons`;
+  let api = `${API_BASE_URL}/pantheon`;
   const navigate = useNavigate();
 
   useEffect(() => {
