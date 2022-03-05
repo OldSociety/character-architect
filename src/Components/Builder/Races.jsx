@@ -2,9 +2,9 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../utils/api';
-import UserData from '../../UserData/UserData.json';
+import { userStack } from 'UserData/User';
 
-const NationForm = () => {
+const RaceForm = () => {
   const [formData, setFormData] = useState('default');
   const [fetchedData, updateFetchedData] = useState([]);
   const { data } = fetchedData;
@@ -60,13 +60,25 @@ const NationForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (formData !== 'default' && !UserData[0] && !UserData[1] ) {
-      UserData.push(handleUserData(formData));
-      console.log("Character Sheet",UserData);
+
+    // Check if a nation has been chosen and that there is a moon in the stack
+    if (formData !== 'default' && userStack.top.value === 'nation') {
+      //remove moon declaration from stack, add selected nation and add a nation designation
+      userStack.pop()
+      userStack.push(handleUserData(formData));
+      userStack.push('race');
+      //go to races page
       navigate(`${baseUrl}/4`);
-    } else {
-      UserData[1] = handleUserData(formData);
-      console.log("Character Sheet",UserData);
+    } else if (formData !== 'default' && userStack.top.value === 'race') {
+      //remove both the selected nation and nation designation
+      userStack.pop();
+      userStack.pop();
+      // add new selected nation and add a nation designation
+      userStack.push(handleUserData(formData));
+      userStack.push('race');
+      console.log("Your race has been replaced.")
+      console.log(userStack)
+      //go to races page
       navigate(`${baseUrl}/4`);
     }
   };
@@ -109,7 +121,7 @@ const NationForm = () => {
   );
 };
 
-export default NationForm;
+export default RaceForm;
 
 // function handleDetails(formData) {
 //   throw new Error('Function not implemented.')

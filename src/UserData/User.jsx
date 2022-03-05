@@ -1,5 +1,6 @@
-import { createContext } from 'react';
+import React from 'react'
+import Stack from 'lib/stack'
 
-const UserContext = createContext();
+export const userStack = new Stack()
 
-export default UserContext;
+export const userArray = []

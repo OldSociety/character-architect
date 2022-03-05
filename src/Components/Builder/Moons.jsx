@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../utils/api';
-import UserData from '../../UserData/UserData.json';
+import { userStack } from '../../UserData/User.jsx';
 
 const MoonForm = () => {
   const [formData, setFormData] = useState('default');
@@ -19,9 +19,6 @@ const MoonForm = () => {
       updateFetchedData(data);
     })();
   }, [api]);
-
-  // console.log('fetched Data', fetchedData);
-  // console.log('Data Array:', data);
 
   ///////////////////////////////////////////////////////
 
@@ -75,13 +72,21 @@ const MoonForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (formData !== 'default' && !UserData[0]) {
-      UserData.push(handleUserData(formData));
-      console.log("Character Sheet", UserData);
+
+    // Check if user has selected an option and the stack isn't empty, add moon data
+    if (formData !== 'default' && !userStack.top) {
+      userStack.push(handleUserData(formData));
+      //used to validate moon in next page
+      userStack.push('moon');
+      //go to nations page
       navigate(`${baseUrl}/2`);
-    } else {
-      UserData[1] = handleUserData(formData);
-      console.log("Character Sheet", UserData);
+    } //Check if user has selected an option but there is already moon in stack
+    else if (formData !== 'default' && userStack.top) {
+      // replace moon with new choice
+      userStack.pop();
+      userStack.push(handleUserData(formData));
+      console.log('Moon has been replaced.');
+      //go to nations page
       navigate(`${baseUrl}/2`);
     }
   };
