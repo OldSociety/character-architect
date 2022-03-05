@@ -14,11 +14,6 @@ const EndForm = () => {
         released. Until then, enjoy using the countdown timer at the bottom of the page in anticipation
         our next dnd session.`}
         <div className="row g-3">
-          {/* { data.map((selection, index) => (
-            <ul>
-              <li>{selection}</li>
-            </ul>
-          ))} */}
         </div>
       </div>
     </div>
