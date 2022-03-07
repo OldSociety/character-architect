@@ -78,17 +78,17 @@ const Footer = () => {
 
           <div className="d-flex col-4 col-lg-3 text-end justify-content-end">
             <ul className="list-unstyled small text-muted">
-              <li className="mb-2 text-light align-items-center text-end">
+              <li className="mb-lg-2 text-light align-items-center text-end">
                 {/* Countdown timer */}
-                <h5>
+                <h5 className="mt-2 mt-md-0">
                   <Clock />
                 </h5>
                 until the next game
               </li>
-              <p className="mb-2 text-light text-end">
+              <li className="mb-lg-2 text-light text-end">
                 License © <span>{year}</span>
-              </p>
-              <li className="mb-sm-2 text-light text-end">Currently v0.0.1</li>
+              </li>
+              <li className="mb-lg-2 text-light text-end">Currently v0.0.1</li>
             </ul>
           </div>
         </div>
