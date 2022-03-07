@@ -96,33 +96,39 @@ const NationForm = () => {
   };
 
   return (
-    <div className="d-flex row main__container main__container-nations min-vh-100">
+    <div className="d-flex row main__container min-vh-100">
       <div className="container col-10 col-lg-8">
-        <form onSubmit={handleSubmit}>
-          <p>From which nation do you hail?</p>
-          <select
-            name="moonText"
-            id="moonText"
-            onChange={handleChange}
-            value={formData}
-            className="w-25 mb-4"
-          >
-            <option value="">--Select an Option--</option>
-            <option value="Fairbourne">Fairbourne</option>
-            <option value="Whitepine">Whitepine</option>
-            <option value="Uruban">Uruban</option>
-            <option value="Egress">Egress</option>
-            <option value="Ashahla">Ash'ahla</option>
-            <option value="Medina">Medina</option>
-            <option value="Medun">Medun</option>
-            <option value="Karaj">Karaj</option>
-            <option value="Zemér">Zemér</option>
-            <option value="Seneka">Seneka</option>
-          </select>
-          <div className="w-50">{handleText(formData)}</div>
-          <button type="submit" className="btn btn-outline-light btn-main my-4">
-            Submit
-          </button>
+        
+      <form onSubmit={handleSubmit} className="d-flex row">
+          <div className="col-12 col-lg-8">
+            <p>From which nation do you hail?</p>
+            <select
+              name="moonText"
+              id="moonText"
+              onChange={handleChange}
+              value={formData}
+              className="w-50 mb-4"
+            >
+              <option value="">--Select an Option--</option>
+              <option value="Fairbourne">Fairbourne</option>
+              <option value="Whitepine">Whitepine</option>
+              <option value="Uruban">Uruban</option>
+              <option value="Egress">Egress</option>
+              <option value="Ashahla">Ash'ahla</option>
+              <option value="Medina">Medina</option>
+              <option value="Medun">Medun</option>
+              <option value="Karaj">Karaj</option>
+              <option value="Zemér">Zemér</option>
+              <option value="Seneka">Seneka</option>
+            </select>
+            <div>{handleText(formData)}</div>
+            <button
+              type="submit"
+              className="btn btn-outline-light btn-main my-4"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

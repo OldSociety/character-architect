@@ -110,28 +110,33 @@ const MoonForm = () => {
           celestial dragon from the human religion Solace, based on color and
           size.
         </p>
-        <form onSubmit={handleSubmit}>
-          <p>Under which moon were you born?</p>
-          <select
-            name="moonText"
-            id="moonText"
-            onChange={handleChange}
-            value={formData}
-            className="w-50 mb-4"
-          >
-            <option value="">Select...</option>
-            <option value="Larimar">Larimar</option>
-            <option value="Udreth-sol">Udreth-sol</option>
-            <option value="Pan-shi">Pan-shi</option>
-            <option value="Nassenti">Nassenti</option>
-            <option value="Zyry">Zyry</option>
-            <option value="Sen-shi">Sen-shi</option>
-            <option value="Oth-orleth">Oth-orleth</option>
-          </select>
-          <div className="w-50">{handleText(formData)}</div>
-          <button type="submit" className="btn btn-outline-light btn-main my-4">
-            Submit
-          </button>
+        <form onSubmit={handleSubmit} className="d-flex row">
+          <div className="col-12 col-lg-8">
+            <p>Under which moon were you born?</p>
+            <select
+              name="moonText"
+              id="moonText"
+              onChange={handleChange}
+              value={formData}
+              className="w-50 mb-4"
+            >
+              <option value="">Select...</option>
+              <option value="Larimar">Larimar</option>
+              <option value="Udreth-sol">Udreth-sol</option>
+              <option value="Pan-shi">Pan-shi</option>
+              <option value="Nassenti">Nassenti</option>
+              <option value="Zyry">Zyry</option>
+              <option value="Sen-shi">Sen-shi</option>
+              <option value="Oth-orleth">Oth-orleth</option>
+            </select>
+            <div>{handleText(formData)}</div>
+            <button
+              type="submit"
+              className="btn btn-outline-light btn-main my-4"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

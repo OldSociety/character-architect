@@ -12,23 +12,18 @@ body {
   background-color: black;
 }
 
+.main__container {
+  padding-bottom: 380px;
+  margin: 0 auto;
+}
+
 .footer-container {
   width: 96vw;
   height: auto;
 }
 
-.main__container {
-  padding-bottom: 320px;
-  margin: 0 auto;
-}
-
-.main__container-nation {
-  padding-bottom: 0px;
-}
-
 .btn-main {
   width: 200px;
-
 }
 
 #explore,
@@ -50,8 +45,11 @@ body {
   }
 
   .main-container {
-    padding-bottom: 140px;
+    padding-bottom: 0;
+  }
 
+  .main__container-home {
+    padding-bottom: 240px;
   }
 
   .footer-container {

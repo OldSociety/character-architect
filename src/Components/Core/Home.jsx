@@ -22,10 +22,10 @@ const Welcome = () => {
 
   return (
     // Web Landing Page
-    <div className="main__container min-vh-100">
+    <div className="main__container main__container-home min-vh-100">
 
       <div className="container d-flex justify-content-center">
-        <p className="w-75 text-center text-white px-md-5">
+        <p className="text-center text-white px-md-5">
           Welcome to the world of Meridian. We will walk you through the process
           of creating a character from scratch suitable for the world of
           Meridian using the rules of 5th Edition Dungeons &amp; Dragons.

@@ -47,7 +47,7 @@ const Start = () => {
         </p>
         <form onSubmit={handleSubmit}>
           <button
-            className="btn btn-outline-light "
+            className="btn btn-outline-light btn-main"
             type="submit"
             onSubmit={handleSubmit}
           >
