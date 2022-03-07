@@ -8,6 +8,7 @@
 
 html,
 body {
+  color: white;
   background-color: black;
 }
 
@@ -16,8 +17,18 @@ body {
   height: auto;
 }
 
-.home-container {
-  padding-bottom: 460px;
+.main__container {
+  padding-bottom: 320px;
+  margin: 0 auto;
+}
+
+.main__container-nation {
+  padding-bottom: 0px;
+}
+
+.btn-main {
+  width: 200px;
+
 }
 
 #explore,
@@ -38,8 +49,9 @@ body {
     );
   }
 
-  .home-container {
-    padding-bottom: 240px;
+  .main-container {
+    padding-bottom: 140px;
+
   }
 
   .footer-container {

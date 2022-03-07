@@ -56,56 +56,46 @@ const NationForm = () => {
     }
   };
 
-  handleUserData()
+  handleUserData();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (formData !== 'default' && !UserData[0] && !UserData[1] ) {
+    if (formData !== 'default' && !UserData[0] && !UserData[1]) {
       UserData.push(handleUserData(formData));
-      console.log("Character Sheet",UserData);
+      console.log('Character Sheet', UserData);
       navigate(`${baseUrl}/4`);
     } else {
       UserData[1] = handleUserData(formData);
-      console.log("Character Sheet",UserData);
+      console.log('Character Sheet', UserData);
       navigate(`${baseUrl}/4`);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="container">
-        <div className="row">
-          <div className="col-5">
-            {`Choose your Race?`}
-            <div className="row g-3">
-              <select
-                name="moonText"
-                id="moonText"
-                onChange={handleChange}
-                value={formData}
-              >
-                <option value="">--Select an Option--</option>
-                <option value="Asha">Ash'a</option>
-                <option value="Nyxen">Nyxen</option>
-                <option value="Siiq">Siiq</option>
-                <option value="Thesian">Thesian</option>
-              </select>
-            </div>
-          </div>
-          <div className="col-1"></div>
-          <div className="col-6">
-            <div>{handleText(formData)}</div>
-          </div>
-        </div>
-        <div className="row">
-          <br />
-          <p />
-          <button type="submit" className="btn btn-outline-light">
+    <div className="d-flex row main__container min-vh-100">
+      <div className="container col-10 col-lg-8">
+        <form onSubmit={handleSubmit}>
+          <p>Choose your Race?</p>
+          <select
+            name="moonText"
+            id="moonText"
+            onChange={handleChange}
+            value={formData}
+            className="w-50 mb-4"
+          >
+            <option value="">--Select an Option--</option>
+            <option value="Asha">Ash'a</option>
+            <option value="Nyxen">Nyxen</option>
+            <option value="Siiq">Siiq</option>
+            <option value="Thesian">Thesian</option>
+          </select>
+          <div className="w-50">{handleText(formData)}</div>
+          <button type="submit" className="btn btn-outline-light btn-main my-4">
             Submit
           </button>
-        </div>
+        </form>
       </div>
-    </form>
+    </div>
   );
 };
 

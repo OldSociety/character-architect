@@ -80,62 +80,52 @@ const NationForm = () => {
     }
   };
 
-  handleUserData()
+  handleUserData();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (formData !== 'default' && !UserData[0] && !UserData[1] ) {
+    if (formData !== 'default' && !UserData[0] && !UserData[1]) {
       UserData.push(handleUserData(formData));
-      console.log("Character Sheet",UserData);
+      console.log('Character Sheet', UserData);
       navigate(`${baseUrl}/3`);
     } else {
       UserData[1] = handleUserData(formData);
-      console.log("Character Sheet",UserData);
+      console.log('Character Sheet', UserData);
       navigate(`${baseUrl}/3`);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="container">
-        <div className="row">
-          <div className="col-5">
-            From which nation do you hail?
-            <div className="row g-3">
-              <select
-                name="moonText"
-                id="moonText"
-                onChange={handleChange}
-                value={formData}
-              >
-                <option value="">--Select an Option--</option>
-                <option value="Fairbourne">Fairbourne</option>
-                <option value="Whitepine">Whitepine</option>
-                <option value="Uruban">Uruban</option>
-                <option value="Egress">Egress</option>
-                <option value="Ashahla">Ash'ahla</option>
-                <option value="Medina">Medina</option>
-                <option value="Medun">Medun</option>
-                <option value="Karaj">Karaj</option>
-                <option value="Zemér">Zemér</option>
-                <option value="Seneka">Seneka</option>
-              </select>
-            </div>
-          </div>
-          <div className="col-1"></div>
-          <div className="col-6">
-            <div>{handleText(formData)}</div>
-          </div>
-        </div>
-        <div className="row">
-          <br />
-          <p />
-          <button type="submit" className="btn btn-outline-light">
+    <div className="d-flex row main__container main__container-nations min-vh-100">
+      <div className="container col-10 col-lg-8">
+        <form onSubmit={handleSubmit}>
+          <p>From which nation do you hail?</p>
+          <select
+            name="moonText"
+            id="moonText"
+            onChange={handleChange}
+            value={formData}
+            className="w-25 mb-4"
+          >
+            <option value="">--Select an Option--</option>
+            <option value="Fairbourne">Fairbourne</option>
+            <option value="Whitepine">Whitepine</option>
+            <option value="Uruban">Uruban</option>
+            <option value="Egress">Egress</option>
+            <option value="Ashahla">Ash'ahla</option>
+            <option value="Medina">Medina</option>
+            <option value="Medun">Medun</option>
+            <option value="Karaj">Karaj</option>
+            <option value="Zemér">Zemér</option>
+            <option value="Seneka">Seneka</option>
+          </select>
+          <div className="w-50">{handleText(formData)}</div>
+          <button type="submit" className="btn btn-outline-light btn-main my-4">
             Submit
           </button>
-        </div>
+        </form>
       </div>
-    </form>
+    </div>
   );
 };
 

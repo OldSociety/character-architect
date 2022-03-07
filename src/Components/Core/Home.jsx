@@ -22,7 +22,7 @@ const Welcome = () => {
 
   return (
     // Web Landing Page
-    <div className="home-container min-vh-100">
+    <div className="main__container min-vh-100">
 
       <div className="container d-flex justify-content-center">
         <p className="w-75 text-center text-white px-md-5">
