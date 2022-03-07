@@ -21,38 +21,15 @@ const Footer = () => {
     </>
   );
 
-  const creators = (
-    <p className="mb-2 text-light">
-      Designed and built by the legendary{' '}
-      <a
-        href="https://github.com/JThacker93"
-        className="d-inline-flex text-decoration-underline link-light fw-bold"
-      >
-        Thackalicious
-      </a>{' '}
-      and the notorious{' '}
-      <a
-        href="https://github.com/Oldsociety"
-        className="d-inline-flex text-decoration-underline link-light fw-bold"
-      >
-        OldSociety
-      </a>{' '}
-      with help of our contributors.
-    </p>
-  );
-
   return (
     <footer className="footer position-relative">
       <div className="position-absolute bottom-0 start-50 translate-middle-x footer-container border border-light shadow-lg p-3">
-        {/* Only shows on small screens */}
+        {/* mobile */}
         <div className="d-flex d-lg-none flex-row col-12 col-lg-4 justify-content-around mb-3 border-bottom">
           {links}
         </div>
 
-
-        <div className="d-flex flex-md-row">
-        <div className="col-8 col-lg-5">
-        {/* Only shows on small screens */}
+        {/* mobile */}
         <h1 className="fs-4">
           <a
             href="/"
@@ -61,9 +38,9 @@ const Footer = () => {
             Meridian Character Creator
           </a>
         </h1>
-
-       
-            {/* Only shows on medium & up */}
+        <div className="d-flex flex-md-row">
+          <div className="col-8 col-lg-5">
+            {/* Only shows on large & up */}
             <h1 className="fs-5">
               <a
                 href="/"
@@ -73,12 +50,28 @@ const Footer = () => {
               </a>
             </h1>
 
-
-            {/* Only shows on medium & up */}
-            <div className=" w-75">{creators}</div>
+            <div className="w-75">
+              <p className="mb-2 text-light">
+                Designed and built by the legendary{' '}
+                <a
+                  href="https://github.com/JThacker93"
+                  className="d-inline-flex text-decoration-underline link-light fw-bold"
+                >
+                  Thackalicious
+                </a>{' '}
+                and the notorious{' '}
+                <a
+                  href="https://github.com/Oldsociety"
+                  className="d-inline-flex text-decoration-underline link-light fw-bold"
+                >
+                  OldSociety
+                </a>{' '}
+                with help of our contributors.
+              </p>
+            </div>
           </div>
 
-          {/* Only shows on medium & up */}
+          {/* Only shows on large & up */}
           <div className="d-none d-lg-flex flex-row col-12 col-lg-4 justify-content-around">
             {links}
           </div>
