@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { userStack, userArray } from 'UserData/User';
+import { userStack, userArray } from 'Components/Builder/User';
 
 const EndForm = () => {
 
   let data = JSON.stringify(userStack)
-  console.log(data)
-  console.log(typeof data)
   return (
     <div className="container">
       <div className="row g-3">
@@ -14,6 +12,8 @@ const EndForm = () => {
         released. Until then, enjoy using the countdown timer at the bottom of the page in anticipation
         our next dnd session.`}
         <div className="row g-3">
+          {JSON.stringify(Object.values(userStack))}
+
         </div>
       </div>
     </div>

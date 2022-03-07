@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../utils/api';
-import { userStack } from 'UserData/User';
+import { userStack } from 'Components/Builder/User';
 
 const NationForm = () => {
   const [formData, setFormData] = useState('default');
@@ -27,6 +27,7 @@ const NationForm = () => {
   };
 
   const handleText = (optionText) => {
+    // Changes text based on chosen option value
     switch (formData) {
       case 'Fairbourne':
         return `I am ${data[0].nationality}.`;
@@ -54,6 +55,7 @@ const NationForm = () => {
   };
 
   const handleUserData = (optionText) => {
+    // Matches drop down form values with API data
     switch (formData) {
       case 'Fairbourne':
         return data[0].nationality;
@@ -114,6 +116,7 @@ const NationForm = () => {
           <div className="col-5">
             From which nation do you hail?
             <div className="row g-3">
+              {/* Dropdown option that lets you choose the nation you are from. */}
               <select
                 name="moonText"
                 id="moonText"
