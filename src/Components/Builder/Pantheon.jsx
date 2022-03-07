@@ -44,13 +44,13 @@ const NationForm = () => {
   const handleUserData = (optionText) => {
     switch (formData) {
       case 'Solace':
-        return data[0].name;
+        return 'I follow the tenets of the Seraphs. (Solace)';
       case 'Nobility':
-        return data[1].name;
+        return 'I strive to honor the Elven Lords. (Nobility)';
       case 'Exclusionism':
-        return data[2].name;
+        return 'I look into to the Eyes of Miira. (Exclusionism)';
       case 'Asha':
-        return data[3].name;
+        return "I worship Aurora. (Ash'a)";
       default:
         return '';
     }
@@ -64,14 +64,14 @@ const NationForm = () => {
 
     // Check if user has selected an option and the stack isn't empty, add moon data
     if (formData !== 'default') {
-      userList.nation = handleUserData(formData);
+      userList.religion = handleUserData(formData);
       //go to nations page
       console.log(userList);
       navigate(`/EndForm`);
     } //Check if user has selected an option but there is already moon in stack
     else if (formData !== 'default' && userList.key === 'race') {
       // replace moon with new choice
-      userList.nation = handleUserData(formData);
+      userList.religion = handleUserData(formData);
       console.log('Religion has been replaced.');
       console.log(userList);
       //go to nations page

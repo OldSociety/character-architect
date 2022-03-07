@@ -44,7 +44,7 @@ const RaceForm = () => {
   const handleUserData = (optionText) => {
     switch (formData) {
       case 'Asha':
-        return data[0].name;
+        return `${data[0].name} (race)`;
       case 'Nyxen':
         return data[1].name;
       case 'Siiq':
@@ -63,14 +63,14 @@ const RaceForm = () => {
 
     // Check if user has selected an option and the stack isn't empty, add moon data
     if (formData !== 'default') {
-      userList.nation = handleUserData(formData);
+      userList.race = handleUserData(formData);
       //go to nations page
       console.log(userList);
       navigate(`${baseUrl}/4`);
     } //Check if user has selected an option but there is already moon in stack
     else if (formData !== 'default' && userList.key === 'race') {
       // replace moon with new choice
-      userList.nation = handleUserData(formData);
+      userList.race = handleUserData(formData);
       console.log('Race has been replaced.');
       console.log(userList);
       //go to nations page

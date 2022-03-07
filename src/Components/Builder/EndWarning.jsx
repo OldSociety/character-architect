@@ -2,8 +2,8 @@ import * as React from 'react';
 import { userList } from './Moons';
 
 const EndForm = () => {
+  let values = Object.values(userList);
 
-  let data = JSON.stringify(userList)
   return (
     <div className="container">
       <div className="row g-3">
@@ -12,8 +12,13 @@ const EndForm = () => {
         released. Until then, enjoy using the countdown timer at the bottom of the page in anticipation
         our next dnd session.`}
         <div className="row g-3">
-          {JSON.stringify(Object.values(userList))}
-
+          {values.map((value, index) => (
+            <ul key={index}>
+              <li>
+                {value}
+              </li>
+            </ul>
+          ))}
         </div>
       </div>
     </div>
