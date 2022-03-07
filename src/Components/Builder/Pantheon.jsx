@@ -7,7 +7,7 @@ import { userList } from './Moons';
 const NationForm = () => {
   const [formData, setFormData] = useState('default');
   const [fetchedData, updateFetchedData] = useState([]);
-  const { data } = fetchedData;
+  // const { data } = fetchedData;
   // const baseUrl = `/characters/builder`;
 
   let api = `${API_BASE_URL}/pantheon`;
