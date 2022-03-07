@@ -43,7 +43,7 @@ const Clock = () => {
     );
   });
 
-  return <div>{timerComponents.length ? timerComponents : <p>7 days</p>}</div>
+  return <div>{timerComponents.length ? timerComponents : <p>tbd</p>}</div>
 }
 
 export default Clock;

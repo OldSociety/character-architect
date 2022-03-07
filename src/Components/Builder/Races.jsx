@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../utils/api';
-import { userStack } from 'Components/Builder/User';
+import { userList } from './Moons';
 
 const RaceForm = () => {
   const [formData, setFormData] = useState('default');
@@ -61,24 +61,19 @@ const RaceForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Check if a nation has been chosen and that there is a moon in the stack
-    if (formData !== 'default' && userStack.top.value === 'nation') {
-      //remove moon declaration from stack, add selected nation and add a nation designation
-      userStack.pop()
-      userStack.push(handleUserData(formData));
-      userStack.push('race');
-      //go to races page
+    // Check if user has selected an option and the stack isn't empty, add moon data
+    if (formData !== 'default') {
+      userList.nation = handleUserData(formData);
+      //go to nations page
+      console.log(userList);
       navigate(`${baseUrl}/4`);
-    } else if (formData !== 'default' && userStack.top.value === 'race') {
-      //remove both the selected nation and nation designation
-      userStack.pop();
-      userStack.pop();
-      // add new selected nation and add a nation designation
-      userStack.push(handleUserData(formData));
-      userStack.push('race');
-      console.log("Your race has been replaced.")
-      console.log(userStack)
-      //go to races page
+    } //Check if user has selected an option but there is already moon in stack
+    else if (formData !== 'default' && userList.key === 'race') {
+      // replace moon with new choice
+      userList.nation = handleUserData(formData);
+      console.log('Race has been replaced.');
+      console.log(userList);
+      //go to nations page
       navigate(`${baseUrl}/4`);
     }
   };

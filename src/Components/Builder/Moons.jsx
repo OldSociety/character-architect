@@ -2,7 +2,9 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../utils/api';
-import { userStack } from './User.jsx';
+import LinkedList from 'lib/linkedList';
+
+export const userList = {};
 
 const MoonForm = () => {
   const [formData, setFormData] = useState('default');
@@ -74,18 +76,17 @@ const MoonForm = () => {
     event.preventDefault();
 
     // Check if user has selected an option and the stack isn't empty, add moon data
-    if (formData !== 'default' && !userStack.top) {
-      userStack.push(handleUserData(formData));
-      //used to validate moon in next page
-      userStack.push('moon');
+    if (formData !== 'default') {
+      userList.moon = handleUserData(formData);
       //go to nations page
+      console.log(userList);
       navigate(`${baseUrl}/2`);
     } //Check if user has selected an option but there is already moon in stack
-    else if (formData !== 'default' && userStack.top) {
+    else if (formData !== 'default' && userList.key === "moon") {
       // replace moon with new choice
-      userStack.pop();
-      userStack.push(handleUserData(formData));
+      userList.moon = handleUserData(formData);
       console.log('Moon has been replaced.');
+      console.log(userList);
       //go to nations page
       navigate(`${baseUrl}/2`);
     }
