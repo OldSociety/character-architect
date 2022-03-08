@@ -6,7 +6,6 @@ const PatronForm = ({ religion }) => {
   const [formData, setFormData] = useState('default');
   const [fetchedData, updateFetchedData] = useState([]);
   const { data } = fetchedData;
-  // const { data } = fetchedData;
   // const baseUrl = `/characters/builder`;
 
   let api = `${API_BASE_URL}/pantheon`;
@@ -106,7 +105,7 @@ const PatronForm = ({ religion }) => {
         </div>
       );
     } else {
-        showPatron = null
+      showPatron = null;
     }
   }
 
@@ -116,7 +115,7 @@ const PatronForm = ({ religion }) => {
         <br />
         <div className="col-5">
           <br />
-          {showPatron}
+          {(!formData) ? null : showPatron}
           <p />
         </div>
       </div>
