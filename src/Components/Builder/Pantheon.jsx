@@ -2,9 +2,10 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../utils/api';
+import PatronForm from './Patron';
 import { userList } from './Moons';
 
-const NationForm = () => {
+const ReligionForm = () => {
   const [formData, setFormData] = useState('default');
   const [fetchedData, updateFetchedData] = useState([]);
   // const { data } = fetchedData;
@@ -56,8 +57,7 @@ const NationForm = () => {
     }
   };
 
-  handleUserData()
-
+  handleUserData();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -107,6 +107,7 @@ const NationForm = () => {
         </div>
         <div className="row">
           <br />
+          {<PatronForm religion={formData} />}
           <p />
           <button type="submit" className="btn btn-outline-light">
             Submit
@@ -117,8 +118,4 @@ const NationForm = () => {
   );
 };
 
-export default NationForm;
-
-// function handleDetails(formData) {
-//   throw new Error('Function not implemented.')
-// }
+export default ReligionForm;
