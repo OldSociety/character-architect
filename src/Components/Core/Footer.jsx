@@ -23,7 +23,7 @@ const Footer = () => {
 
   return (
     <footer className="footer position-relative">
-      <div className="position-absolute bottom-0 start-50 translate-middle-x footer-container border border-light shadow-lg p-3">
+      <div className="position-absolute bottom-0 mb-2 start-50 translate-middle-x footer-container border border-light shadow-lg p-3">
         {/* mobile */}
         <div className="d-flex d-lg-none flex-row col-12 col-lg-4 justify-content-around mb-3 border-bottom">
           {links}

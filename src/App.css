@@ -1,15 +1,20 @@
-* {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+*,
 *:before,
 *:after {
   box-sizing: border-box;
 }
 
-html,
 body {
   color: white;
-  background-color: black;
+  background: linear-gradient(
+    360deg,
+    hsla(7, 79%, 46%, 0.9) 0%,
+    hsla(26, 60%, 43%, 0.9) 10%,
+    hsla(211, 49%, 15%, 1) 30%,
+    hsla(216, 83%, 2%, 1) 100%
+  );
 }
 
 .main__container {
@@ -18,7 +23,7 @@ body {
 }
 
 .footer-container {
-  width: 96vw;
+  width: 98vw;
   height: auto;
 }
 
@@ -31,19 +36,13 @@ body {
   filter: grayscale(100%);
 }
 
-/* Medium devices (large desktops, 1200px and up) */
-@media (min-width: 992px) {
-  html,
-  body {
-    background: linear-gradient(
-      360deg,
-      hsla(7, 79%, 46%, 0.9) 0%,
-      hsla(26, 60%, 43%, 0.9) 10%,
-      hsla(211, 49%, 15%, 1) 30%,
-      hsla(216, 83%, 2%, 1) 100%
-    );
-  }
+.unique-font {
+  font-family: 'MedievalSharp', cursive;
+  margin-left: 14px;
+}
 
+/* Devices 992 pixels and larger */
+@media (min-width: 992px) {
   .main-container {
     padding-bottom: 0;
   }
