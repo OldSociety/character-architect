@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 export const calculateTimeLeft = () => {
-  let target = new Date('02/22/22 17:30')
+  let target = new Date('03/16/22 17:30')
 
   let difference = + target - +new Date()
 
@@ -43,7 +43,7 @@ const Clock = () => {
     );
   });
 
-  return <div>{timerComponents.length ? timerComponents : <p>tbd</p>}</div>
+  return <div>{timerComponents.length ? timerComponents : <p> {calculateTimeLeft} </p>}</div>
 }
 
 export default Clock;
