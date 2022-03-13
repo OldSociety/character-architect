@@ -2,9 +2,9 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../utils/api';
-import UserData from '../../UserData/UserData.json';
+import { userList } from './Moons';
 
-const NationForm = () => {
+const RaceForm = () => {
   const [formData, setFormData] = useState('default');
   const [fetchedData, updateFetchedData] = useState([]);
   const { data } = fetchedData;
@@ -44,7 +44,7 @@ const NationForm = () => {
   const handleUserData = (optionText) => {
     switch (formData) {
       case 'Asha':
-        return data[0].name;
+        return `${data[0].name} (race)`;
       case 'Nyxen':
         return data[1].name;
       case 'Siiq':
@@ -60,13 +60,20 @@ const NationForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (formData !== 'default' && !UserData[0] && !UserData[1]) {
-      UserData.push(handleUserData(formData));
-      console.log('Character Sheet', UserData);
+
+    // Check if user has selected an option and the stack isn't empty, add moon data
+    if (formData !== 'default') {
+      userList.race = handleUserData(formData);
+      //go to nations page
+      console.log(userList);
       navigate(`${baseUrl}/4`);
-    } else {
-      UserData[1] = handleUserData(formData);
-      console.log('Character Sheet', UserData);
+    } //Check if user has selected an option but there is already moon in stack
+    else if (formData !== 'default' && userList.key === 'race') {
+      // replace moon with new choice
+      userList.race = handleUserData(formData);
+      console.log('Race has been replaced.');
+      console.log(userList);
+      //go to nations page
       navigate(`${baseUrl}/4`);
     }
   };
@@ -104,7 +111,7 @@ const NationForm = () => {
   );
 };
 
-export default NationForm;
+export default RaceForm;
 
 // function handleDetails(formData) {
 //   throw new Error('Function not implemented.')

@@ -2,12 +2,13 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../utils/api';
-import UserData from '../../UserData/UserData.json';
+import PatronForm from './Patron';
+import { userList } from './Moons';
 
-const NationForm = () => {
+const ReligionForm = () => {
   const [formData, setFormData] = useState('default');
   const [fetchedData, updateFetchedData] = useState([]);
-  const { data } = fetchedData;
+  // const { data } = fetchedData;
   // const baseUrl = `/characters/builder`;
 
   let api = `${API_BASE_URL}/pantheon`;
@@ -44,13 +45,13 @@ const NationForm = () => {
   const handleUserData = (optionText) => {
     switch (formData) {
       case 'Solace':
-        return data[0].name;
+        return 'I follow the tenets of the Seraphs. (Solace)';
       case 'Nobility':
-        return data[1].name;
+        return 'I strive to honor the Elven Lords. (Nobility)';
       case 'Exclusionism':
-        return data[2].name;
+        return 'I look into to the Eyes of Miira. (Exclusionism)';
       case 'Asha':
-        return data[3].name;
+        return "I worship Aurora. (Ash'a)";
       default:
         return '';
     }
@@ -60,14 +61,21 @@ const NationForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (formData !== 'default' && !UserData[0] && !UserData[1]) {
-      UserData.push(handleUserData(formData));
-      console.log('Character Sheet', UserData);
-      navigate(`/endform`);
-    } else {
-      UserData[1] = handleUserData(formData);
-      console.log('Character Sheet', UserData);
-      navigate(`/endform`);
+
+    // Check if user has selected an option and the stack isn't empty, add moon data
+    if (formData !== 'default') {
+      userList.religion = handleUserData(formData);
+      //go to nations page
+      console.log(userList);
+      navigate(`/EndForm`);
+    } //Check if user has selected an option but there is already moon in stack
+    else if (formData !== 'default' && userList.key === 'race') {
+      // replace moon with new choice
+      userList.religion = handleUserData(formData);
+      console.log('Religion has been replaced.');
+      console.log(userList);
+      //go to nations page
+      navigate(`/EndForm`);
     }
   };
 
@@ -98,14 +106,18 @@ const NationForm = () => {
               Submit
             </button>
           </div>
+        <div className="row">
+          <br />
+          {<PatronForm religion={formData} />}
+          <p />
+          <button type="submit" className="btn btn-outline-light">
+            Submit
+          </button>
+        </div>
         </form>
       </div>
     </div>
   );
 };
 
-export default NationForm;
-
-// function handleDetails(formData) {
-//   throw new Error('Function not implemented.')
-// }
+export default ReligionForm;

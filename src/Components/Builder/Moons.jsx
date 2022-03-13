@@ -2,7 +2,8 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../utils/api';
-import UserData from '../../UserData/UserData.json';
+
+export const userList = {};
 
 const MoonForm = () => {
   const [formData, setFormData] = useState('default');
@@ -19,9 +20,6 @@ const MoonForm = () => {
       updateFetchedData(data);
     })();
   }, [api]);
-
-  // console.log('fetched Data', fetchedData);
-  // console.log('Data Array:', data);
 
   ///////////////////////////////////////////////////////
 
@@ -75,13 +73,20 @@ const MoonForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (formData !== 'default' && !UserData[0]) {
-      UserData.push(handleUserData(formData));
-      console.log('Character Sheet', UserData);
+
+    // Check if user has selected an option and the stack isn't empty, add moon data
+    if (formData !== 'default') {
+      userList.moon = handleUserData(formData);
+      //go to nations page
+      console.log(userList);
       navigate(`${baseUrl}/2`);
-    } else {
-      UserData[1] = handleUserData(formData);
-      console.log('Character Sheet', UserData);
+    } //Check if user has selected an option but there is already moon in stack
+    else if (formData !== 'default' && userList.key === "moon") {
+      // replace moon with new choice
+      userList.moon = handleUserData(formData);
+      console.log('Moon has been replaced.');
+      console.log(userList);
+      //go to nations page
       navigate(`${baseUrl}/2`);
     }
   };
