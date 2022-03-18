@@ -81,7 +81,7 @@ const Footer = () => {
               <li className="mb-lg-2 text-light align-items-center text-end">
                 {/* Countdown timer */}
                 <h5 className="mt-2 mt-md-0">
-                  <Clock />
+                  {/* <Clock /> */}
                 </h5>
                 until the next game
               </li>

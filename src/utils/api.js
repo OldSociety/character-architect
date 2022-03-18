@@ -23,6 +23,7 @@ headers.append('Content-Type', 'application/json');
  *  a promise that resolves to the `json` data or an error.
  *  If the response is not in the 200 - 399 range the promise is rejected.
  */
+
 async function fetchJson(url, options) {
   try {
     const response = await fetch(url);
