@@ -1,55 +1,100 @@
-import React from 'react'
-import Clock from '../Clock/Clock'
+import React from 'react';
+import Clock from '../Clock/Clock';
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
+  const links = (
+    <>
+      <ul className="list-unstyled">
+        <li className="text-light fs-6 fw-bolder">Community</li>
+        <li className="text-light fs-6">Discord</li>
+        <li className="text-light fs-6">Twitter</li>
+      </ul>
+      <ul className="list-unstyled">
+        <li className="text-light fs-6 fw-bolder">Links</li>
+        <li className="text-light fs-6">Github</li>
+      </ul>
+      <ul className="list-unstyled">
+        <li className="text-light fs-6 fw-bolder">Guides</li>
+      </ul>
+    </>
+  );
 
   return (
-    <footer className="bd-footer mt-5 py-2" id="footer">
-      <div id="footer-border" className="container border border-light shadow-lg p-3 mb-2 py-1">
+    <footer className="footer position-relative">
+      <div className="position-absolute bottom-0 mb-2 start-50 translate-middle-x footer-container border border-light shadow-lg p-3">
+        {/* mobile */}
+        <div className="d-flex d-lg-none flex-row col-12 col-lg-4 justify-content-around mb-3 border-bottom">
+          {links}
+        </div>
 
-        <div className="row">
-          <div className="col-12 col-lg-3 mb-3">
-            <a
-              href="/"
-              className="d-inline-flex align-items-center mb-3 link-light text-decoration-none"
-              aria-label="Bootstrap"
-            >
-              <span className="fs-5 text-light">Meridian Character Creator</span>
-            </a>
-            <ul className="list-unstyled small text-muted">
-              <li className="mb-2 text-light">
+        {/* mobile */}
+        <h1 className="fs-4">
+          <a
+            href="/"
+            className="d-inline-flex d-lg-none align-items-center link-light text-decoration-none"
+          >
+            Meridian Character Creator
+          </a>
+        </h1>
+        <div className="d-flex flex-md-row">
+          <div className="col-8 col-lg-5">
+            {/* Only shows on large & up */}
+            <h1 className="fs-5">
+              <a
+                href="/"
+                className="d-none d-lg-inline-flex align-items-center mb-3 link-light text-decoration-none"
+              >
+                Meridian Character Creator
+              </a>
+            </h1>
+
+            <div className="w-75">
+              <p className="mb-2 text-light">
                 Designed and built by the legendary{' '}
-                <a href="https://github.com/JThacker93" className="d-inline-flex text-decoration-underline link-light fw-bold">Thackalicious</a> and the
-                notorious <a href="https://github.com/Oldsociety" className="d-inline-flex text-decoration-underline link-light fw-bold">OldSociety</a>{' '}
+                <a
+                  href="https://github.com/JThacker93"
+                  className="d-inline-flex text-decoration-underline link-light fw-bold"
+                >
+                  Thackalicious
+                </a>{' '}
+                and the notorious{' '}
+                <a
+                  href="https://github.com/Oldsociety"
+                  className="d-inline-flex text-decoration-underline link-light fw-bold"
+                >
+                  OldSociety
+                </a>{' '}
                 with help of our contributors.
-              </li>
-            </ul>
+              </p>
+            </div>
           </div>
-          <div className="col-6 col-lg-2 text-light offset-lg-1 mb-3">
-            <h5>Community</h5>
-          </div>
-          <div className="col-6 col-lg-2 text-light mb-3">
-            <h5>Links</h5>
-          </div>
-          <div className="col-6 col-lg-2 text-light mb-3">
-            <h5>Guides</h5>
-          </div>
-          <div className="col-6 col-lg-2 text-light mb-3 text-end">
-            <ul className="list-unstyled small text-muted">
-              <li className="mb-2 text-light align-items-center text-end">
 
-              {/* Countdown timer */}
-              <h5><Clock /></h5>
-                until the next game 
+          {/* Only shows on large & up */}
+          <div className="d-none d-lg-flex flex-row col-12 col-lg-4 justify-content-around">
+            {links}
+          </div>
+
+          <div className="d-flex col-4 col-lg-3 text-end justify-content-end">
+            <ul className="list-unstyled small text-muted">
+              <li className="mb-lg-2 text-light align-items-center text-end">
+                {/* Countdown timer */}
+                <h5 className="mt-2 mt-md-0">
+                  <Clock />
+                </h5>
+                until the next game
               </li>
-              <li className="mb-2 text-light text-end">License <a href="https://support.worldwildlife.org/site/Donation2?df_id=15146&15146.donation=form1&s_src=AWE1800OQ18695A01430RX&msclkid=63d9e45b1bb814e1dd078596e1cf2f58&utm_source=bing&utm_medium=cpc&utm_campaign=Brand&utm_term=worldwildlifefund.org&utm_content=WorldWildlife.Org" className="d-inline-flex text-decoration-none link-light">©</a>2022</li>
-              <li className="mb-2 text-light text-end">Currently v0.0.1</li>
+              <li className="mb-lg-2 text-light text-end">
+                License © <span>{year}</span>
+              </li>
+              <li className="mb-lg-2 text-light text-end">Currently v0.0.1</li>
             </ul>
           </div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

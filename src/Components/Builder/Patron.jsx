@@ -115,7 +115,7 @@ const PatronForm = ({ religion }) => {
         <br />
         <div className="col-5">
           <br />
-          {(!formData) ? null : showPatron}
+          {!formData ? null : showPatron}
           <p />
         </div>
       </div>

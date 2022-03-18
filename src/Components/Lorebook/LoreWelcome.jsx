@@ -12,7 +12,6 @@ const LoreWelcome = () => {
   //   event.preventDefault();
   //   navigate('/');
   // };
-
   // return (
   //   // Builder Landing Page
   //   <form onSubmit={handleSubmit}>
@@ -20,9 +19,7 @@ const LoreWelcome = () => {
   //       <div className="row g-3">
   //         {`This is where the world lore will be stored.`}
   //         <div className="RACEMAP">
-
   //         </div>
-
   //         <button className="btn btn-outline-light " type="submit">
   //           Back
   //         </button>

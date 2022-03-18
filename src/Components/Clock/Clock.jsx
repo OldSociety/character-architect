@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
 export const calculateTimeLeft = () => {
-  let target = new Date('03/16/22 17:30')
+  let target = new Date('03/16/22 17:30');
 
-  let difference = + target - +new Date()
+  let difference = +target - +new Date();
 
-  let timeLeft = {}
+  let timeLeft = {};
 
   if (difference > 0) {
     timeLeft = {
@@ -13,21 +13,21 @@ export const calculateTimeLeft = () => {
       h: Math.floor((difference / (1000 * 60 * 60)) % 24),
       m: Math.floor((difference / 1000 / 60) % 60),
       s: Math.floor((difference / 1000) % 60),
-    }
+    };
   }
 
-  return timeLeft
-}
+  return timeLeft;
+};
 
 const Clock = () => {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft())
-    }, 1000)
-    return () => clearTimeout(timer)
-  })
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    return () => clearTimeout(timer);
+  });
 
   const timerComponents = [];
 
@@ -35,15 +35,19 @@ const Clock = () => {
     if (!timeLeft[interval]) {
       return;
     }
-  
+
     timerComponents.push(
       <span>
-        {timeLeft[interval]} {interval}{" "}
-      </span>
+        {timeLeft[interval]} {interval}{' '}
+      </span>,
     );
   });
 
-  return <div>{timerComponents.length ? timerComponents : <p> {calculateTimeLeft} </p>}</div>
-}
+  return (
+    <div>
+      {timerComponents.length ? timerComponents : <p> {calculateTimeLeft} </p>}
+    </div>
+  );
+};
 
 export default Clock;
