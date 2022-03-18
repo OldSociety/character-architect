@@ -1,89 +1,46 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { API_BASE_URL } from '../../utils/api';
+import { listMoons } from '../../utils/api';
+
+import ErrorAlert from '../../utils/ErrorAlert.js';
 
 export const userList = {};
 
 const MoonForm = () => {
-  const [formData, setFormData] = useState('default');
-  const [fetchedData, updateFetchedData] = useState([]);
-  const { data } = fetchedData;
+  const [userData, setUserData] = useState('default');
+  const [fetchedData, setFetchedData] = useState([]);
+  const [MoonsError, setMoonsError] = useState(null);
+
   const baseUrl = `/characters/builder`;
 
-  let api = `${API_BASE_URL}/pantheon`;
   const navigate = useNavigate();
 
-  useEffect(() => {
-    (async function () {
-      let data = await fetch(api).then((res) => res.json());
-      updateFetchedData(data);
-    })();
-  }, [api]);
+  useEffect(fetchData, []);
 
-  ///////////////////////////////////////////////////////
+  function fetchData() {
+    const abortController = new AbortController();
+    setMoonsError(null);
 
-  const handleChange = (event) => {
-    setFormData(event.target.value);
-  };
+    listMoons(abortController.signal).then(setFetchedData).catch(setMoonsError);
 
-  const handleUserData = (optionText) => {
-    switch (formData) {
-      case 'Larimar':
-        return data[1].name;
-      case 'Udreth-sol':
-        return data[2].name;
-      case 'Pan-shi':
-        return data[3].name;
-      case 'Nassenti':
-        return data[4].name;
-      case 'Zyry':
-        return data[5].name;
-      case 'Sen-shi':
-        return data[6].name;
-      case 'Oth-orleth':
-        return data[7].name;
-      default:
-        return '';
-    }
-  };
-
-  handleUserData(formData);
-
-  const handleText = (optionText) => {
-    switch (formData) {
-      case 'Larimar':
-        return data[1].sphere[0].description;
-      case 'Udreth-sol':
-        return data[2].sphere[0].description;
-      case 'Pan-shi':
-        return data[3].sphere[0].description;
-      case 'Nassenti':
-        return data[4].sphere[0].description;
-      case 'Zyry':
-        return data[5].sphere[0].description;
-      case 'Sen-shi':
-        return data[6].sphere[0].description;
-      case 'Oth-orleth':
-        return data[7].sphere[0].description;
-      default:
-        return '';
-    }
-  };
+    return () => abortController.abort();
+  }
 
   const handleSubmit = (event) => {
+    setUserData(event.target.value);
     event.preventDefault();
 
     // Check if user has selected an option and the stack isn't empty, add moon data
-    if (formData !== 'default') {
-      userList.moon = handleUserData(formData);
+    if (userData !== 'default') {
+      userList.moon = userData;
       //go to nations page
       console.log(userList);
       navigate(`${baseUrl}/2`);
     } //Check if user has selected an option but there is already moon in stack
-    else if (formData !== 'default' && userList.key === "moon") {
+    else if (userData !== 'default' && userList.key === 'moon') {
       // replace moon with new choice
-      userList.moon = handleUserData(formData);
+      userList.moon = userData;
       console.log('Moon has been replaced.');
       console.log(userList);
       //go to nations page
@@ -92,66 +49,120 @@ const MoonForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div className="container">
-          <div className="row">
-            {`Meridian is one of eight moons orbiting the planet Pandem. Its only continent, also referred to as Meridian, is a conflicted
-world of two powerful, yet opposing, forces: human magic and elven technology.`}
-          </div>
-          <br />
-          <div className="row">
-            {`It is found in an S-type binary star system (two stars in one system). Its suns are named Delis and Veris and are sometimes referred to as Miira's Eyes. Pandem orbits Delis, the large yellow star that provides for life on Meridian, otherwise known as its Sun. Veris, on the other hand, sheds a much dimmer red light which is near impossible 
-to see when the two suns share the same sky. On the few nights where Velis appears alone - referred to as "Second Sun" or "Bloody 
-Night" - the sky lights up like twilight in a grimsome, blood-red filter.`}
-          </div>
-          <br />
-          <div className="row">
-            {`Along with these two suns and the barren red planet, Pandem, seven other moons light up the night sky. Each is named after a Seraph, or celestial 
-dragon from the human religion Solace, based on color and size.`}
-          </div>
-          <br />
-          <div className="row">
-            <div className="col-5">
-              Under which moon were you born?
-              <div className="row g-3">
-                <select
-                  name="moonText"
-                  id="moonText"
-                  onChange={handleChange}
-                  value={formData}
-                >
-                  <option value="">Select...</option>
-                  <option value="Larimar">Larimar</option>
-                  <option value="Udreth-sol">Udreth-sol</option>
-                  <option value="Pan-shi">Pan-shi</option>
-                  <option value="Nassenti">Nassenti</option>
-                  <option value="Zyry">Zyry</option>
-                  <option value="Sen-shi">Sen-shi</option>
-                  <option value="Oth-orleth">Oth-orleth</option>
-                </select>
+    <div
+      className="d-flex flex-column flex-lg-row
+    main__container min-vh-100"
+    >
+      <div className="container col-10 col-md-9 col-lg-5 mt-2">
+        <p>
+          Meridian is one of eight moons orbiting the planet Pandem. Its only
+          continent, also referred to as Meridian, is a conflicted world of two
+          powerful, yet opposing, forces: human magic and elven technology.
+        </p>
+        <p>
+          It is found in an S-type binary star system (two stars in one system).
+          Its suns are named Delis and Veris and are sometimes referred to as
+          Miira's Eyes. Pandem orbits Delis, the large yellow star that provides
+          for life on Meridian, otherwise known as its Sun. Veris, on the other
+          hand, sheds a much dimmer red light which is near impossible to see
+          when the two suns share the same sky. On the few nights where Velis
+          appears alone - referred to as "Second Sun" or "Bloody Night" - the
+          sky lights up like twilight in a grimsome, blood-red filter.
+        </p>
+        <p>
+          Along with these two suns and the barren red planet, Pandem, seven
+          other moons light up the night sky. Each is named after a Seraph, or
+          celestial dragon from the human religion Solace, based on color and
+          size.
+        </p>
+      </div>
+
+      <div className="container col-10 col-md-8 col-lg-5">
+        <ErrorAlert error={MoonsError} />
+
+        <div
+          id="carouselExampleFade"
+          className="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <div className="card bg-transparent d-flex justify-content-center">
+                <div className="card-body h-100 d-flex justify-content-center">
+                  <p className="h4">Under which moon were you born?</p>
+                </div>
               </div>
             </div>
-            <div className="col-1"></div>
-            <div className="col-6">
-              <div>{handleText(formData)}</div>
-            </div>
-          </div>
-          <div className="row">
-            <br />
-            <p />
-            <button type="submit" className="btn btn-outline-light">
-              Submit
+
+            {fetchedData.map((info) => {
+              const { id, name, entries } = info;
+              return (
+                <div className="carousel-item" key={id}>
+                  <div className="card bg-transparent">
+                    <div className="card-header">
+                      <h5 className="card-title text-light text-center">
+                        {name}
+                      </h5>
+                    </div>
+
+                    <div className="card-body h-full">
+                      <ol className="px-4">
+                        {entries.map((entry) => {
+                          const { description, id } = entry;
+                          const entryId = id;
+                          return (
+                            <li className="card-text text-light" key={entryId}>
+                              {description}
+                            </li>
+                          );
+                        })}
+                      </ol>
+
+                      <button
+                        onClick={handleSubmit}
+                        type="submit"
+                        name={name}
+                        value={name}
+                        className="btn btn-light card-button my-4"
+                      >
+                        Select Moon
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+
+            <button
+              className="carousel-control-prev mb-5"
+              type="button"
+              data-bs-target="#carouselExampleFade"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+
+            <button
+              className="carousel-control-next mb-5"
+              type="button"
+              data-bs-target="#carouselExampleFade"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Next</span>
             </button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   );
 };
-
-// function handleDetails(formData) {
-//   throw new Error('Function not implemented.');
-// }
 
 export default MoonForm;
