@@ -1,8 +1,4 @@
-<!-- PROJECT LOGO -->
-<br />
-<h3 align="center">Character Architect</h3>
-
-  # Capstone: Restaurant Reservation System
+# Meridian Campaign Setting: Character Architect
 
 ## Live application URL
 `https://www.meridianlore.com`
