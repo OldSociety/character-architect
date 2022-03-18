@@ -1,72 +1,105 @@
-* {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+/* - - - - Semantics - - - - */
+
+*,
 *:before,
 *:after {
   box-sizing: border-box;
 }
 
-.main-container {
-  min-height: 100%; /* will cover the 100% of viewport */
-  overflow: hidden;
-  display: block;
-  position: relative;
-  padding-bottom: 100px; /* height of your footer */
-  margin: 0%;
+li {
+  list-style: none;
 }
 
-#landing {
-  text-align: center;
+body {
+  color: white;
+  background: linear-gradient(
+    360deg,
+    hsla(7, 79%, 46%, 0.9) 0%,
+    hsla(26, 60%, 43%, 0.9) 10%,
+    hsla(211, 49%, 15%, 1) 30%,
+    hsla(216, 83%, 2%, 1) 100%
+  );
 }
 
-img#explore {
+/* - - - - Components - - - - */
+
+.main__container {
+  padding-bottom: 380px;
+  margin: 0 auto;
+}
+
+.footer-container {
+  width: 98vw;
+  height: auto;
+}
+
+.btn-main {
+  width: 200px;
+}
+
+#explore,
+#lore {
   filter: grayscale(100%);
 }
 
-img#lore {
-  filter: grayscale(100%);
+.unique-font {
+  font-family: 'MedievalSharp', cursive;
+  margin-left: 14px;
 }
 
-/* Anything Smaller than Medium  */
-@media (max-width: 767px) {
-  body {
-    background-color: black;
-  }
-  img {
-    max-width: 75%;
-  }
-  #header {
-    margin-top: 20px;
-    bottom: 0;
-  }
-  #footer {
-    position: relative;
-    bottom: 0;
-    height:60px; 
-    width: 100%;
-    font-size: medium;
-    background: black;
-  }
+/* - - - - Carousel $ Carousel Cards - - - - */
+
+.card {
+  min-height: 500px;
 }
 
-/* Medium devices (large desktops, 1200px and up) */
-@media (min-width: 768px) {
-  html,
-  body {
-    color: white;
-    height: 100%;
-    padding-bottom:10px;
-    background: linear-gradient(
-      360deg,
-      hsla(7, 79%, 46%, 0.9) 0%,
-      hsla(26, 60%, 43%, 0.9) 10%,
-      hsla(211, 49%, 15%, 1) 30%,
-      hsla(216, 83%, 2%, 1) 100%
-    );
+.card-header {
+  background: #1c1c21;
+  opacity: 0.9;
+  height: 60px;
+}
+
+.card-title {
+  font-size: 2rem;
+}
+
+.card-button {
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+}
+
+.carousel-control-next {
+  margin-right: -25px;
+}
+
+.carousel-control-prev {
+  margin-left: -25px;
+}
+
+/* - - - - Devices 992 pixels and larger - - - - */
+
+@media (min-width: 992px) {
+  /* - - - - Components - - - - */
+
+  .main-container {
+    padding-bottom: 0;
   }
-  footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+
+  .main__container-home {
+    padding-bottom: 240px;
+  }
+
+  .footer-container {
+    width: 70vw;
+    max-height: 220px;
+  }
+
+  /* - - - - Carousel $ Carousel Cards - - - - */
+
+  .card {
+    min-height: 400px;
   }
 }
