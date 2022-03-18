@@ -1,10 +1,13 @@
 /**
  * Defines the base URL for the API.
  * The default values is overridden by the `API_BASE_URL` environment variable.
+ *
+ * || 'https://dry-everglades-66679.herokuapp.com';
  */
-const API_BASE_URL = process.env.API_BASE_URL || 'https://dry-everglades-66679.herokuapp.com';
 
+export const API_BASE_URL = 'http://localhost:5050';
 /**
+ *
  * Defines the default headers for these functions to work with `json-server`
  */
 const headers = new Headers();
@@ -23,25 +26,76 @@ headers.append('Content-Type', 'application/json');
  *  a promise that resolves to the `json` data or an error.
  *  If the response is not in the 200 - 399 range the promise is rejected.
  */
-// async function fetchJson(url, options) {
-//   try {
-//     const response = await fetch(url);
-//     if (response.status === 204) {
-//       return null;
-//     }
 
-//     const payload = await response.json();
+async function fetchJson(url, options, onCancel) {
+  try {
+    const response = await fetch(url, options);
+    if (response.status === 204) {
+      return null;
+    }
+    const payload = await response.json();
+    if (payload.error) {
+      return Promise.reject({ message: payload.error });
+    }
+    return payload.data;
+  } catch (error) {
+    if (error.name !== 'AbortError') {
+      console.error(error.stack);
+      throw error;
+    }
+    return Promise.resolve(onCancel);
+  }
+}
 
-//     if (payload.error) {
-//       return Promise.reject({ message: payload.error });
-//     }
-//     return payload.data;
-//   } catch (error) {
-//     if (error.name !== 'AbortError') {
-//       console.error(error.stack);
-//     }
-//   }
-// }
+export async function listMoons(params, signal) {
+  const url = new URL(`${API_BASE_URL}/pantheon`);
+  if (params) {
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
+
+export async function listNations(params, signal) {
+  const url = new URL(`${API_BASE_URL}/nations`);
+  if (params) {
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
+
+export async function listPantheon(params, signal) {
+  const url = new URL(`${API_BASE_URL}/pantheon`);
+  if (params) {
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
+
+export async function listPatrons(params, signal) {
+  const url = new URL(`${API_BASE_URL}/pantheon`);
+  if (params) {
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
+
+export async function listRaces(params, signal) {
+  const url = new URL(`${API_BASE_URL}/races`);
+  if (params) {
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
 
 //CALL API IS STRICTLY FOR TESTING
 
@@ -51,5 +105,3 @@ headers.append('Content-Type', 'application/json');
 //       .then(res => this.setState({ apiResponse: res }))
 //       .catch(err => err)
 // }
-
-module.exports = { API_BASE_URL };
