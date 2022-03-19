@@ -107,11 +107,13 @@ const MoonForm = () => {
 
                     <div className="card-body h-full">
                       <ol className="px-4">
-                        {entries.map((entry) => {
+                        {entries.map((entry, index) => {
+                          
                           const { description, id } = entry;
                           const entryId = id;
+
                           return (
-                            <li className="card-text text-light" key={entryId}>
+                            <li className="card-text text-light" key={id}>
                               {description}
                             </li>
                           );
