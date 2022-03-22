@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //continue button
 const Welcome = () => {
@@ -12,13 +12,6 @@ const Welcome = () => {
   //   event.preventDefault();
   //   navigate('/lore');
   // };
-
-  const handleCreateSubmit = (event) => {
-    event.preventDefault();
-    navigate('/characters/builder');
-  };
-
-  const navigate = useNavigate();
 
   return (
     // Web Landing Page
@@ -42,14 +35,15 @@ const Welcome = () => {
             className="img-fluid"
           />
           <p />
+          {/* <Link to="/characters/maps"> */}
           <button
             className="btn btn-outline-light"
-            // onClick={handleSubmit}
             id="explore"
-            type="submit"
+            type="button"
           >
             Coming Soon
           </button>
+          {/* </Link> */}
         </div>
 
         {/* World Lore Wiki */}
@@ -57,35 +51,36 @@ const Welcome = () => {
           <img
             id="lore"
             src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/011ad8e1-175a-4002-ba85-26ff6c10c094/d982yvo-d852d3b0-79f6-4e39-b935-f00f585ed26a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAxMWFkOGUxLTE3NWEtNDAwMi1iYTg1LTI2ZmY2YzEwYzA5NFwvZDk4Mnl2by1kODUyZDNiMC03OWY2LTRlMzktYjkzNS1mMDBmNTg1ZWQyNmEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.I3ndyyFxRKfYKk3Y1cAtAu06MFKuwrqeZqNE21LZ_JE"
-            alt="hi"
+            alt="scales"
             className="img-fluid"
           />
           <p />
+          <Link to="/characters/lore">
           <button
             className="btn btn-outline-light "
-            // onClick={handleSubmit2}
             id="study"
-            type="submit"
+            type="button"
           >
-            Coming Soon
+            Learn the Lore
           </button>
+          </Link>
         </div>
 
         {/* Character Creator*/}
         <div className="col-8 col-md-4 align-self-center">
           <img
+          id="create"
             src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/011ad8e1-175a-4002-ba85-26ff6c10c094/d987rtd-ee54351e-bccb-44b9-803b-bb43374cd6bc.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAxMWFkOGUxLTE3NWEtNDAwMi1iYTg1LTI2ZmY2YzEwYzA5NFwvZDk4N3J0ZC1lZTU0MzUxZS1iY2NiLTQ0YjktODAzYi1iYjQzMzc0Y2Q2YmMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.U74TOtdlfhBqnPfFJfe8Qg9gmp_nnlJm4SsWvWJF6X0"
-            alt="hi"
+            alt="anvil"
             className="img-fluid"
           />
           <p />
           <button
             className="btn btn-outline-light"
-            onClick={handleCreateSubmit}
             id="create"
-            type="submit"
+            type="button"
           >
-            Create a Character
+            Coming Soon
           </button>
         </div>
       </div>

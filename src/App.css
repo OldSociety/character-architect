@@ -40,7 +40,7 @@ body {
 }
 
 #explore,
-#lore {
+#create {
   filter: grayscale(100%);
 }
 
