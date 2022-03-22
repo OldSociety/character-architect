@@ -13,7 +13,7 @@ const Footer = () => {
       </ul>
       <ul className="list-unstyled">
         <li className="text-light fs-6 fw-bolder">Links</li>
-        <li className="text-light fs-6">Github</li>
+        <li className="text-light fs-6"><a href='https://github.com/OldSociety/character-architect' className="d-inline-flex text-decoration-none link-light fw-bold">Project Github</a></li>
       </ul>
       <ul className="list-unstyled">
         <li className="text-light fs-6 fw-bolder">Guides</li>
