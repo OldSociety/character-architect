@@ -106,14 +106,14 @@ const ReligionForm = () => {
               Submit
             </button>
           </div>
-        <div className="row">
-          <br />
-          {<PatronForm religion={formData} />}
-          <p />
-          <button type="submit" className="btn btn-outline-light">
-            Submit
-          </button>
-        </div>
+          <div className="row">
+            <br />
+            {<PatronForm religion={formData} />}
+            <p />
+            <button type="submit" className="btn btn-outline-light">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

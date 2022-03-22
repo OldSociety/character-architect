@@ -107,29 +107,28 @@ const NationForm = () => {
   return (
     <div className="d-flex row main__container min-vh-100">
       <div className="container col-10 col-lg-8">
-        
-      <form onSubmit={handleSubmit} className="d-flex row">
+        <form onSubmit={handleSubmit} className="d-flex row">
           <div className="col-12 col-lg-8">
             <p>From which nation do you hail?</p>
-              <select
-                name="moonText"
-                id="moonText"
-                onChange={handleChange}
-                value={formData}
-              >
-                <option value="">--Select an Option--</option>
-                <option value="Fairbourne">Fairbourne</option>
-                <option value="Whitepine">Whitepine</option>
-                <option value="Uruban">Uruban</option>
-                <option value="Egress">Egress</option>
-                <option value="Ashahla">Ash'ahla</option>
-                <option value="Medina">Medina</option>
-                <option value="Medun">Medun</option>
-                <option value="Karaj">Karaj</option>
-                <option value="Zemér">Zemér</option>
-                <option value="Seneka">Seneka</option>
-              </select>
-            </div>
+            <select
+              name="moonText"
+              id="moonText"
+              onChange={handleChange}
+              value={formData}
+            >
+              <option value="">--Select an Option--</option>
+              <option value="Fairbourne">Fairbourne</option>
+              <option value="Whitepine">Whitepine</option>
+              <option value="Uruban">Uruban</option>
+              <option value="Egress">Egress</option>
+              <option value="Ashahla">Ash'ahla</option>
+              <option value="Medina">Medina</option>
+              <option value="Medun">Medun</option>
+              <option value="Karaj">Karaj</option>
+              <option value="Zemér">Zemér</option>
+              <option value="Seneka">Seneka</option>
+            </select>
+          </div>
           <div className="col-1"></div>
           <div className="col-6">
             <div>{handleText(formData)}</div>
