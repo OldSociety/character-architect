@@ -79,6 +79,12 @@ body {
   margin-left: -25px;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 /* - - - - Devices 992 pixels and larger - - - - */
 
 @media (min-width: 992px) {

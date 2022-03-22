@@ -110,11 +110,14 @@ const MoonForm = () => {
                       <ol className="px-4">
                         {sphere.map((entry, index) => {
                           
-                          const { description } = entry;
+                          const { description, image  } = entry;
 
                           return (
                             <li className="card-text text-light" key={id}>
+                              <img className="center" src={`${image}`} alt="Moon" />
+                              <br />
                               {description}
+                              <br />
                             </li>
                           );
                         })}
