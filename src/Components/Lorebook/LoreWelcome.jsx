@@ -1,4 +1,4 @@
-// import * as React from 'react';
+import * as React from 'react';
 // import { useState, useEffect } from 'react';
 // import { API_BASE_URL, fetchJson } from 'utils/api';
 // import { useNavigate } from 'react-router-dom';
@@ -12,21 +12,15 @@ const LoreWelcome = () => {
   //   event.preventDefault();
   //   navigate('/');
   // };
-  // return (
-  //   // Builder Landing Page
-  //   <form onSubmit={handleSubmit}>
-  //     <div className="container mb-5 py-3">
-  //       <div className="row g-3">
-  //         {`This is where the world lore will be stored.`}
-  //         <div className="RACEMAP">
-  //         </div>
-  //         <button className="btn btn-outline-light " type="submit">
-  //           Back
-  //         </button>
-  //       </div>
-  //     </div>
-  //   </form>
-  // );
+  return (
+    <>
+      <div className="d-flex row main__container min-vh-100">
+        <div className="container col-10 col-lg-8">
+          <div>Lore</div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default LoreWelcome;

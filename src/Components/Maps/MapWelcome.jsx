@@ -1,29 +1,25 @@
 import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 //continue button
 const MapWelcome = () => {
   //Change page when button is clicked
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    navigate('/moonform');
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   navigate('/moonform');
+  // };
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
-    // Builder Landing Page
-    <form onSubmit={handleSubmit}>
-      <div className="container mb-5 py-3">
-        <div className="row g-3">
-          {`This is where Setting Maps will be stored.`}
-          {/* 
-              <button className="btn btn-outline-light " type="submit">
-                Continue
-              </button> */}
-        </div>
+    // Maps Landing Page
+    <>
+    <div className="d-flex row main__container min-vh-100">
+      <div className="container col-10 col-lg-8">
+        <div>Maps</div>
       </div>
-    </form>
+    </div>
+  </>
   );
 };
 
