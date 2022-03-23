@@ -75,13 +75,18 @@ const Welcome = () => {
             className="img-fluid"
           />
           <p />
+          {/*Leaving button active only during development for convenience. Disable before pushing to main.*/}
+          <Link to="/characters/builder">
           <button
             className="btn btn-outline-light"
             id="create"
             type="button"
           >
-            Coming Soon
+            Create a Character
           </button>
+          </Link>
+          <br />
+          Working: Deactivate Before Pushing To Main!!
         </div>
       </div>
     </div>
