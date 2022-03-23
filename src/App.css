@@ -109,3 +109,7 @@ body {
     min-height: 400px;
   }
 }
+
+.button {
+  padding: 10px;
+}
