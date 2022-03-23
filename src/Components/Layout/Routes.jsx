@@ -20,7 +20,7 @@ import RaceBuild from '../Builder/Races';
 import PantheonBuild from '../Builder/Pantheon';
 
 //Lore Componenets
-import LoreWelcome from '../Library/LoreWelcome';
+import LoreWelcome from '../Library/Library';
 import RacesLore from '../Library/RacesLore';
 
 //Map Componenets
