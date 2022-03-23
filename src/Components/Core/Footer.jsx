@@ -13,7 +13,14 @@ const Footer = () => {
       </ul>
       <ul className="list-unstyled">
         <li className="text-light fs-6 fw-bolder">Links</li>
-        <li className="text-light fs-6"><a href='https://github.com/OldSociety/character-architect' className="d-inline-flex text-decoration-none link-light fw-bold">Project Github</a></li>
+        <li className="text-light fs-6">
+          <a
+            href="https://github.com/OldSociety/character-architect"
+            className="d-inline-flex text-decoration-none link-light fw-bold"
+          >
+            Project Github
+          </a>
+        </li>
       </ul>
       <ul className="list-unstyled">
         <li className="text-light fs-6 fw-bolder">Guides</li>
@@ -51,22 +58,31 @@ const Footer = () => {
             </h1>
 
             <div className="w-75">
-              <p className="mb-2 text-light">
-                Designed and built by the legendary{' '}
-                <a
-                  href="https://github.com/JThacker93"
-                  className="d-inline-flex text-decoration-underline link-light fw-bold"
-                >
-                  Thackalicious
-                </a>{' '}
-                and the notorious{' '}
-                <a
-                  href="https://github.com/Oldsociety"
-                  className="d-inline-flex text-decoration-underline link-light fw-bold"
-                >
-                  OldSociety
-                </a>{' '}
-                with help of our contributors.
+              <p className="mb-2  text-light">
+                <small>
+                  Designed and built by the legendary{' '}
+                  <a
+                    href="https://github.com/JThacker93"
+                    className="d-inline-flex text-decoration-underline link-light fw-bold"
+                  >
+                    Thackalicious
+                  </a>
+                  , the incredible
+                  <a
+                    href="https://github.com/NathanielHotchkiss "
+                    className="d-inline-flex text-decoration-underline link-light fw-bold"
+                  >
+                    NathanielHotchkiss
+                  </a>{' '}
+                  and the notorious{' '}
+                  <a
+                    href="https://github.com/Oldsociety"
+                    className="d-inline-flex text-decoration-underline link-light fw-bold"
+                  >
+                    OldSociety
+                  </a>{' '}
+                  and with help of our contributors.
+                </small>
               </p>
             </div>
           </div>
@@ -80,9 +96,7 @@ const Footer = () => {
             <ul className="list-unstyled small text-muted">
               <li className="mb-lg-2 text-light align-items-center text-end">
                 {/* Countdown timer */}
-                <h5 className="mt-2 mt-md-0">
-                  {/* <Clock /> */}
-                </h5>
+                <h5 className="mt-2 mt-md-0">{/* <Clock /> */}</h5>
                 until the next game
               </li>
               <li className="mb-lg-2 text-light text-end">
