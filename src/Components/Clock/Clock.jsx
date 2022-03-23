@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 export const calculateTimeLeft = () => {
-  let target = new Date('03/16/22 17:30');
+  let target = new Date('03/30/22 17:30');
+  // const nextWeek = new Date();
+
+  // // add 7 days to the current date
+  // nextWeek.setDate(new Date().getDate() + 7);
 
   let difference = +target - +new Date();
 
@@ -14,8 +18,16 @@ export const calculateTimeLeft = () => {
       m: Math.floor((difference / 1000 / 60) % 60),
       s: Math.floor((difference / 1000) % 60),
     };
+  } else {
+    difference += 604800000
+    timeLeft = {
+      d: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      h: Math.floor(((difference / (1000 * 60 * 60)) % 24)),
+      m: Math.floor(((difference / 1000 / 60) % 60)),
+      s: Math.floor(((difference / 1000) % 60)),
+    };
   }
-
+  console.log(difference)
   return timeLeft;
 };
 
