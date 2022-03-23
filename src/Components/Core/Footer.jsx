@@ -17,7 +17,7 @@ const Footer = () => {
         <li className="text-light fs-6">
           <a
             href="https://github.com/OldSociety/character-architect"
-            className="d-inline-flex text-decoration-none link-light fw-bold"
+            className="d-inline-flex text-decoration-none link-light fw-light"
           >
             Project Github
           </a>
@@ -96,7 +96,6 @@ const Footer = () => {
           <div className="d-flex col-4 col-lg-3 text-end justify-content-end">
             <ul className="list-unstyled small text-muted">
               <li className="mb-lg-2 text-light align-items-center text-end">
-                {/* Countdown timer */}
                 <h5 className="mt-2 mt-md-0">
                   <Clock />
                 </h5>
