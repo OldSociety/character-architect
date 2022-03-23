@@ -1,15 +1,16 @@
-import * as React from 'react'
+import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { listRaces } from 'utils/api';
-import Cards from 'Components/Cards/Cards'; 
+import Cards from 'Components/Cards/Cards';
+import ErrorAlert from 'Components/Layout/ErrorAlert';
 
 const RacesLore = () => {
- const [fetchedData, setFetchedData] = useState([])
- const [raceError, setRaceError] = useState(null)
-//  let { info, results } = fetchedData
+  const [fetchedData, setFetchedData] = useState([]);
+  const [raceError, setRaceError] = useState(null);
+  //  let { info, results } = fetchedData
 
-useEffect(fetchData, [])
-  
+  useEffect(fetchData, []);
+
   function fetchData() {
     const abortController = new AbortController();
     setRaceError(null);
@@ -18,7 +19,7 @@ useEffect(fetchData, [])
     return () => abortController.abort();
   }
 
-  console.log(fetchedData)
+  console.log(fetchedData);
 
   return (
     <>
@@ -26,7 +27,7 @@ useEffect(fetchData, [])
         <div className="container col-10 col-lg-8">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
-            <li className="breadcrumb-item" aria-current="page">
+              <li className="breadcrumb-item" aria-current="page">
                 Library
               </li>
               <li className="breadcrumb-item active" aria-current="page">
@@ -34,16 +35,18 @@ useEffect(fetchData, [])
               </li>
             </ol>
           </nav>
+          <ErrorAlert error={raceError} />
+
           <div className="row">
-          <div className="container">
-          <h4>The Races of Meridian</h4>
-          <Cards results={fetchedData} />
+            <div className="container">
+              <h4>The Races of Meridian</h4>
+              <Cards results={fetchedData} />
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </>
   );
-}
+};
 
-export default RacesLore
+export default RacesLore;

@@ -9,7 +9,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../Core/Home';
 import Header from '../Core/Header';
 import Footer from '../Core/Footer';
-import NotFound from '../Core/NotFound';
+import NotFound from './NotFound';
 import EndForm from '../Builder/EndWarning';
 
 // Builder Components

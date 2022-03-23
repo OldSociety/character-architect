@@ -18,11 +18,19 @@ const Cards = ({ results }) => {
           >
             {/* <img className={`${styles.img} img-fluid`} src={image} alt="" /> */}
             <div className={`${styles.content}`}>
-              <div className="fs-5 fw-bold mb-4">{name} ({raceName})</div>
-              <div className="">
-                <div className="fs-6 fw-normal">Race</div>
-                <div className="fs-5">{entries.description}</div>
+              <div className="fs-5 fw-bold mb-4">
+                {name} ({raceName})
               </div>
+              <div className="">
+                {entries.slice(0,1).map((entry, index) => {
+                   const {entries} = entry
+                    return (
+                        <li className="card-text text-light" key={index}>
+                        {`${entries[0]}`}
+                      </li>
+                    )
+                })}
+            </div>
             </div>
           </div>
         </div>
