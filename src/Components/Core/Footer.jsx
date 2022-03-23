@@ -1,5 +1,5 @@
 import React from 'react';
-import Clock from '../Clock/Clock';
+// import Clock from '../Clock/Clock';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

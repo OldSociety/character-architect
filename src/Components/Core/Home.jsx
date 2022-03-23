@@ -55,7 +55,7 @@ const Welcome = () => {
             className="img-fluid"
           />
           <p />
-          <Link to="/lore">
+          <Link to="/library">
           <button
             className="btn btn-outline-light "
             id="study"
