@@ -11,7 +11,7 @@ const LoreWelcome = () => {
         <div className="container col-10 col-lg-8">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item active" aria-current="page">
+              <li class="breadcrumb-item" aria-current="page">
                 Library
               </li>
             </ol>
