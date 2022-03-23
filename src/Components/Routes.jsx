@@ -20,7 +20,8 @@ import RaceBuild from './Builder/Races';
 import PantheonBuild from './Builder/Pantheon';
 
 //Lore Componenets
-import LoreWelcome from './Lorebook/LoreWelcome';
+import LoreWelcome from './Library/LoreWelcome';
+import RacesLore from './Library/RacesLore';
 
 //Map Componenets
 import MapWelcome from './Maps/MapWelcome';
@@ -47,7 +48,9 @@ const Layout = () => {
         <Route path="/characters/builder/3" element={<RaceBuild />} />
         <Route path="/characters/builder/4" element={<PantheonBuild />} />
 
-        <Route path="/lore" element={<LoreWelcome />} />
+        <Route path="/library" element={<LoreWelcome />} />
+        <Route path="/library/races" element={<RacesLore />} />
+
         <Route path="/maps" element={<MapWelcome />} />
         <Route path="/endform" element={<EndForm />} />
         <Route path="/*" element={<NotFound />} />
