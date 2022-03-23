@@ -6,25 +6,25 @@ import { Route, Routes } from 'react-router-dom';
 //AppLayout replaces App.jsx as the central hub of this the Application.
 
 //Core Components
-import Home from './Core/Home';
-import Header from './Core/Header';
-import Footer from './Core/Footer';
-import NotFound from './Core/NotFound';
-import EndForm from './Builder/EndWarning';
+import Home from '../Core/Home';
+import Header from '../Core/Header';
+import Footer from '../Core/Footer';
+import NotFound from '../Core/NotFound';
+import EndForm from '../Builder/EndWarning';
 
 // Builder Components
-import Start from './Builder/Start';
-import MoonBuild from './Builder/Moons';
-import NationBuild from './Builder/Nations';
-import RaceBuild from './Builder/Races';
-import PantheonBuild from './Builder/Pantheon';
+import Start from '../Builder/Start';
+import MoonBuild from '../Builder/Moons';
+import NationBuild from '../Builder/Nations';
+import RaceBuild from '../Builder/Races';
+import PantheonBuild from '../Builder/Pantheon';
 
 //Lore Componenets
-import LoreWelcome from './Library/LoreWelcome';
-import RacesLore from './Library/RacesLore';
+import LoreWelcome from '../Library/LoreWelcome';
+import RacesLore from '../Library/RacesLore';
 
 //Map Componenets
-import MapWelcome from './Maps/MapWelcome';
+import MapWelcome from '../Maps/MapWelcome';
 
 const Layout = () => {
   // const [userData, setUserData] = useState(UserData);

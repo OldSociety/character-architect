@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { listMoons } from '../../utils/api';
 
-import ErrorAlert from '../../utils/ErrorAlert.js';
+import ErrorAlert from '../Layout/ErrorAlert.js';
 
 export const userList = {};
 
