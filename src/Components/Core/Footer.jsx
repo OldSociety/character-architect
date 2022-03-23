@@ -103,6 +103,7 @@ const Footer = () => {
               </li>
               <li className="mb-lg-2 text-light text-end">
                 License{' '}
+                {/* Secret link: DO NOT DELETE! */}
                 <Link
                   className="text-decoration-none link-light fw-light"
                   to={
