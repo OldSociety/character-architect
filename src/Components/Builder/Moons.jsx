@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { listMoons } from '../../utils/api';
 
-import ErrorAlert from '../../utils/ErrorAlert.js';
+import ErrorAlert from '../Layout/ErrorAlert.js';
 
 export const userList = {};
 
@@ -35,14 +35,14 @@ const MoonForm = () => {
     if (userData !== 'default') {
       userList.moon = userData;
       //go to nations page
-      console.log(userList);
+      // console.log(userList);
       navigate(`${baseUrl}/2`);
     } //Check if user has selected an option but there is already moon in stack
     else if (userData !== 'default' && userList.key === 'moon') {
       // replace moon with new choice
       userList.moon = userData;
-      console.log('Moon has been replaced.');
-      console.log(userList);
+      // console.log('Moon has been replaced.');
+      // console.log(userList);
       //go to nations page
       navigate(`${baseUrl}/2`);
     }
@@ -94,8 +94,9 @@ const MoonForm = () => {
               </div>
             </div>
 
-            {fetchedData.map((info) => {
-              const { id, name, entries } = info;
+            {fetchedData.slice(1, 8).map((info) => {
+              const { id, name, sphere } = info;
+
               return (
                 <div className="carousel-item" key={id}>
                   <div className="card bg-transparent">
@@ -107,13 +108,16 @@ const MoonForm = () => {
 
                     <div className="card-body h-full">
                       <ol className="px-4">
-                        {entries.map((entry, index) => {
-                          const { description, id } = entry;
-                          const entryId = id;
+                        {sphere.map((entry, index) => {
+                          
+                          const { description, image  } = entry;
 
                           return (
                             <li className="card-text text-light" key={id}>
+                              <img className="center" src={`${image}`} alt="Moon" />
+                              <br />
                               {description}
+                              <br />
                             </li>
                           );
                         })}

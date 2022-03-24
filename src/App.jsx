@@ -3,7 +3,7 @@ import 'bootstrap/dist/js/bootstrap'
 
 import * as React from 'react'
 import { Route, Routes } from 'react-router-dom';
-import AppLayout from './Components/Routes';
+import AppLayout from './Components/Layout/Routes';
 import './App.css'
 
 //Test Code used for JEST !!! DO NOT DELETE !!!

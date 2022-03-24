@@ -6,24 +6,25 @@ import { Route, Routes } from 'react-router-dom';
 //AppLayout replaces App.jsx as the central hub of this the Application.
 
 //Core Components
-import Home from './Core/Home';
-import Header from './Core/Header';
-import Footer from './Core/Footer';
-import NotFound from './Core/NotFound';
-import EndForm from './Builder/EndWarning';
+import Home from '../Core/Home';
+import Header from '../Core/Header';
+import Footer from '../Core/Footer';
+import NotFound from './NotFound';
+import EndForm from '../Builder/EndWarning';
 
 // Builder Components
-import Start from './Builder/Start';
-import MoonBuild from './Builder/Moons';
-import NationBuild from './Builder/Nations';
-import RaceBuild from './Builder/Races';
-import PantheonBuild from './Builder/Pantheon';
+import Start from '../Builder/Start';
+import MoonBuild from '../Builder/Moons';
+import NationBuild from '../Builder/Nations';
+import RaceBuild from '../Builder/Races';
+import PantheonBuild from '../Builder/Pantheon';
 
 //Lore Componenets
-import LoreWelcome from './Lorebook/LoreWelcome';
+import LoreWelcome from '../Library/Library';
+import RacesLore from '../Library/RacesLore';
 
 //Map Componenets
-import MapWelcome from './Maps/MapWelcome';
+import MapWelcome from '../Maps/MapWelcome';
 
 const Layout = () => {
   // const [userData, setUserData] = useState(UserData);
@@ -47,7 +48,9 @@ const Layout = () => {
         <Route path="/characters/builder/3" element={<RaceBuild />} />
         <Route path="/characters/builder/4" element={<PantheonBuild />} />
 
-        <Route path="/lore" element={<LoreWelcome />} />
+        <Route path="/library" element={<LoreWelcome />} />
+        <Route path="/library/races" element={<RacesLore />} />
+
         <Route path="/maps" element={<MapWelcome />} />
         <Route path="/endform" element={<EndForm />} />
         <Route path="/*" element={<NotFound />} />

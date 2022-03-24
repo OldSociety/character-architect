@@ -1,5 +1,6 @@
 import React from 'react';
 import Clock from '../Clock/Clock';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -13,7 +14,14 @@ const Footer = () => {
       </ul>
       <ul className="list-unstyled">
         <li className="text-light fs-6 fw-bolder">Links</li>
-        <li className="text-light fs-6"><a href='https://github.com/OldSociety/character-architect' className="d-inline-flex text-decoration-none link-light fw-bold">Project Github</a></li>
+        <li className="text-light fs-6">
+          <a
+            href="https://github.com/OldSociety/character-architect"
+            className="d-inline-flex text-decoration-none link-light fw-light"
+          >
+            Project Github
+          </a>
+        </li>
       </ul>
       <ul className="list-unstyled">
         <li className="text-light fs-6 fw-bolder">Guides</li>
@@ -51,22 +59,31 @@ const Footer = () => {
             </h1>
 
             <div className="w-75">
-              <p className="mb-2 text-light">
-                Designed and built by the legendary{' '}
-                <a
-                  href="https://github.com/JThacker93"
-                  className="d-inline-flex text-decoration-underline link-light fw-bold"
-                >
-                  Thackalicious
-                </a>{' '}
-                and the notorious{' '}
-                <a
-                  href="https://github.com/Oldsociety"
-                  className="d-inline-flex text-decoration-underline link-light fw-bold"
-                >
-                  OldSociety
-                </a>{' '}
-                with help of our contributors.
+              <p className="mb-2  text-light">
+                <small>
+                  Designed and built by the legendary{' '}
+                  <a
+                    href="https://github.com/JThacker93"
+                    className="d-inline-flex text-decoration-underline link-light fw-bold"
+                  >
+                    Thackalicious
+                  </a>
+                  , the incredible
+                  <a
+                    href="https://github.com/NathanielHotchkiss "
+                    className="d-inline-flex text-decoration-underline link-light fw-bold"
+                  >
+                    NathanielHotchkiss
+                  </a>{' '}
+                  and the notorious{' '}
+                  <a
+                    href="https://github.com/Oldsociety"
+                    className="d-inline-flex text-decoration-underline link-light fw-bold"
+                  >
+                    OldSociety
+                  </a>{' '}
+                  and with help of our contributors.
+                </small>
               </p>
             </div>
           </div>
@@ -79,14 +96,23 @@ const Footer = () => {
           <div className="d-flex col-4 col-lg-3 text-end justify-content-end">
             <ul className="list-unstyled small text-muted">
               <li className="mb-lg-2 text-light align-items-center text-end">
-                {/* Countdown timer */}
                 <h5 className="mt-2 mt-md-0">
-                  {/* <Clock /> */}
+                  <Clock />
                 </h5>
                 until the next game
               </li>
               <li className="mb-lg-2 text-light text-end">
-                License © <span>{year}</span>
+                License{' '}
+                {/* Secret link: DO NOT DELETE! */}
+                <Link
+                  className="text-decoration-none link-light fw-light"
+                  to={
+                    'https://support.worldwildlife.org/site/Donation2?df_id=13430&13430.donation=form1&s_src=AWE1800OQ18363A01430RX&msclkid=baf713be356214ea0c5771844c78eb71'
+                  }
+                >
+                  ©
+                </Link>
+                <span> {year}</span>
               </li>
               <li className="mb-lg-2 text-light text-end">Currently v0.0.1</li>
             </ul>

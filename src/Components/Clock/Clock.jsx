@@ -1,21 +1,32 @@
 import React, { useState, useEffect } from 'react';
 
 export const calculateTimeLeft = () => {
-  let target = new Date('03/16/22 17:30');
+  // Set target date for next game
+  let target = new Date('03/30/22 17:30');
 
   let difference = +target - +new Date();
 
   let timeLeft = {};
 
   if (difference > 0) {
+    // assign countdown time format
     timeLeft = {
       d: Math.floor(difference / (1000 * 60 * 60 * 24)),
       h: Math.floor((difference / (1000 * 60 * 60)) % 24),
       m: Math.floor((difference / 1000 / 60) % 60),
       s: Math.floor((difference / 1000) % 60),
     };
+  } else {
+    // auto-reset add 7 days to the current date
+    difference += 604799999
+    // assign time format
+    timeLeft = {
+      d: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      h: Math.floor(((difference / (1000 * 60 * 60)) % 24)),
+      m: Math.floor(((difference / 1000 / 60) % 60)),
+      s: Math.floor(((difference / 1000) % 60)),
+    };
   }
-
   return timeLeft;
 };
 
@@ -31,13 +42,13 @@ const Clock = () => {
 
   const timerComponents = [];
 
-  Object.keys(timeLeft).forEach((interval) => {
+  Object.keys(timeLeft).forEach((interval, index) => {
     if (!timeLeft[interval]) {
       return;
     }
 
     timerComponents.push(
-      <span>
+      <span key={index}>
         {timeLeft[interval]} {interval}{' '}
       </span>,
     );
