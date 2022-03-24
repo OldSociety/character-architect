@@ -39,7 +39,8 @@ body {
   width: 200px;
 }
 
-#explore {
+#explore,
+#library {
   filter: grayscale(100%);
 }
 

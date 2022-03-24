@@ -49,21 +49,21 @@ const Welcome = () => {
         {/* World Lore Wiki */}
         <div className="col-8 col-md-4 align-self-center">
           <img
-            id="lore"
+            id="library"
             src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/011ad8e1-175a-4002-ba85-26ff6c10c094/d982yvo-d852d3b0-79f6-4e39-b935-f00f585ed26a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAxMWFkOGUxLTE3NWEtNDAwMi1iYTg1LTI2ZmY2YzEwYzA5NFwvZDk4Mnl2by1kODUyZDNiMC03OWY2LTRlMzktYjkzNS1mMDBmNTg1ZWQyNmEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.I3ndyyFxRKfYKk3Y1cAtAu06MFKuwrqeZqNE21LZ_JE"
             alt="scales"
             className="img-fluid"
           />
           <p />
-          <Link to="/library">
+          {/* <Link to="/library"> */}
           <button
             className="btn btn-outline-light "
             id="study"
             type="button"
           >
-            Learn the Lore
+            Coming Soon
           </button>
-          </Link>
+          {/* </Link> */}
         </div>
 
         {/* Character Creator*/}
