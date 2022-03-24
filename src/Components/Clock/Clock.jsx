@@ -42,13 +42,13 @@ const Clock = () => {
 
   const timerComponents = [];
 
-  Object.keys(timeLeft).forEach((interval) => {
+  Object.keys(timeLeft).forEach((interval, index) => {
     if (!timeLeft[interval]) {
       return;
     }
 
     timerComponents.push(
-      <span>
+      <span key={index}>
         {timeLeft[interval]} {interval}{' '}
       </span>,
     );
