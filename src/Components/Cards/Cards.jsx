@@ -20,7 +20,7 @@ const Cards = ({ results }) => {
                 {name} ({raceName})
               </div>
               <div className="">
-                <img src={`${entries[1].href.url}`} alt="hello" width="200" />
+                <img className={`${styles.img} img-fluid`} src={`${entries[1].href.url}`} alt="hello" width="200" />
 
                 {entries.slice(0, 1).map((entry, index) => {
                   const { entries } = entry;

@@ -40,7 +40,13 @@ const RacesLore = () => {
           <div className="row">
             <div className="container">
               <h4>The Races of Meridian</h4>
-              <Cards results={fetchedData} />
+              <div className="container">
+                <div className="col-12">
+                  <div className="row">
+                    <Cards results={fetchedData} />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
