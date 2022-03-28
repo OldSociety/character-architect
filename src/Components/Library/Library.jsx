@@ -29,12 +29,8 @@ const LoreWelcome = () => {
                           to great diversity.
                         </p>
                         <p className="actions">
-                          <Link to={'/library/races'}>Meet the Races</Link>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="item">
+                          <Link to={'/library/races'}>
+                          <div className="item">
                     <div className="image">
                       <img
                         src="https://i.pinimg.com/originals/50/2f/fe/502ffe6a6e1ab4127e65a2c3f45a89b6.jpg"
@@ -42,6 +38,11 @@ const LoreWelcome = () => {
                         width="1024"
                         height="426"
                       />
+                    </div>
+                  </div>
+                          </Link>
+                        </p>
+                      </div>
                     </div>
                   </div>
                  

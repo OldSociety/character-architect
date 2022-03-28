@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { listRaces } from 'utils/api';
 import Cards from 'Components/Cards/Cards';
 import ErrorAlert from 'Components/Layout/ErrorAlert';
@@ -28,7 +29,7 @@ const RacesLore = () => {
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item" aria-current="page">
-                Library
+                <Link to={`/library`} className="text-decoration-none link-light fw-heavy">Library</Link>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
                 Races
@@ -39,12 +40,9 @@ const RacesLore = () => {
 
           <div className="row">
             <div className="container">
-              <h4>The Races of Meridian</h4>
-              <div className="container">
-                <div className="col-12">
-                  <div className="row">
-                    <Cards results={fetchedData} />
-                  </div>
+              <div className="col-12">
+                <div className="row">
+                  <Cards results={fetchedData} />
                 </div>
               </div>
             </div>
