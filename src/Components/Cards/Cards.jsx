@@ -17,7 +17,7 @@ const Cards = ({ results }) => {
           >
             <div className={`${styles.content}`}>
               <div className="fs-5 fw-bold mb-4">
-                {name} ({raceName})
+                {(raceName) ? `${name} (${(raceName)})` : `${name}`}
               </div>
               <div className="">
                 <img className={`${styles.img} img-fluid`} src={`${entries[1].href.url}`} alt="hello" width="200" />
