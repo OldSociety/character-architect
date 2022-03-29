@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const LoreWelcome = () => {
   return (
     <>
-      <div className="d-flex row main__container min-vh-100">
+      <div className="d-flex">
         <div className="container col-10 col-lg-8">
           <div className="row">
             <div className="container">

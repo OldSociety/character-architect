@@ -40,6 +40,7 @@ const Layout = () => {
   return (
     <div className="Layout">
       <Header />
+      <div className="main__container">
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -58,6 +59,7 @@ const Layout = () => {
         <Route path="/endform" element={<EndForm />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
+      </div>
       <Footer />
     </div>
   );
