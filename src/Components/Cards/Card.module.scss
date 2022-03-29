@@ -6,6 +6,10 @@ $radius: 10px;
 }
 .content {
   padding: 10px;
+  text-align: center;
+}
+.content:hover {
+  background-color: rgba(255, 255, 255, 0.101);
 }
 .img {
   border-radius: $radius $radius 0 0;
