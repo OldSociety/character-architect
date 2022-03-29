@@ -80,7 +80,7 @@ const ReligionForm = () => {
   };
 
   return (
-    <div className="d-flex row main__container min-vh-100">
+    <div className="d-flex">
       <div className="container col-10 col-lg-8">
         <form onSubmit={handleSubmit} className="d-flex row">
           <div className="col-12 col-lg-8">

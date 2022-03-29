@@ -24,7 +24,7 @@ const RacesLore = () => {
 
   return (
     <>
-      <div className="d-flex row main__container min-vh-100">
+      <div className="d-flex">
         <div className="container col-10 col-lg-8">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">

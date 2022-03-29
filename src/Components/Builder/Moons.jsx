@@ -5,6 +5,8 @@ import { listMoons } from '../../utils/api';
 
 import ErrorAlert from '../Layout/ErrorAlert.js';
 
+const starMap = require('../../Images/star-map.png');
+
 export const userList = {};
 
 const MoonForm = () => {
@@ -49,10 +51,7 @@ const MoonForm = () => {
   };
 
   return (
-    <div
-      className="d-flex flex-column flex-lg-row
-    main__container min-vh-100"
-    >
+    <div className="d-flex flex-column flex-lg-row">
       <div className="container col-10 col-md-9 col-lg-5 mt-2">
         <p>
           Meridian is one of eight moons orbiting the planet Pandem. Its only
@@ -77,7 +76,7 @@ const MoonForm = () => {
         </p>
       </div>
 
-      <div className="container col-10 col-md-8 col-lg-5">
+      <div className="container col-12 col-md-8 col-lg-5">
         <ErrorAlert error={MoonsError} />
 
         <div
@@ -88,8 +87,9 @@ const MoonForm = () => {
           <div className="carousel-inner">
             <div className="carousel-item active">
               <div className="card bg-transparent d-flex justify-content-center">
-                <div className="card-body h-100 d-flex justify-content-center">
-                  <p className="h4">Under which moon were you born?</p>
+                <div className="card-body h-100 justify-content-center">
+                <h4 className="h4 text-center">Under which moon were you born?</h4>
+                  <img className="card-image card-image-default" src={starMap} alt="Moon" />
                 </div>
               </div>
             </div>
@@ -107,28 +107,28 @@ const MoonForm = () => {
                     </div>
 
                     <div className="card-body h-full">
-                      <ol className="px-4">
-                        {sphere.map((entry, index) => {
-                          
-                          const { description, image  } = entry;
+                      {sphere.map((entry) => {
+                        const { description, image } = entry;
 
-                          return (
-                            <li className="card-text text-light" key={id}>
-                              <img className="center" src={`${image}`} alt="Moon" />
-                              <br />
+                        return (
+                          <div className="card-body h-full">
+                            <img
+                              className="card-image"
+                              src={image}
+                              alt="Moon"
+                            />
+                            <div className="card-text mx-5 mt-2">
                               {description}
-                              <br />
-                            </li>
-                          );
-                        })}
-                      </ol>
+                            </div>
+                          </div>
+                        );
+                      })}
 
                       <button
                         onClick={handleSubmit}
                         type="submit"
-                        name={name}
                         value={name}
-                        className="btn btn-light card-button my-4"
+                        className="btn btn-light card-button"
                       >
                         Select Moon
                       </button>
