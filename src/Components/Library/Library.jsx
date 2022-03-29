@@ -10,10 +10,52 @@ const LoreWelcome = () => {
             <div className="container">
               <div className="col d-flex flex-column justify-content-center">
                 <ul className="col-lg-12">
+                <li>
+                    <div className="item-content">
+                      <h2>
+                        <span>Astronomy</span>
+                      </h2>
+                      <div className="details">
+                        <div className="description">
+                          <p>
+                            Meridian's place in the stars.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
                   <li>
                     <div className="item-content">
                       <h2>
-                        <span>Races of Meridian</span>
+                        <span>Atlas</span>
+                      </h2>
+                      <div className="details">
+                        <div className="description">
+                          <p>
+                            Nations and their borders.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item-content">
+                      <h2>
+                        <span>History</span>
+                      </h2>
+                      <div className="details">
+                        <div className="description">
+                          <p>
+                            Meridian throughout the ages.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item-content">
+                      <h2>
+                        <span>Races</span>
                       </h2>
                       <div className="details">
                         <div className="description">
@@ -34,6 +76,76 @@ const LoreWelcome = () => {
                                 </div>
                               </div>
                             </Link>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item-content">
+                      <h2>
+                        <span>Factions</span>
+                      </h2>
+                      <div className="details">
+                        <div className="description">
+                          <p>
+                            Unseen powers behind the throne.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item-content">
+                      <h2>
+                        <span>Religion</span>
+                      </h2>
+                      <div className="details">
+                        <div className="description">
+                          <p>
+                            Faith and its inner workings.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item-content">
+                      <h2>
+                        <span>Technology</span>
+                      </h2>
+                      <div className="details">
+                        <div className="description">
+                          <p>
+                            Mithril and Magic.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item-content">
+                      <h2>
+                        <span>Beastiary</span>
+                      </h2>
+                      <div className="details">
+                        <div className="description">
+                          <p>
+                            The wilds.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="item-content">
+                      <h2>
+                        <span>Appendix</span>
+                      </h2>
+                      <div className="details">
+                        <div className="description">
+                          <p>
+                            Everything else...
                           </p>
                         </div>
                       </div>
