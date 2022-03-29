@@ -87,6 +87,16 @@ export async function listPatrons(params, signal) {
   return await fetchJson(url, { headers, signal, method: 'GET' }, []);
 }
 
+export async function listHistory(params, signal) {
+  const url = new URL(`${API_BASE_URL}/history`);
+  if (params) {
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
+
 export async function listRaces(params, signal) {
   const url = new URL(`${API_BASE_URL}/races`);
   if (params) {
