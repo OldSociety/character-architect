@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Chrono } from 'react-chrono';
 import { listHistory } from 'utils/api';
+import ErrorAlert from 'Components/Layout/ErrorAlert';
 
 const History = () => {
   const [fetchedData, setFetchedData] = useState([]);
@@ -33,6 +34,7 @@ const History = () => {
           hideControls="true"
           useReadMore="true"
         />
+        <ErrorAlert error={historyError} />
       </div>
     </div>
   );
