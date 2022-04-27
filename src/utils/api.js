@@ -47,6 +47,16 @@ async function fetchJson(url, options, onCancel) {
   }
 }
 
+export async function listData(route, params, signal) {
+  const url = new URL(`${API_BASE_URL}/pantheon`);
+  if (params) {
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
+
 export async function listMoons(params, signal) {
   const url = new URL(`${API_BASE_URL}/pantheon`);
   if (params) {
@@ -87,9 +97,31 @@ export async function listPatrons(params, signal) {
   return await fetchJson(url, { headers, signal, method: 'GET' }, []);
 }
 
+export async function listHistory(params, signal) {
+  const url = new URL(`${API_BASE_URL}/history`);
+  if (params) {
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
+
 export async function listRaces(params, signal) {
   const url = new URL(`${API_BASE_URL}/races`);
+  console.log('params', params)
   if (params) {
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
+
+export async function readRace(id, params, signal) {
+  const url = new URL(`${API_BASE_URL}/races/${id}`);
+  if (params) {
+ 
     Object.entries(params).forEach(([key, value]) =>
       url.searchParams.append(key, value.toString()),
     );

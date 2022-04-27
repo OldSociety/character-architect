@@ -15,7 +15,7 @@ const Welcome = () => {
 
   return (
     // Web Landing Page
-    <div className="main__container main__container-home min-vh-100">
+    <div className="home__container">
       <div className="container d-flex justify-content-center">
         <p className="text-md-center text-white col-10 col-md-8 col-xl-6">
           <span className="unique-font h2 fw-bold">W</span>elcome to the world
@@ -36,11 +36,7 @@ const Welcome = () => {
           />
           <p />
           {/* <Link to="/characters/maps"> */}
-          <button
-            className="btn btn-outline-light"
-            id="explore"
-            type="button"
-          >
+          <button className="btn btn-outline-light" id="explore" type="button">
             Coming Soon
           </button>
           {/* </Link> */}
@@ -55,21 +51,17 @@ const Welcome = () => {
             className="img-fluid"
           />
           <p />
-          {/* <Link to="/library"> */}
-          <button
-            className="btn btn-outline-light "
-            id="study"
-            type="button"
-          >
-            Coming Soon
-          </button>
-          {/* </Link> */}
+          <Link to="/library">
+            <button className="btn btn-outline-light " id="study" type="button">
+              Learn the Lore
+            </button>
+          </Link>
         </div>
 
         {/* Character Creator*/}
         <div className="col-8 col-md-4 align-self-center">
           <img
-          id="create"
+            id="create"
             src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/011ad8e1-175a-4002-ba85-26ff6c10c094/d987rtd-ee54351e-bccb-44b9-803b-bb43374cd6bc.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzAxMWFkOGUxLTE3NWEtNDAwMi1iYTg1LTI2ZmY2YzEwYzA5NFwvZDk4N3J0ZC1lZTU0MzUxZS1iY2NiLTQ0YjktODAzYi1iYjQzMzc0Y2Q2YmMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.U74TOtdlfhBqnPfFJfe8Qg9gmp_nnlJm4SsWvWJF6X0"
             alt="anvil"
             className="img-fluid"
@@ -77,13 +69,9 @@ const Welcome = () => {
           <p />
           {/*Leaving button active only during development for convenience. Disable before pushing to main.*/}
           <Link to="/characters/builder">
-          <button
-            className="btn btn-outline-light"
-            id="create"
-            type="button"
-          >
-            Create a Character
-          </button>
+            <button className="btn btn-outline-light" id="create" type="button">
+              Create a Character
+            </button>
           </Link>
           <br />
           {/* Working: Deactivate Before Pushing To Main!! */}

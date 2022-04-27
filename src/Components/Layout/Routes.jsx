@@ -22,9 +22,13 @@ import PantheonBuild from '../Builder/Pantheon';
 //Lore Componenets
 import LoreWelcome from '../Library/Library';
 import RacesLore from '../Library/RacesLore';
+import CardDetails from 'Components/Cards/CardDetails';
+
+import History from 'Components/Library/History';
 
 //Map Componenets
 import MapWelcome from '../Maps/MapWelcome';
+
 
 const Layout = () => {
   // const [userData, setUserData] = useState(UserData);
@@ -38,6 +42,7 @@ const Layout = () => {
   return (
     <div className="Layout">
       <Header />
+      <div className="main__container">
       <Routes>
         <Route path="/" element={<Home />} />
 
@@ -50,11 +55,15 @@ const Layout = () => {
 
         <Route path="/library" element={<LoreWelcome />} />
         <Route path="/library/races" element={<RacesLore />} />
+        <Route path="/library/races/:id" element={<CardDetails />} />
+        <Route path="/library/history" element={<History />} />
+
 
         <Route path="/maps" element={<MapWelcome />} />
         <Route path="/endform" element={<EndForm />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
+      </div>
       <Footer />
     </div>
   );

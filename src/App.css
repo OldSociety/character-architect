@@ -26,8 +26,13 @@ body {
 /* - - - - Components - - - - */
 
 .main__container {
+  min-height: 100vh;
   padding-bottom: 380px;
-  margin: 0 auto;
+}
+
+.home__container {
+  min-height: 100vh;
+  padding-bottom: 0px;
 }
 
 .footer-container {
@@ -39,8 +44,11 @@ body {
   width: 200px;
 }
 
-#explore,
-#library {
+.button {
+  padding: 10px;
+}
+
+#explore {
   filter: grayscale(100%);
 }
 
@@ -52,64 +60,76 @@ body {
 /* - - - - Carousel $ Carousel Cards - - - - */
 
 .card {
-  min-height: 500px;
+  min-height: 450px;
 }
 
 .card-header {
-  background: #1c1c21;
-  opacity: 0.9;
-  height: 60px;
+  height: 40px;
 }
 
 .card-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
+}
+
+.card-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.card-image-default {
+  width: 75%;
+}
+
+.card-body {
+  padding: 5px;
 }
 
 .card-button {
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
-  left: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
 }
 
 .carousel-control-next {
-  margin-right: -25px;
+  margin-right: -10px;
 }
 
 .carousel-control-prev {
-  margin-left: -25px;
+  margin-left: -10px;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 /* - - - - Devices 992 pixels and larger - - - - */
 
 @media (min-width: 992px) {
   /* - - - - Components - - - - */
 
-  .main-container {
-    padding-bottom: 0;
+  .main__container {
+    padding-bottom: 220px;
   }
 
-  .main__container-home {
-    padding-bottom: 240px;
+  .home__container {
+    padding-bottom: 80px;
   }
 
   .footer-container {
-    width: 70vw;
+    width: 85vw;
     max-height: 220px;
+    max-width: 1000px;
   }
 
   /* - - - - Carousel $ Carousel Cards - - - - */
 
-  .card {
-    min-height: 400px;
+  .carousel-control-next {
+    margin-right: 0px;
   }
-}
 
-.button {
-  padding: 10px;
+  .carousel-control-prev {
+    margin-left: 0px;
+  }
 }
