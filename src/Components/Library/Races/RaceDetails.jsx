@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { readRace } from 'utils/api';
 import ErrorAlert from 'Components/Layout/ErrorAlert';
 import { Link, useParams } from 'react-router-dom';
-import styles from './Card.module.scss';
 
 const CardDetails = () => {
   // use params as page numbers
@@ -25,7 +24,11 @@ const CardDetails = () => {
   }
 
   if (fetchedData) {
-    let { name, raceName, size, speed, sanity } = fetchedData;
+    let { name, raceName, size, sanity} = fetchedData;
+ console.log(fetchedData)
+
+
+
     return (
       <>
         <div className="d-flex">
@@ -70,7 +73,6 @@ const CardDetails = () => {
                   </div>
                   <div className="">
                     <span className="fw-bold">Speed: </span>
-                    {speed}
                   </div>
                   <div className="">
                     <span className="fw-bold">Sanity: </span>

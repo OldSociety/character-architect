@@ -21,7 +21,7 @@ import PantheonBuild from './Builder/Pantheon';
 
 //Lore Componenets
 import LoreWelcome from './Lorebook/LoreWelcome';
-import CardDetails from './Cards/CardDetails';
+import CardDetails from './Library/Races/RaceDetails';
 
 //Map Componenets
 import MapWelcome from './Maps/MapWelcome';

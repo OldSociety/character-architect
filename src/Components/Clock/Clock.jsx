@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export const calculateTimeLeft = () => {
   // Set target date for next game
-  let target = new Date('05/06/22 17:30');
+  let target = new Date('05/04/22 17:30');
 
   let difference = +target - +new Date();
 

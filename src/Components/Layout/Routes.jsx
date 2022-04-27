@@ -21,10 +21,10 @@ import PantheonBuild from '../Builder/Pantheon';
 
 //Lore Componenets
 import LoreWelcome from '../Library/Library';
-import RacesLore from '../Library/RacesLore';
-import CardDetails from 'Components/Cards/CardDetails';
+import RacesLore from '../Library/Races/RacesLore';
+import CardDetails from 'Components/Library/Races/RaceDetails';
 
-import History from 'Components/Library/History';
+import History from 'Components/Library/History/History';
 
 //Map Componenets
 import MapWelcome from '../Maps/MapWelcome';
