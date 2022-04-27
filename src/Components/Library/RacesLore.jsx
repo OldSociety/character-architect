@@ -8,7 +8,6 @@ import ErrorAlert from 'Components/Layout/ErrorAlert';
 const RacesLore = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [raceError, setRaceError] = useState(null);
-  //  let { info, results } = fetchedData
 
   useEffect(fetchData, []);
 
@@ -19,8 +18,6 @@ const RacesLore = () => {
     listRaces(abortController.signal).then(setFetchedData).catch(setRaceError);
     return () => abortController.abort();
   }
-
-  console.log(fetchedData);
 
   return (
     <>
@@ -42,7 +39,7 @@ const RacesLore = () => {
             <div className="container">
               <div className="col-12">
                 <div className="row">
-                  <Cards results={fetchedData} />
+                  <Cards page="/" results={fetchedData} />
                 </div>
               </div>
             </div>
