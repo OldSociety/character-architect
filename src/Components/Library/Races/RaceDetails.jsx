@@ -70,28 +70,36 @@ const CardDetails = () => {
                       width="200"
                     />
                     <br />
-                    <span className="fw-bold">
-                      Ability Scores:{' '}
-                      <ul>
-                        {Object.entries(ability[0]).map((stat, index) => {
-                          return (
-                            <li key={index}>{`${stat[0]}: ${stat[1]}`}</li>
-                          );
-                        })}
-                      </ul>
-                    </span>
+                    <span className="fw-bold">Ability Scores: </span>
+                    <ul>
+                      {Object.entries(ability[0]).map((stat, index) => {
+                        return <li key={index}>{`${stat[0]} +${stat[1]};`}</li>;
+                      })}
+                    </ul>
                   </div>
                   <div className="">
                     <span className="fw-bold">Size: </span>
-                    {size}
+                    {size.length > 1 ? `${size[0]}, ${size[1]}` : size}
                   </div>
                   <div className="">
                     <span className="fw-bold">Speed: </span>
-                    {(typeof speed !== "object") ? speed : Object.entries(speed)}
+                    {typeof speed !== 'object'
+                      ? `${speed} ft.`
+                      : speed.fly
+                      ? `${speed.walk} ft., fly equal to your walking speed.`
+                      : speed.climb
+                      ? `${speed.walk} ft., climb equal to your walking speed.`
+                      : speed.swim
+                      ? `${speed.walk} ft., swim equal to your walking speed.`
+                      : null}
                   </div>
                   <div className="">
                     <span className="fw-bold">Sanity: </span>
                     {sanity}
+                  </div>
+                  <br />
+                  <div className="">
+                    <span className="fw-bold">Age: </span>
                   </div>
                   <div className="">
                     <span className="fw-bold">Traits: </span>
