@@ -7,7 +7,7 @@ import { Link, useParams } from 'react-router-dom';
 const CardDetails = () => {
   // use params as page numbers
   let { id } = useParams();
-  let [fetchedData, setFetchedData] = useState([]);
+  let [fetchedData, setFetchedData] = useState(null);
 
   const [raceError, setRaceError] = useState(null);
 
@@ -24,10 +24,8 @@ const CardDetails = () => {
   }
 
   if (fetchedData) {
-    let { name, raceName, size, sanity} = fetchedData;
- console.log(fetchedData)
-
-
+    let { name, raceName, size, sanity, ability, speed, entries } = fetchedData;
+    console.log(Object.entries(entries[1]));
 
     return (
       <>
@@ -65,7 +63,23 @@ const CardDetails = () => {
                 </div>
                 <div className="content">
                   <div className="">
-                    <span className="fw-bold">Ability Scores: </span>
+                    <img
+                      className={'1'}
+                      src={entries[1].href.url}
+                      alt="missingpicture"
+                      width="200"
+                    />
+                    <br />
+                    <span className="fw-bold">
+                      Ability Scores:{' '}
+                      <ul>
+                        {Object.entries(ability[0]).map((stat, index) => {
+                          return (
+                            <li key={index}>{`${stat[0]}: ${stat[1]}`}</li>
+                          );
+                        })}
+                      </ul>
+                    </span>
                   </div>
                   <div className="">
                     <span className="fw-bold">Size: </span>
@@ -73,6 +87,7 @@ const CardDetails = () => {
                   </div>
                   <div className="">
                     <span className="fw-bold">Speed: </span>
+                    {(typeof speed !== "object") ? speed : Object.entries(speed)}
                   </div>
                   <div className="">
                     <span className="fw-bold">Sanity: </span>
@@ -88,8 +103,10 @@ const CardDetails = () => {
         </div>
       </>
     );
-  } else {
+  } else if (id >= 15) {
     return 'No Results Found :/';
+  } else {
+    return <> </>;
   }
 };
 
