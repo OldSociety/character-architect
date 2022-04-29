@@ -19,12 +19,15 @@ import NationBuild from '../Builder/Nations';
 import RaceBuild from '../Builder/Races';
 import PantheonBuild from '../Builder/Pantheon';
 
-//Lore Componenets
+// Library Componenets
 import LoreWelcome from '../Library/Library';
+// Library - Races
 import RacesLore from '../Library/Races/RacesLore';
 import RaceDetails from 'Components/Library/Races/RaceDetails';
+// Library - Pantheon
 import PantheonLore from '../Library/Pantheon/PantheonLore';
 import PantheonDetails from 'Components/Library/Pantheon/PantheonDetails';
+// Library - Nations
 import NationsLore from '../Library/Nations/NationsLore';
 import NationDetails from 'Components/Library/Nations/NationDetails';
 
@@ -49,20 +52,25 @@ const Layout = () => {
           <Route path="/characters/builder/2" element={<NationBuild />} />
           <Route path="/characters/builder/3" element={<RaceBuild />} />
           <Route path="/characters/builder/4" element={<PantheonBuild />} />
+          <Route path="/endform" element={<EndForm />} />
 
           {/* Lore Library Routing */}
           <Route path="/library" element={<LoreWelcome />} />
+          {/* Races */}
           <Route path="/library/races" element={<RacesLore />} />
           <Route path="/library/races/:id" element={<RaceDetails />} />
+          {/* Pantheon */}
           <Route path="/library/pantheon" element={<PantheonLore />} />
           <Route path="/library/pantheon/:id" element={<PantheonDetails />} />
           <Route path="/library/nations" element={<NationsLore />} />
+          {/* Nations */}
           <Route path="/library/nations/:id" element={<NationDetails />} />
           <Route path="/library/history" element={<History />} />
 
           {/* Interactive Maps Routing */}
           <Route path="/maps" element={<MapWelcome />} />
-          <Route path="/endform" element={<EndForm />} />
+
+          {/* Error Handling */}
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </div>
