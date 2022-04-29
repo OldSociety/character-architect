@@ -7,7 +7,7 @@ const Cards = ({ results }) => {
 
   if (results) {
     display = results.map((info) => {
-      let { id, name, entries } = info;
+      let { id, name, entries, description } = info;
       return (
         <Link
           style={{ textDecoration: 'none' }}
@@ -28,6 +28,9 @@ const Cards = ({ results }) => {
                     alt="hello"
                     width="300"
                   />
+                <div className="fs-6 fw-light mb-4">
+                  {`${description[0]}`}
+                </div>
               </div>
             </div>
         </Link>
