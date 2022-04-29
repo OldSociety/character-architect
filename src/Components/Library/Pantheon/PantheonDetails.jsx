@@ -63,7 +63,7 @@ const PantheonDetails = () => {
         </div>
       </>
     );
-  } else if (id >= 13) {
+  } else if (id >= 38) {
     return 'No Results Found :/';
   } else {
     return <> </>;
