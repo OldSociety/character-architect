@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { readRace } from 'utils/api';
@@ -25,7 +26,8 @@ const CardDetails = () => {
 
   if (fetchedData) {
     let { name, raceName, size, sanity, ability, speed, entries } = fetchedData;
-    console.log(Object.entries(entries[1]));
+
+    let itemList = [];
 
     return (
       <>
@@ -82,6 +84,10 @@ const CardDetails = () => {
                     {size.length > 1 ? `${size[0]}, ${size[1]}` : size}
                   </div>
                   <div className="">
+                    <span className="fw-bold">Sanity: </span>
+                    {sanity}
+                  </div>
+                  <div className="">
                     <span className="fw-bold">Speed: </span>
                     {typeof speed !== 'object'
                       ? `${speed} ft.`
@@ -93,16 +99,66 @@ const CardDetails = () => {
                       ? `${speed.walk} ft., swim equal to your walking speed.`
                       : null}
                   </div>
-                  <div className="">
-                    <span className="fw-bold">Sanity: </span>
-                    {sanity}
-                  </div>
                   <br />
                   <div className="">
-                    <span className="fw-bold">Age: </span>
-                  </div>
-                  <div className="">
-                    <span className="fw-bold">Traits: </span>
+                    {entries.map((entry, index) => {
+                      if (entry.type === 'entries') {
+                        if (entry.entries.length > 1) {
+                          // check that it is an entry and whether the length is longer than one
+
+                          return (
+                            <>
+                              <span className="fw-bold">
+                                {`${entry.name}:`}{' '}
+                              </span>
+                              {entry.entries.map((i, index) => {
+                                if (typeof i === 'string') {
+                                  //return strings as usual
+                                  return (
+                                    <ul>
+                                      <li key={index}>{i}</li>
+                                    </ul>
+                                  );
+                                }
+
+                                if (typeof i === 'object') {
+                                  i.items.forEach((item) => {
+                                    itemList.push([item.name, item.entry]);
+                                  });
+                                }
+
+                                if (itemList.length > 0) {
+                                  return itemList.map((item, index) => {
+                                    return (
+                                      <ul>
+                                        <li key={index}>
+                                          <span className="fw-bold">
+                                            {`${item[0]}:`}{' '}
+                                          </span>
+                                          {item[1]}
+                                        </li>
+                                      </ul>
+                                    );
+                                  });
+                                }
+                              })}
+                            </>
+                          );
+                        } else {
+                          // if length is only 1 we will return it.
+                          return (
+                            <ul>
+                              <li key={index}>
+                                <span className="fw-bold">
+                                  {`${entry.name}:`}{' '}
+                                </span>
+                                {entry.entries}
+                              </li>
+                            </ul>
+                          );
+                        }
+                      }
+                    })}
                   </div>
                 </div>
               </div>
@@ -111,7 +167,7 @@ const CardDetails = () => {
         </div>
       </>
     );
-  } else if (id >= 15) {
+  } else if (id >= 25) {
     return 'No Results Found :/';
   } else {
     return <> </>;
