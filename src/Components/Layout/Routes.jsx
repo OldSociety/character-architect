@@ -22,47 +22,49 @@ import PantheonBuild from '../Builder/Pantheon';
 //Lore Componenets
 import LoreWelcome from '../Library/Library';
 import RacesLore from '../Library/Races/RacesLore';
-import CardDetails from 'Components/Library/Races/RaceDetails';
+import RaceDetails from 'Components/Library/Races/RaceDetails';
+import PantheonLore from '../Library/Pantheon/PantheonLore';
+import PantheonDetails from 'Components/Library/Pantheon/PantheonDetails';
+import NationsLore from '../Library/Nations/NationsLore';
+import NationDetails from 'Components/Library/Nations/NationDetails';
 
 import History from 'Components/Library/History/History';
 
 //Map Componenets
 import MapWelcome from '../Maps/MapWelcome';
 
-
 const Layout = () => {
-  // const [userData, setUserData] = useState(UserData);
-
-  // const handleDetails = (newData) => {
-  //   setUserData([...userData, newData]);
-  // };
-
   // Sets up the web address routes
 
   return (
     <div className="Layout">
       <Header />
       <div className="main__container">
-      <Routes>
-        <Route path="/" element={<Home />} />
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        {/* Character Build Routing */}
-        <Route path="/characters/builder" element={<Start />} />
-        <Route path="/characters/builder/1" element={<MoonBuild />} />
-        <Route path="/characters/builder/2" element={<NationBuild />} />
-        <Route path="/characters/builder/3" element={<RaceBuild />} />
-        <Route path="/characters/builder/4" element={<PantheonBuild />} />
+          {/* Character Build Routing */}
+          <Route path="/characters/builder" element={<Start />} />
+          <Route path="/characters/builder/1" element={<MoonBuild />} />
+          <Route path="/characters/builder/2" element={<NationBuild />} />
+          <Route path="/characters/builder/3" element={<RaceBuild />} />
+          <Route path="/characters/builder/4" element={<PantheonBuild />} />
 
-        <Route path="/library" element={<LoreWelcome />} />
-        <Route path="/library/races" element={<RacesLore />} />
-        <Route path="/library/races/:id" element={<CardDetails />} />
-        <Route path="/library/history" element={<History />} />
+          {/* Lore Library Routing */}
+          <Route path="/library" element={<LoreWelcome />} />
+          <Route path="/library/races" element={<RacesLore />} />
+          <Route path="/library/races/:id" element={<RaceDetails />} />
+          <Route path="/library/pantheon" element={<PantheonLore />} />
+          <Route path="/library/pantheon/:id" element={<PantheonDetails />} />
+          <Route path="/library/nations" element={<NationsLore />} />
+          <Route path="/library/nations/:id" element={<NationDetails />} />
+          <Route path="/library/history" element={<History />} />
 
-
-        <Route path="/maps" element={<MapWelcome />} />
-        <Route path="/endform" element={<EndForm />} />
-        <Route path="/*" element={<NotFound />} />
-      </Routes>
+          {/* Interactive Maps Routing */}
+          <Route path="/maps" element={<MapWelcome />} />
+          <Route path="/endform" element={<EndForm />} />
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
       </div>
       <Footer />
     </div>

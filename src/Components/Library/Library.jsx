@@ -34,6 +34,20 @@ const LoreWelcome = () => {
                           <p>
                             Nations and their borders.
                           </p>
+                          <p className="actions">
+                            <Link to={'/library/nations'}>
+                              <div className="item">
+                                <div className="image">
+                                  <img
+                                    src="https://i.pinimg.com/originals/50/2f/fe/502ffe6a6e1ab4127e65a2c3f45a89b6.jpg"
+                                    alt="nations"
+                                    width="1024"
+                                    height="426"
+                                  />
+                                </div>
+                              </div>
+                            </Link>
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -69,7 +83,7 @@ const LoreWelcome = () => {
                                 <div className="image">
                                   <img
                                     src="https://i.pinimg.com/originals/50/2f/fe/502ffe6a6e1ab4127e65a2c3f45a89b6.jpg"
-                                    alt="dragons placeholder"
+                                    alt="races placeholder"
                                     width="1024"
                                     height="426"
                                   />
@@ -104,6 +118,20 @@ const LoreWelcome = () => {
                         <div className="description">
                           <p>
                             Faith and its inner workings.
+                          </p>
+                          <p className="actions">
+                            <Link to={'/library/pantheon'}>
+                              <div className="item">
+                                <div className="image">
+                                  <img
+                                    src="https://i.pinimg.com/originals/50/2f/fe/502ffe6a6e1ab4127e65a2c3f45a89b6.jpg"
+                                    alt="races placeholder"
+                                    width="1024"
+                                    height="426"
+                                  />
+                                </div>
+                              </div>
+                            </Link>
                           </p>
                         </div>
                       </div>

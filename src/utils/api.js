@@ -77,7 +77,7 @@ export async function listNations(params, signal) {
   return await fetchJson(url, { headers, signal, method: 'GET' }, []);
 }
 
-export async function listPantheon(params, signal) {
+export async function listPantheons(params, signal) {
   const url = new URL(`${API_BASE_URL}/pantheon`);
   if (params) {
     Object.entries(params).forEach(([key, value]) =>
@@ -120,6 +120,28 @@ export async function listRaces(params, signal) {
 
 export async function readRace(id, params, signal) {
   const url = new URL(`${API_BASE_URL}/races/${id}`);
+  if (params) {
+ 
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
+
+export async function readPantheon(id, params, signal) {
+  const url = new URL(`${API_BASE_URL}/pantheon/${id}`);
+  if (params) {
+ 
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
+
+export async function readNation(id, params, signal) {
+  const url = new URL(`${API_BASE_URL}/nation/${id}`);
   if (params) {
  
     Object.entries(params).forEach(([key, value]) =>
