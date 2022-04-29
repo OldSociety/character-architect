@@ -35,10 +35,10 @@ const Library = () => {
                               <div className="item">
                                 <div className="image">
                                   <img
-                                    src="../public/Images/MeridianMap.png"
+                                    src="https://media.istockphoto.com/illustrations/fantasy-style-medieval-castle-digital-illustration-illustration-id1312222939?k=20&m=1312222939&s=612x612&w=0&h=Y8jxyHyzPF1sn3pWzTS19KbylD8UnVITZgGrAkldVWI="
                                     alt="nations"
-                                    width="1024"
-                                    height="426"
+                                    width="512"
+                                    height="213"
                                   />
                                 </div>
                               </div>
@@ -78,8 +78,8 @@ const Library = () => {
                                   <img
                                     src="https://i.pinimg.com/originals/50/2f/fe/502ffe6a6e1ab4127e65a2c3f45a89b6.jpg"
                                     alt="races placeholder"
-                                    width="1024"
-                                    height="426"
+                                    width="512"
+                                    height="213"
                                   />
                                 </div>
                               </div>
@@ -114,10 +114,10 @@ const Library = () => {
                               <div className="item">
                                 <div className="image">
                                   <img
-                                   src="../public/Images/MeridianMap.png"
+                                   src="https://i1.wp.com/www.alittlebithuman.com/wp-content/uploads/2021/07/7848.jpg?resize=1170%2C700&ssl=1"
                                     alt="pantheons"
-                                    width="1024"
-                                    height="426"
+                                    width="512"
+                                    height="213"
                                   />
                                 </div>
                               </div>
