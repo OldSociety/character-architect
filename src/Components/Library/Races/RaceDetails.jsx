@@ -129,14 +129,21 @@ const CardDetails = () => {
 
                                 if (itemList.length > 0) {
                                   return itemList.map((item, index) => {
+                                    if (item[0]) {
+                                      return (
+                                        <ul>
+                                          <li key={index}>
+                                            <span className="fw-bold">
+                                              {`${item[0]}:`}{' '}
+                                            </span>
+                                            {item[1]}
+                                          </li>
+                                        </ul>
+                                      );
+                                    }
                                     return (
                                       <ul>
-                                        <li key={index}>
-                                          <span className="fw-bold">
-                                            {`${item[0]}:`}{' '}
-                                          </span>
-                                          {item[1]}
-                                        </li>
+                                        <li key={index}>{`- ${item[1]}`}</li>
                                       </ul>
                                     );
                                   });
