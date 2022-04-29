@@ -7,11 +7,11 @@ const Cards = ({ results }) => {
 
   if (results) {
     display = results.map((info) => {
-      let { id, name } = info;
+      let { id, name, entries } = info;
       return (
         <Link
           style={{ textDecoration: 'none' }}
-          to={`/library/pantheon/${id}`}
+          to={`/library/nations/${id}`}
           key={id}
           className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark"
         >
@@ -22,6 +22,12 @@ const Cards = ({ results }) => {
                 <div className="fs-5 fw-bold mb-4">
                   {`${name}`}
                 </div>
+                <img
+                    className={`${styles.img} img-fluid`}
+                    src={`${entries[0].href.url}`}
+                    alt="hello"
+                    width="300"
+                  />
               </div>
             </div>
         </Link>

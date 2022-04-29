@@ -26,7 +26,7 @@ const Cards = ({ results }) => {
                   <img
                     className={`${styles.img} img-fluid`}
                     src={`${entries[1].href.url}`}
-                    alt="hello"
+                    alt={`${entries[1].title}`}
                     width="200"
                   />
 

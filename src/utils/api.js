@@ -141,7 +141,7 @@ export async function readPantheon(id, params, signal) {
 }
 
 export async function readNation(id, params, signal) {
-  const url = new URL(`${API_BASE_URL}/nation/${id}`);
+  const url = new URL(`${API_BASE_URL}/nations/${id}`);
   if (params) {
  
     Object.entries(params).forEach(([key, value]) =>
