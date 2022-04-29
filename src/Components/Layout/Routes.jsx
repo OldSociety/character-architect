@@ -1,16 +1,14 @@
 import * as React from 'react';
 // import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import UserData from 'UserData/UserData.json';
 
-//AppLayout replaces App.jsx as the central hub of this the Application.
+//Routes.jsx replaces App.jsx as the central hub of this the Application.
 
 //Core Components
 import Home from '../Core/Home';
 import Header from '../Core/Header';
 import Footer from '../Core/Footer';
 import NotFound from './NotFound';
-import EndForm from '../Builder/EndWarning';
 
 // Builder Components
 import Start from '../Builder/Start';
@@ -18,9 +16,10 @@ import MoonBuild from '../Builder/Moons';
 import NationBuild from '../Builder/Nations';
 import RaceBuild from '../Builder/Races';
 import PantheonBuild from '../Builder/Pantheon';
+import EndForm from '../Builder/EndWarning';
 
 // Library Componenets
-import LoreWelcome from '../Library/Library';
+import Library from '../Library/Library';
 // Library - Races
 import RacesLore from '../Library/Races/RacesLore';
 import RaceDetails from 'Components/Library/Races/RaceDetails';
@@ -55,16 +54,17 @@ const Layout = () => {
           <Route path="/endform" element={<EndForm />} />
 
           {/* Lore Library Routing */}
-          <Route path="/library" element={<LoreWelcome />} />
-          {/* Races */}
+          <Route path="/library" element={<Library />} />
+          {/* Library - Races */}
           <Route path="/library/races" element={<RacesLore />} />
           <Route path="/library/races/:id" element={<RaceDetails />} />
-          {/* Pantheon */}
+          {/* Library - Pantheon */}
           <Route path="/library/pantheon" element={<PantheonLore />} />
           <Route path="/library/pantheon/:id" element={<PantheonDetails />} />
+          {/* Library - Nations */}
           <Route path="/library/nations" element={<NationsLore />} />
-          {/* Nations */}
           <Route path="/library/nations/:id" element={<NationDetails />} />
+          {/* Library - History */}
           <Route path="/library/history" element={<History />} />
 
           {/* Interactive Maps Routing */}

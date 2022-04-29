@@ -5,7 +5,7 @@ import { readRace } from 'utils/api';
 import ErrorAlert from 'Components/Layout/ErrorAlert';
 import { Link, useParams } from 'react-router-dom';
 
-const CardDetails = () => {
+const RaceDetails = () => {
   // use params as page numbers
   let { id } = useParams();
   let [fetchedData, setFetchedData] = useState(null);
@@ -181,4 +181,4 @@ const CardDetails = () => {
   }
 };
 
-export default CardDetails;
+export default RaceDetails;

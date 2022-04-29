@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-const LoreWelcome = () => {
+const Library = () => {
   return (
     <>
       <div className="d-flex">
@@ -10,16 +10,14 @@ const LoreWelcome = () => {
             <div className="container">
               <div className="col d-flex flex-column justify-content-center">
                 <ul className="col-lg-12">
-                <li>
+                  <li>
                     <div className="item-content">
                       <h2>
                         <span>Astronomy</span>
                       </h2>
                       <div className="details">
                         <div className="description">
-                          <p>
-                            Meridian's place in the stars.
-                          </p>
+                          <p>Meridian's place in the stars.</p>
                         </div>
                       </div>
                     </div>
@@ -31,10 +29,8 @@ const LoreWelcome = () => {
                       </h2>
                       <div className="details">
                         <div className="description">
-                          <p>
-                            Nations and their borders.
-                          </p>
-                          <p className="actions">
+                          <p>Nations and their borders.</p>
+                          <div className="actions">
                             <Link to={'/library/nations'}>
                               <div className="item">
                                 <div className="image">
@@ -47,7 +43,7 @@ const LoreWelcome = () => {
                                 </div>
                               </div>
                             </Link>
-                          </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -59,9 +55,7 @@ const LoreWelcome = () => {
                       </h2>
                       <div className="details">
                         <div className="description">
-                          <p>
-                            Meridian throughout the ages.
-                          </p>
+                          <p>Meridian throughout the ages.</p>
                         </div>
                       </div>
                     </div>
@@ -77,7 +71,7 @@ const LoreWelcome = () => {
                             The elven experiments to cross lines with humans led
                             to great diversity.
                           </p>
-                          <p className="actions">
+                          <div className="actions">
                             <Link to={'/library/races'}>
                               <div className="item">
                                 <div className="image">
@@ -90,7 +84,7 @@ const LoreWelcome = () => {
                                 </div>
                               </div>
                             </Link>
-                          </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -102,9 +96,7 @@ const LoreWelcome = () => {
                       </h2>
                       <div className="details">
                         <div className="description">
-                          <p>
-                            Unseen powers behind the throne.
-                          </p>
+                          <p>Unseen powers behind the throne.</p>
                         </div>
                       </div>
                     </div>
@@ -116,10 +108,8 @@ const LoreWelcome = () => {
                       </h2>
                       <div className="details">
                         <div className="description">
-                          <p>
-                            Faith and its inner workings.
-                          </p>
-                          <p className="actions">
+                          <p>Faith and its inner workings.</p>
+                          <div className="actions">
                             <Link to={'/library/pantheon'}>
                               <div className="item">
                                 <div className="image">
@@ -132,7 +122,7 @@ const LoreWelcome = () => {
                                 </div>
                               </div>
                             </Link>
-                          </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -144,9 +134,7 @@ const LoreWelcome = () => {
                       </h2>
                       <div className="details">
                         <div className="description">
-                          <p>
-                            Mithril and Magic.
-                          </p>
+                          <p>Mithril and Magic.</p>
                         </div>
                       </div>
                     </div>
@@ -158,9 +146,7 @@ const LoreWelcome = () => {
                       </h2>
                       <div className="details">
                         <div className="description">
-                          <p>
-                            The wilds.
-                          </p>
+                          <p>The wilds.</p>
                         </div>
                       </div>
                     </div>
@@ -172,9 +158,7 @@ const LoreWelcome = () => {
                       </h2>
                       <div className="details">
                         <div className="description">
-                          <p>
-                            Everything else...
-                          </p>
+                          <p>Everything else...</p>
                         </div>
                       </div>
                     </div>
@@ -189,4 +173,4 @@ const LoreWelcome = () => {
   );
 };
 
-export default LoreWelcome;
+export default Library;
