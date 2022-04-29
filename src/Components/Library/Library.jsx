@@ -35,7 +35,7 @@ const Library = () => {
                               <div className="item">
                                 <div className="image">
                                   <img
-                                    src="https://i.pinimg.com/originals/50/2f/fe/502ffe6a6e1ab4127e65a2c3f45a89b6.jpg"
+                                    src="../public/Images/MeridianMap.png"
                                     alt="nations"
                                     width="1024"
                                     height="426"
@@ -114,8 +114,8 @@ const Library = () => {
                               <div className="item">
                                 <div className="image">
                                   <img
-                                    src="https://i.pinimg.com/originals/50/2f/fe/502ffe6a6e1ab4127e65a2c3f45a89b6.jpg"
-                                    alt="races placeholder"
+                                   src="../public/Images/MeridianMap.png"
+                                    alt="pantheons"
                                     width="1024"
                                     height="426"
                                   />
