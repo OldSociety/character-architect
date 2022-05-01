@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { listNations } from 'utils/api';
-import Cards from 'Components/Library/Nations/Cards/NationCards';
+import Cards from 'Components/Library/Nations/NationCards';
 import ErrorAlert from 'Components/Layout/ErrorAlert';
 
 const NationsLore = () => {

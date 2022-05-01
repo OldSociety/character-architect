@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Card.module.scss';
+import styles from '../../../Card.module.scss';
 
 const Cards = ({ results }) => {
   let display;
 
   if (results) {
     display = results.map((info) => {
-      let { id, name, raceName, entries } = info;
+      let { id, name, entries, description } = info;
       return (
         <Link
           style={{ textDecoration: 'none' }}
-          to={`/library/races/${id}`}
+          to={`/library/nations/${id}`}
           key={id}
           className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark"
         >
@@ -20,25 +20,16 @@ const Cards = ({ results }) => {
             >
               <div className={`${styles.content}`}>
                 <div className="fs-5 fw-bold mb-4">
-                  {raceName ? `${name} (${raceName})` : `${name}`}
+                  {`${name}`}
                 </div>
-                <div className="">
-                  <img
+                <img
                     className={`${styles.img} img-fluid`}
-                    src={`${entries[1].href.url}`}
-                    alt={`${entries[1].title}`}
-                    width="200"
+                    src={`${entries[0].href.url}`}
+                    alt="hello"
+                    width="300"
                   />
-
-                  {entries.slice(0, 1).map((entry, index) => {
-                    const { entries } = entry;
-
-                    return (
-                      <li className="card-text text-light" key={index}>
-                        {`${entries[0]}`}
-                      </li>
-                    );
-                  })}
+                <div className="fs-6 fw-light mb-4 d-flex flex-column justify-content-left">
+                  {`${description[0]}`}
                 </div>
               </div>
             </div>
