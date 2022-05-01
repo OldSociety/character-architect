@@ -1,26 +1,26 @@
 /* eslint-disable array-callback-return */
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { readPantheon } from 'utils/api';
+import { readFaction } from 'utils/api';
 import ErrorAlert from 'Components/Layout/ErrorAlert';
 import { Link, useParams } from 'react-router-dom';
 
-const PantheonDetails = () => {
+const FactionDetails = () => {
   // use params as page numbers
   let { id } = useParams();
   let [fetchedData, setFetchedData] = useState(null);
 
-  const [PantheonError, setPantheonError] = useState(null);
+  const [FactionError, setFactionError] = useState(null);
 
   useEffect(fetchData, [id]);
 
   function fetchData() {
     const abortController = new AbortController();
-    setPantheonError(null);
+    setFactionError(null);
 
-    readPantheon(id, abortController.signal)
+    readFaction(id, abortController.signal)
       .then(setFetchedData)
-      .catch(setPantheonError);
+      .catch(setFactionError);
     return () => abortController.abort();
   }
 
@@ -45,10 +45,10 @@ const PantheonDetails = () => {
                 </li>
                 <li className="breadcrumb-item" aria-current="page">
                   <Link
-                    to={`/library/pantheon`}
+                    to={`/library/factions`}
                     className="text-decoration-none link-light fw-heavy"
                   >
-                    Pantheon
+                    Faction
                   </Link>
                 </li>
                 <li className="breadcrumb-item active" aria-current="page">
@@ -56,7 +56,7 @@ const PantheonDetails = () => {
                 </li>
               </ol>
             </nav>
-            <ErrorAlert error={PantheonError} />
+            <ErrorAlert error={FactionError} />
 
             <div className="fs-5 fw-bold mb-4">{`${name}`}</div>
           </div>
@@ -70,4 +70,4 @@ const PantheonDetails = () => {
   }
 };
 
-export default PantheonDetails;
+export default FactionDetails;

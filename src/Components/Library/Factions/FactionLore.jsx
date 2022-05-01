@@ -1,21 +1,21 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { listPantheons } from 'utils/api';
-import Cards from 'Components/Library/Pantheon/PantheonCards';
+import { listFactions } from 'utils/api';
+import Cards from 'Components/Library/Factions/FactionCards';
 import ErrorAlert from 'Components/Layout/ErrorAlert';
 
-const PantheonsLore = () => {
+const FactionsLore = () => {
   const [fetchedData, setFetchedData] = useState([]);
-  const [PantheonError, setPantheonError] = useState(null);
+  const [FactionError, setFactionError] = useState(null);
 
   useEffect(fetchData, []);
 
   function fetchData() {
     const abortController = new AbortController();
-    setPantheonError(null);
+    setFactionError(null);
 
-    listPantheons(abortController.signal).then(setFetchedData).catch(setPantheonError);
+    listFactions(abortController.signal).then(setFetchedData).catch(setFactionError);
     return () => abortController.abort();
   }
 
@@ -29,11 +29,11 @@ const PantheonsLore = () => {
                 <Link to={`/library`} className="text-decoration-none link-light fw-heavy">Library</Link>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
-                Pantheon
+                Factions
               </li>
             </ol>
           </nav>
-          <ErrorAlert error={PantheonError} />
+          <ErrorAlert error={FactionError} />
 
           <div className="row">
             <div className="container">
@@ -50,4 +50,4 @@ const PantheonsLore = () => {
   );
 };
 
-export default PantheonsLore;
+export default FactionsLore;

@@ -30,6 +30,10 @@ import PantheonDetails from 'Components/Library/Pantheon/PantheonDetails';
 import NationsLore from '../Library/Nations/NationsLore';
 import NationDetails from 'Components/Library/Nations/NationDetails';
 
+// Library - Factions
+import FactionsLore from '../Library/Factions/FactionLore';
+import FactionsDetails from 'Components/Library/Factions/FactionDetails';
+
 import History from 'Components/Library/History/History';
 
 //Map Componenets
@@ -61,6 +65,9 @@ const Layout = () => {
           {/* Library - Pantheon */}
           <Route path="/library/pantheon" element={<PantheonLore />} />
           <Route path="/library/pantheon/:id" element={<PantheonDetails />} />
+          {/* Library - Factions */}
+          <Route path="/library/factions" element={<FactionsLore />} />
+          <Route path="/library/factions/:id" element={<FactionsDetails />} />
           {/* Library - Nations */}
           <Route path="/library/nations" element={<NationsLore />} />
           <Route path="/library/nations/:id" element={<NationDetails />} />
