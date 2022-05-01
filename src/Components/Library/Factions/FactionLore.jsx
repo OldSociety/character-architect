@@ -1,21 +1,21 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { listNations } from 'utils/api';
-import Cards from 'Components/Library/Nations/NationCards';
+import { listFactions } from 'utils/api';
+import Cards from 'Components/Library/Factions/FactionCards';
 import ErrorAlert from 'Components/Layout/ErrorAlert';
 
-const NationsLore = () => {
+const FactionsLore = () => {
   const [fetchedData, setFetchedData] = useState([]);
-  const [NationError, setNationError] = useState(null);
+  const [FactionError, setFactionError] = useState(null);
 
   useEffect(fetchData, []);
 
   function fetchData() {
     const abortController = new AbortController();
-    setNationError(null);
+    setFactionError(null);
 
-    listNations(abortController.signal).then(setFetchedData).catch(setNationError);
+    listFactions(abortController.signal).then(setFetchedData).catch(setFactionError);
     return () => abortController.abort();
   }
 
@@ -29,11 +29,11 @@ const NationsLore = () => {
                 <Link to={`/library`} className="text-decoration-none link-light fw-heavy">Library</Link>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
-                Nations
+                Factions
               </li>
             </ol>
           </nav>
-          <ErrorAlert error={NationError} />
+          <ErrorAlert error={FactionError} />
 
           <div className="row">
             <div className="container">
@@ -50,4 +50,4 @@ const NationsLore = () => {
   );
 };
 
-export default NationsLore;
+export default FactionsLore;

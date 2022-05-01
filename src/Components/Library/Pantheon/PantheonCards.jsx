@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Card.module.scss';
+import styles from '../../../Card.module.scss';
 
 const Cards = ({ results }) => {
   let display;

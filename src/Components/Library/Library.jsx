@@ -98,6 +98,20 @@ const Library = () => {
                         <div className="description">
                           <p>Unseen powers behind the throne.</p>
                         </div>
+                        <div className="actions">
+                            <Link to={'/library/factions'}>
+                              <div className="item">
+                                <div className="image">
+                                  <img
+                                    src="https://esosslfiles-a.akamaihd.net/cms/2016/02/b1744dd17d3f5a571ae983f5210995bb.jpg"
+                                    alt="races placeholder"
+                                    width="512"
+                                    height="213"
+                                  />
+                                </div>
+                              </div>
+                            </Link>
+                            </div>
                       </div>
                     </div>
                   </li>

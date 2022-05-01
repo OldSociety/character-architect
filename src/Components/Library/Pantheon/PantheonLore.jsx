@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { listPantheons } from 'utils/api';
-import Cards from 'Components/Library/Pantheon/Cards/PantheonCards';
+import Cards from 'Components/Library/Pantheon/PantheonCards';
 import ErrorAlert from 'Components/Layout/ErrorAlert';
 
 const PantheonsLore = () => {

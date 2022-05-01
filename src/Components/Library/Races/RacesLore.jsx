@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { listRaces } from 'utils/api';
-import Cards from 'Components/Library/Races/Cards/RaceCards';
+import Cards from 'Components/Library/Races/RaceCards';
 import ErrorAlert from 'Components/Layout/ErrorAlert';
 
 const RacesLore = () => {
