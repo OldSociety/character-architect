@@ -28,7 +28,7 @@ const Cards = ({ results }) => {
                     alt="hello"
                     width="300"
                   />
-                <div className="fs-6 fw-light mb-4">
+                <div className="fs-6 fw-light mb-4 d-flex flex-column justify-content-left">
                   {`${description[0]}`}
                 </div>
               </div>

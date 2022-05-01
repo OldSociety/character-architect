@@ -25,9 +25,8 @@ const NationDetails = () => {
   }
 
   if (fetchedData) {
-    let { name } = fetchedData;
-
-    // let itemList = [];
+    let { name, capital, description, entries } = fetchedData;
+console.log(capital)
 
     return (
       <>
@@ -59,6 +58,24 @@ const NationDetails = () => {
             <ErrorAlert error={nationError} />
 
             <div className="fs-5 fw-bold mb-4">{`${name}`}</div>
+
+            <div className="">
+              <img
+                className={'1'}
+                src={entries[0].href.url}
+                alt="missingpicture"
+                width="500"
+              />
+            </div>
+            <br />
+            <div className="container mb-4">
+            {description.map((entry, index) => {
+              return <div key={index}> {`${entry}`}</div>;
+            })}
+            </div>
+            {/* <div className="">
+              {capital[0].name}
+            </div> */}
           </div>
         </div>
       </>
