@@ -8,6 +8,15 @@ const Cards = ({ results }) => {
   if (results) {
     display = results.map((info) => {
       let { id, name, type, entries } = info;
+      const image = (
+        <img
+          className={`${styles.img} img-fluid`}
+          src={`${entries[1].href.url}`}
+          alt="hello"
+          width="300"
+          key={name}
+        />
+      );
       return (
         <Link
           style={{ textDecoration: 'none' }}
@@ -20,13 +29,9 @@ const Cards = ({ results }) => {
           >
             <div className={`${styles.content}`}>
               <div className="fs-5 fw-bold mb-4">{`${name}`}</div>
-              <img
-                    className={`${styles.img} img-fluid`}
-                    src={`${entries[1].href.url}`}
-                    alt="hello"
-                    width="300"
-                  />
+
               <div className="">
+                {entries[1].href.url !== '' ? image : null}
                 {type.length > 1 ? `${type[0]}, ${type[1]}` : type}
               </div>
             </div>
