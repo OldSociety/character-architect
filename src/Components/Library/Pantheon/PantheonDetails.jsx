@@ -25,7 +25,7 @@ const PantheonDetails = () => {
   }
 
   if (fetchedData) {
-    let { name } = fetchedData;
+    let { name, entries } = fetchedData;
 
     // let itemList = [];
 
@@ -59,6 +59,14 @@ const PantheonDetails = () => {
             <ErrorAlert error={PantheonError} />
 
             <div className="fs-5 fw-bold mb-4">{`${name}`}</div>
+           <div className="">
+                    <img
+                      className={'1'}
+                      src={entries[1].href.url}
+                      alt="missingpicture"
+                      width="200"
+                    />
+                    </div>
           </div>
         </div>
       </>
