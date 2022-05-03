@@ -151,7 +151,7 @@ export async function readPantheon(id, params, signal) {
 }
 
 export async function readFaction(id, params, signal) {
-  const url = new URL(`${API_BASE_URL}/faction/${id}`);
+  const url = new URL(`${API_BASE_URL}/factions/${id}`);
   if (params) {
  
     Object.entries(params).forEach(([key, value]) =>
