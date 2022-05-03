@@ -25,7 +25,7 @@ const FactionDetails = () => {
   }
 
   if (fetchedData) {
-    let { name, entries } = fetchedData;
+    let { name, entries, description } = fetchedData;
 
     // let itemList = [];
 
@@ -68,6 +68,16 @@ const FactionDetails = () => {
                   width="200"
                 />
                 <br />
+                <div className="container mb-4">
+                  {entries[0].map((entry, index) => {
+                    return typeof entry !== 'object' ? null : (
+                      <div key={index}>{`${entry}`}</div>
+                    );
+                  })}
+                </div>
+                {/* <div className="">
+              {capital[0].name}
+            </div> */}
               </div>
             </div>
           </div>
