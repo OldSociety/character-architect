@@ -56,7 +56,8 @@ const Clock = () => {
 
   return (
     <div>
-      {timerComponents.length ? timerComponents : <p> {calculateTimeLeft} </p>}
+      {timerComponents.length ? "TBD" : <p> TBD </p>} {/*Temporarily suspend countdown to next game. */}
+      {/* {timerComponents.length ? timerComponents : <p> {calculateTimeLeft} </p>}  /// Reactivate countdown.*/}
     </div>
   );
 };
