@@ -20,21 +20,33 @@ import EndForm from '../Builder/EndWarning';
 
 // Library Componenets
 import Library from '../Library/Library';
-// Library - Races
-import RacesLore from '../Library/Races/RacesLore';
-import RaceDetails from 'Components/Library/Races/RaceDetails';
-// Library - Pantheon
-import PantheonLore from '../Library/Pantheon/PantheonLore';
-import PantheonDetails from 'Components/Library/Pantheon/PantheonDetails';
-// Library - Nations
-import NationsLore from '../Library/Nations/NationsLore';
-import NationDetails from 'Components/Library/Nations/NationDetails';
+
+// Library - Beastiary
+import BeastLore from '../Library/Beastiary/BeastLore';
+import BeastDetails from 'Components/Library/Beastiary/BeastDetails';
 
 // Library - Factions
 import FactionsLore from '../Library/Factions/FactionLore';
 import FactionsDetails from 'Components/Library/Factions/FactionDetails';
 
+// Library - Nations
 import History from 'Components/Library/History/History';
+
+// Library - Nations
+import NationsLore from '../Library/Nations/NationsLore';
+import NationDetails from 'Components/Library/Nations/NationDetails';
+
+// Library - Pantheon
+import PantheonLore from '../Library/Pantheon/PantheonLore';
+import PantheonDetails from 'Components/Library/Pantheon/PantheonDetails';
+
+// Library - Races
+import RacesLore from '../Library/Races/RacesLore';
+import RaceDetails from 'Components/Library/Races/RaceDetails';
+
+// Library - Technology
+import TechLore from '../Library/Technology/TechLore';
+import TechDetails from 'Components/Library/Technology/TechDetails';
 
 //Map Componenets
 import MapWelcome from '../Maps/MapWelcome';
@@ -59,20 +71,26 @@ const Layout = () => {
 
           {/* Lore Library Routing */}
           <Route path="/library" element={<Library />} />
-          {/* Library - Races */}
-          <Route path="/library/races" element={<RacesLore />} />
-          <Route path="/library/races/:id" element={<RaceDetails />} />
-          {/* Library - Pantheon */}
-          <Route path="/library/pantheon" element={<PantheonLore />} />
-          <Route path="/library/pantheon/:id" element={<PantheonDetails />} />
+          {/* Library - Beastiary */}
+          <Route path="/library/beastiary" element={<BeastLore />} />
+          <Route path="/library/beastiary/:id" element={<BeastDetails />} />
           {/* Library - Factions */}
           <Route path="/library/factions" element={<FactionsLore />} />
           <Route path="/library/factions/:id" element={<FactionsDetails />} />
+          {/* Library - History */}
+          <Route path="/library/history" element={<History />} />
           {/* Library - Nations */}
           <Route path="/library/nations" element={<NationsLore />} />
           <Route path="/library/nations/:id" element={<NationDetails />} />
-          {/* Library - History */}
-          <Route path="/library/history" element={<History />} />
+          {/* Library - Pantheon */}
+          <Route path="/library/pantheon" element={<PantheonLore />} />
+          <Route path="/library/pantheon/:id" element={<PantheonDetails />} />
+          {/* Library - Races */}
+          <Route path="/library/races" element={<RacesLore />} />
+          <Route path="/library/races/:id" element={<RaceDetails />} />
+          {/* Library - Technology */}
+          <Route path="/library/technology" element={<TechLore />} />
+          <Route path="/library/technology/:id" element={<TechDetails />} />
 
           {/* Interactive Maps Routing */}
           <Route path="/maps" element={<MapWelcome />} />
