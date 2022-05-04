@@ -44,25 +44,25 @@ const Footer = () => {
         </div>
 
         {/* mobile */}
-        <h1 className="fs-4">
+        {/* <h1 className="fs-4">
           <a
             href="/"
             className="d-inline-flex d-lg-none align-items-center link-light text-decoration-none"
           >
             Meridian Character Creator
           </a>
-        </h1>
+        </h1> */}
         <div className="d-flex flex-md-row">
           <div className="col-8 col-lg-5">
             {/* Only shows on large & up */}
-            <h1 className="fs-5">
+            {/* <h1 className="fs-5">
               <a
                 href="/"
                 className="d-none d-lg-inline-flex align-items-center mb-3 link-light text-decoration-none"
               >
                 Meridian Campaign Setting™
               </a>
-            </h1>
+            </h1> */}
 
             <div className="w-75">
               <p className="mb-2  text-light">
