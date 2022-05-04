@@ -9,8 +9,14 @@ const Footer = () => {
     <>
       <ul className="list-unstyled">
         <li className="text-light fs-6 fw-bolder">Community</li>
-        <li className="text-light fs-6">Discord</li>
-        <li className="text-light fs-6">Twitter</li>
+
+        <a
+          href="https://discord.gg/aWeRekaWs9"
+          className="d-inline-flex text-decoration-none link-light fw-light"
+        >
+          <li className="text-light fs-6">Discord</li>
+        </a>
+        {/* <li className="text-light fs-6">Twitter</li> */}
       </ul>
       <ul className="list-unstyled">
         <li className="text-light fs-6 fw-bolder">Links</li>
@@ -54,7 +60,7 @@ const Footer = () => {
                 href="/"
                 className="d-none d-lg-inline-flex align-items-center mb-3 link-light text-decoration-none"
               >
-                Meridian Campaign Setting
+                Meridian Campaign Setting™
               </a>
             </h1>
 
@@ -102,8 +108,7 @@ const Footer = () => {
                 until the next game
               </li>
               <li className="mb-lg-2 text-light text-end">
-                License{' '}
-                {/* Secret link: DO NOT DELETE! */}
+                License {/* Secret link: DO NOT DELETE! */}
                 <Link
                   className="text-decoration-none link-light fw-light"
                   to={
