@@ -49,15 +49,6 @@ const NationsLore = () => {
                 <div className="row">
                   <Cards page="/" results={fetchedData} />
                 </div>
-                <div className="row">
-                  
-                  <img
-                    className={`map img-fluid`}
-                    src={require(`../../../Images/MeridianMap.png`)}
-                    alt="hello"
-                    width="1000"
-                  />
-                </div>
               </div>
             </div>
           </div>

@@ -14,12 +14,26 @@ const MapWelcome = () => {
   return (
     // Maps Landing Page
     <>
-    <div className="d-flex row main__container min-vh-100">
-      <div className="container col-10 col-lg-8">
-        <div>Maps</div>
+      <div className="d-flex row main__container min-vh-100">
+        <div className="container col-10 col-lg-8">
+          <nav aria-label="breadcrumb">
+            <ol className="breadcrumb">
+              <li className="breadcrumb-item active" aria-current="page">
+                Maps
+              </li>
+            </ol>
+          </nav>
+          <div className="row">
+            <img
+              className={`map img-fluid`}
+              src={require(`../../Images/MeridianMap.png`)}
+              alt="hello"
+              width="1000"
+            />
+          </div>
+        </div>
       </div>
-    </div>
-  </>
+    </>
   );
 };
 
