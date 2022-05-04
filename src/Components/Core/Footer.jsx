@@ -54,7 +54,7 @@ const Footer = () => {
                 href="/"
                 className="d-none d-lg-inline-flex align-items-center mb-3 link-light text-decoration-none"
               >
-                Meridian Character Creator
+                Meridian Campaign Setting
               </a>
             </h1>
 
