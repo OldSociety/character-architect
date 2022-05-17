@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export const calculateTimeLeft = () => {
   // Set target date for next game
-  let target = new Date('05/04/22 17:30');
+  let target = new Date('07/06/22 17:30');
 
   let difference = +target - +new Date();
 
@@ -56,8 +56,8 @@ const Clock = () => {
 
   return (
     <div>
-      {timerComponents.length ? "TBD" : <p> TBD </p>} {/*Temporarily suspend countdown to next game. */}
-      {/* {timerComponents.length ? timerComponents : <p> {calculateTimeLeft} </p>}  /// Reactivate countdown.*/}
+      {/* {timerComponents.length ? "TBD" : <p> TBD </p>} Temporarily suspend countdown to next game. */}
+      {timerComponents.length ? timerComponents : <p> {calculateTimeLeft} </p>}  {/* /// Reactivate countdown.*/}
     </div>
   );
 };
