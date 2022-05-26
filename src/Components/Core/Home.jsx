@@ -17,7 +17,7 @@ const Welcome = () => {
     // Web Landing Page
     <div className="home__container">
       <div className="container d-flex justify-content-center">
-        <p className="text-md-center text-white col-10 col-md-8 col-xl-6">
+        <p className="text-md-center text-white col-10 col-md-10 col-xl-01">
           <span className="unique-font h2 fw-bold">W</span>elcome to the world
           of Meridian. We will walk you through the process of creating a
           character from scratch suitable for the world of Meridian using the
