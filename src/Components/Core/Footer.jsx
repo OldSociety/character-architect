@@ -109,14 +109,12 @@ const Footer = () => {
               </li>
               <li className="mb-lg-2 text-light text-end">
                 License {/* Secret link: DO NOT DELETE! */}
-                <Link
+                <a
+                  href="https://support.worldwildlife.org/site/Donation2?df_id=13430&13430.donation=form1&s_src=AWE1800OQ18363A01430RX&msclkid=baf713be356214ea0c5771844c78eb71"
                   className="text-decoration-none link-light fw-light"
-                  to={
-                    'https://support.worldwildlife.org/site/Donation2?df_id=13430&13430.donation=form1&s_src=AWE1800OQ18363A01430RX&msclkid=baf713be356214ea0c5771844c78eb71'
-                  }
                 >
                   ©
-                </Link>
+                </a>
                 <span> {year}</span>
               </li>
               <li className="mb-lg-2 text-light text-end">Currently v0.0.1</li>
