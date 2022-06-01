@@ -69,9 +69,9 @@ const FactionDetails = () => {
                 />
                 <br />
                 <div className="container mb-4">
-                  {entries[0].map((entry, index) => {
+                  {entries.map((entry, index) => {
                     return typeof entry !== 'object' ? null : (
-                      <div key={index}>{`${entry}`}</div>
+                      <div key={index}>{`${entry[0]}`}</div>
                     );
                   })}
                 </div>

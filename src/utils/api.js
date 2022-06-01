@@ -116,6 +116,15 @@ export async function listHistory(params, signal) {
   }
   return await fetchJson(url, { headers, signal, method: 'GET' }, []);
 }
+export async function listAppendix(params, signal) {
+  const url = new URL(`${API_BASE_URL}/appendix`);
+  if (params) {
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
 
 export async function listRaces(params, signal) {
   const url = new URL(`${API_BASE_URL}/races`);
@@ -163,6 +172,17 @@ export async function readFaction(id, params, signal) {
 
 export async function readNation(id, params, signal) {
   const url = new URL(`${API_BASE_URL}/nations/${id}`);
+  if (params) {
+ 
+    Object.entries(params).forEach(([key, value]) =>
+      url.searchParams.append(key, value.toString()),
+    );
+  }
+  return await fetchJson(url, { headers, signal, method: 'GET' }, []);
+}
+
+export async function readAppendix(id, params, signal) {
+  const url = new URL(`${API_BASE_URL}/appendix/${id}`);
   if (params) {
  
     Object.entries(params).forEach(([key, value]) =>

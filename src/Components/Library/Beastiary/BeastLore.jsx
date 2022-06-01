@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { listRaces } from 'utils/api';
+import { listAppendix } from 'utils/api';
 import Cards from 'Components/Library/Beastiary/BeastCards';
 import ErrorAlert from 'Components/Layout/ErrorAlert';
 
-const RacesLore = () => {
+const BeastsLore = () => {
   const [fetchedData, setFetchedData] = useState([]);
   const [beastError, setBeastError] = useState(null);
 
@@ -15,7 +15,7 @@ const RacesLore = () => {
     const abortController = new AbortController();
     setBeastError(null);
 
-    listRaces(abortController.signal).then(setFetchedData).catch(setBeastError);
+    listAppendix(abortController.signal).then(setFetchedData).catch(setBeastError);
     return () => abortController.abort();
   }
 
@@ -39,6 +39,7 @@ const RacesLore = () => {
             <div className="container">
               <div className="col-12">
                 <div className="row">
+                  
                   <Cards page="/" results={fetchedData} />
                 </div>
               </div>
@@ -50,4 +51,4 @@ const RacesLore = () => {
   );
 };
 
-export default RacesLore;
+export default BeastsLore;
