@@ -26,7 +26,7 @@ const BeastDetails = () => {
 
   if (fetchedData) {
     let { name, type, entries } = fetchedData;
-    console.log(fetchedData)
+    console.log(fetchedData);
 
     let itemList = [];
 
@@ -67,14 +67,12 @@ const BeastDetails = () => {
                 <div className="content">
                   <div className="">
                     {entries[0]}
-                    {/* <img
+                    <img
                       className={'1'}
                       src={entries[1].href.url}
                       alt="missingpicture"
                       width="200"
-                    /> */}
-                   
-                        
+                    />
                   </div>
                 </div>
               </div>
