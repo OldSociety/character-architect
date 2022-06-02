@@ -26,7 +26,6 @@ const BeastDetails = () => {
 
   if (fetchedData) {
     let { name, type, entries } = fetchedData;
-    console.log(fetchedData);
 
     let itemList = [];
 
@@ -62,17 +61,17 @@ const BeastDetails = () => {
             <div className="container d-flex justify-content-center mb-5">
               <div className="d-flex flex-column gap-3">
                 <div className="fs-5 fw-bold mb-4">
-                  {name ? `${name}` : `${name}`}
+                  {name ? `${name}` : null}
                 </div>
                 <div className="content">
                   <div className="">
-                    {entries[0]}
                     <img
                       className={'1'}
                       src={entries[1].href.url}
                       alt="missingpicture"
                       width="200"
                     />
+                    <div className="">{entries[0]}</div>
                   </div>
                 </div>
               </div>

@@ -8,7 +8,7 @@ const Cards = ({ results }) => {
   if (results) {
     display = results.map((info) => {
       let { id, type, name, entries } = info;
-      console.log(name);
+  
       const image = (
         <img
           className={`${styles.img} img-fluid`}
@@ -17,11 +17,12 @@ const Cards = ({ results }) => {
           width="200"
           key={name}
         />
+        
       );
       return type !== 'bestiary' ? null : (
         <Link
           style={{ textDecoration: 'none' }}
-          to={`/library/appendix/${id}`}
+          to={`/library/beastiary/${id}`}
           key={id}
           className="col-lg-4 col-md-6 col-sm-6 col-12 mb-4 position-relative text-dark"
         >
@@ -31,7 +32,7 @@ const Cards = ({ results }) => {
             <div className={`${styles.content}`}>
               <div className="fs-5 fw-bold mb-4">{name ? `${name}` : null}</div>
               <div className="">
-                {/* {entries[1].href.url !== '' ? image : null} */}
+                {entries[1].href.url !== '' ? image : null}
                 {entries.slice(0, 1).map((entry, index) => {
                   const { entries } = entry;
 
