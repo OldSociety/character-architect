@@ -26,6 +26,7 @@ const PantheonDetails = () => {
 
   if (fetchedData) {
     let { name, entries } = fetchedData;
+    console.log(entries);
 
     // let itemList = [];
 
@@ -33,6 +34,7 @@ const PantheonDetails = () => {
       <>
         <div className="d-flex">
           <div className="container col-10 col-lg-8">
+            {/* BREADCRUMBS */}
             <nav aria-label="breadcrumb">
               <ol className="breadcrumb">
                 <li className="breadcrumb-item" aria-current="page">
@@ -57,16 +59,29 @@ const PantheonDetails = () => {
               </ol>
             </nav>
             <ErrorAlert error={PantheonError} />
-
             <div className="fs-5 fw-bold mb-4">{`${name}`}</div>
-           <div className="">
-                    <img
-                      className={'1'}
-                      src={entries[1].href.url}
-                      alt="missingpicture"
-                      width="200"
-                    />
-                    </div>
+            {/* IMAGE */}
+            <div className="">
+              <img
+                className={'1'}
+                src={entries[1].href.url}
+                alt="missingpicture"
+                width="200"
+              />
+            </div>
+            {/*  DOMAIN */}
+            <div className="fw-bold">
+              {`Domain:`}
+              <div className="fw-light">{`${entries[3].domain}`}</div>
+            </div>
+            <p />
+            {/*  DESCRIPTION */}
+            {entries[0].description}
+            {/*  TENANTS */}
+            {/* <p />
+            {entries[2].tenants ? 
+             <div className="fw-light"> {`Tenants: ${entries[2].tenants[0]} \n ${entries[2].tenants[1]} \n ${entries[2].tenants[2]}`}</div> : null}
+             */}
           </div>
         </div>
       </>
