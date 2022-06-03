@@ -100,7 +100,7 @@ const Library = () => {
                       </div>
                     </div>
                   </li>
-                  <li>
+                  {/* <li>
                     <div className="item-content">
                       <h2>
                         <span>History</span>
@@ -125,7 +125,7 @@ const Library = () => {
                         </div>
                       </div>
                     </div>
-                  </li>
+                  </li> */}
                   <li>
                     <div className="item-content">
                       <h2>
@@ -178,7 +178,7 @@ const Library = () => {
                       </div>
                     </div>
                   </li>
-                  <li>
+                  {/* <li>
                     <div className="item-content">
                       <h2>
                         <span>Technology</span>
@@ -203,7 +203,7 @@ const Library = () => {
                         </div>
                       </div>
                     </div>
-                  </li>
+                  </li> */}
                   {/* <li>
                     <div className="item-content">
                       <h2>
