@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '../../utils/api';
 import { userList } from './Moons';
 
+
 const RaceForm = () => {
   const [formData, setFormData] = useState('default');
   const [fetchedData, updateFetchedData] = useState([]);
@@ -24,6 +25,7 @@ const RaceForm = () => {
 
   const handleChange = (event) => {
     setFormData(event.target.value);
+    console.log(userList)
   };
 
   // Detailed ancestry text
@@ -64,12 +66,7 @@ const RaceForm = () => {
       case 'Pureblood':
         return `${data[16].entries[0].entries[0]}`;
       case 'Nightblood':
-        return `${data[17].entries[0].entries[0]} ${                    <img
-          className={'1'}
-          src={data[17].entries[1].href.url}
-          alt="missingpicture"
-          width="200"
-        />}`;
+        return `${data[17].entries[0].entries[0]}}`;
       case 'Wren':
         return `${data[18].entries[0].entries[0]}`;
       case 'Blackwren':
@@ -90,13 +87,53 @@ const RaceForm = () => {
   const handleUserData = (optionText) => {
     switch (formData) {
       case 'Asha':
-        return `${data[0].name} (race)`;
+        return `${data[0].name}`;
       case 'Nyxen':
         return data[1].name;
       case 'Siiq':
         return data[2].name;
       case 'Thesian':
         return data[3].name;
+        case 'High':
+          return `${data[4].name}`;
+        case 'Moon':
+          return `${data[5].name}`;
+        case 'Wood':
+          return `${data[6].name}`;
+        case 'Dark':
+          return `${data[7].name}`;
+        case 'Sea':
+          return `${data[8].name} `;
+        case 'Halfelf':
+          return `${data[9].name}`;
+        case 'Lynx':
+          return `${data[10].name}`;
+        case 'Prideborn':
+          return `${data[11].name}`;
+        case 'Snakeskin':
+          return `${data[12].name}}`;
+        case 'Lizardskin':
+          return `${data[13].name}`;
+        case 'Naga':
+          return `${data[14].name}`;
+        case 'Sigri':
+          return `${data[15].name}`;
+        case 'Pureblood':
+          return `${data[16].name}`;
+        case 'Nightblood':
+          return `${data[17].name}}`;
+        case 'Wren':
+          return `${data[18].name}`;
+        case 'Blackwren':
+          return `${data[19].name}`;
+        case 'GenerationI':
+          return `${data[20].name}}`;
+        case 'GenerationII':
+          return `${data[21].name}`;
+        case 'GenerationIII':
+          return `${data[22].name}`;
+        case 'Unmarked':
+          return `${data[23].name}`;
       default:
         return '';
     }
@@ -112,15 +149,15 @@ const RaceForm = () => {
       userList.race = handleUserData(formData);
       //go to nations page
       console.log(userList);
-      navigate(`${baseUrl}/4`);
+      navigate(`${baseUrl}/3`);
     } //Check if user has selected an option but there is already moon in stack
     else if (formData !== 'default' && userList.key === 'race') {
-      // replace moon with new choice
+      // replace race with new choice
       userList.race = handleUserData(formData);
       console.log('Race has been replaced.');
       console.log(userList);
       //go to nations page
-      navigate(`${baseUrl}/4`);
+      navigate(`${baseUrl}/3`);
     }
   };
 
@@ -174,7 +211,7 @@ const RaceForm = () => {
                 <option value="Wren">Wren</option>
                 <option value="Blackwren">Blackwren</option>
               </optgroup>
-              <optgroup label="Marksmen">
+            <optgroup label="Marksmen">
                 <option value="GenerationI">Generation I</option>
                 <option value="GenerationII">Generation II</option>
                 <option value="GenerationIII">Generation III</option>

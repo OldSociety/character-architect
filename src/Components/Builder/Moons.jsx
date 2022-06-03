@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { listMoons } from '../../utils/api';
 
+
 import ErrorAlert from '../Layout/ErrorAlert.js';
 
 const starMap = require('../../Images/star-map.png');
@@ -37,14 +38,12 @@ const MoonForm = () => {
     if (userData !== 'default') {
       userList.moon = userData;
       //go to nations page
-      // console.log(userList);
       navigate(`${baseUrl}/2`);
     } //Check if user has selected an option but there is already moon in stack
     else if (userData !== 'default' && userList.key === 'moon') {
       // replace moon with new choice
       userList.moon = userData;
       // console.log('Moon has been replaced.');
-      // console.log(userList);
       //go to nations page
       navigate(`${baseUrl}/2`);
     }
