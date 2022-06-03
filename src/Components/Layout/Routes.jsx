@@ -64,8 +64,8 @@ const Layout = () => {
           {/* Character Build Routing */}
           <Route path="/characters/builder" element={<Start />} />
           <Route path="/characters/builder/1" element={<MoonBuild />} />
-          <Route path="/characters/builder/2" element={<NationBuild />} />
-          <Route path="/characters/builder/3" element={<RaceBuild />} />
+          <Route path="/characters/builder/2" element={<RaceBuild />} />
+          <Route path="/characters/builder/3" element={<NationBuild />} />
           <Route path="/characters/builder/4" element={<PantheonBuild />} />
           <Route path="/endform" element={<EndForm />} />
 

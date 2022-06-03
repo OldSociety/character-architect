@@ -54,25 +54,25 @@ const MoonForm = () => {
     <div className="d-flex flex-column flex-lg-row">
       <div className="container col-10 col-md-9 col-lg-5 mt-2">
         <p>
-          Meridian is one of eight moons orbiting the planet Pandem. Its only
+          {` Meridian is one of eight moons orbiting the planet Pandem. Its only
           continent, also referred to as Meridian, is a conflicted world of two
-          powerful, yet opposing, forces: human magic and elven technology.
+          powerful, yet opposing, forces: human magic and elven technology.`}
         </p>
         <p>
-          It is found in an S-type binary star system (two stars in one system).
+          {`It is found in an S-type binary star system (two stars in one system).
           Its suns are named Delis and Veris and are sometimes referred to as
           Miira's Eyes. Pandem orbits Delis, the large yellow star that provides
           for life on Meridian, otherwise known as its Sun. Veris, on the other
           hand, sheds a much dimmer red light which is near impossible to see
           when the two suns share the same sky. On the few nights where Velis
           appears alone - referred to as "Second Sun" or "Bloody Night" - the
-          sky lights up like twilight in a grimsome, blood-red filter.
+          sky lights up like twilight in a grimsome, blood-red filter.`}
         </p>
         <p>
-          Along with these two suns and the barren red planet, Pandem, seven
+          {`Along with these two suns and the barren red planet, Pandem, seven
           other moons light up the night sky. Each is named after a Seraph, or
           celestial dragon from the human religion Solace, based on color and
-          size.
+          size.`}
         </p>
       </div>
 
@@ -88,8 +88,14 @@ const MoonForm = () => {
             <div className="carousel-item active">
               <div className="card bg-transparent d-flex justify-content-center">
                 <div className="card-body h-100 justify-content-center">
-                <h4 className="h4 text-center">Under which moon were you born?</h4>
-                  <img className="card-image card-image-default" src={starMap} alt="Moon" />
+                  <h4 className="h4 text-center">
+                    Under which moon were you born?
+                  </h4>
+                  <img
+                    className="card-image card-image-default"
+                    src={starMap}
+                    alt="Moon"
+                  />
                 </div>
               </div>
             </div>
