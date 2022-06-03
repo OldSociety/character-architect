@@ -20,11 +20,18 @@ const NationForm = () => {
     })();
   }, [api]);
 
+  //Prevent loading out of order
+  useEffect(() => {
+    if (userList.moon === '' || userList.race === '') {
+      navigate(`${baseUrl}`);
+    }
+  });
+
   console.log('fetched Data', fetchedData);
 
   const handleChange = (event) => {
     setFormData(event.target.value);
-    console.log(userList)
+    console.log(userList);
   };
 
   const handleText = (optionText) => {
@@ -33,25 +40,25 @@ const NationForm = () => {
       case 'Arxyk':
         return `${data[0].description}.`;
       case 'Fairbourne':
-        return `${data[1].description}.`;
+        return `${data[1].description}`;
       case 'Whitepine':
         return `${data[2].description}`;
       case 'Uruban':
-        return `${data[3].description}.`;
+        return `${data[3].description}`;
       case 'Ashahla':
-        return `${data[4].description}.`;
+        return `${data[4].description}`;
       case 'Egress':
-        return `${data[5].description}.`;
+        return `${data[5].description}`;
       case 'Medina':
-        return `${data[6].description}.`;
+        return `${data[6].description}`;
       case 'Medun':
         return `${data[7].description}`;
       case 'Karaj':
-        return `${data[8].description}.`;
+        return `${data[8].description}`;
       case 'Zemér':
-        return `${data[9].description}.`;
+        return `${data[9].description}`;
       case 'Seneka':
-        return `${data[10].description}.`;
+        return `${data[10].description}`;
       case 'Oceanic':
         return `I am from beneath the shores.`;
       default:
@@ -85,7 +92,7 @@ const NationForm = () => {
       case 'Seneka':
         return `${data[10].name}`;
       case 'Oceanic':
-        return `Oceanic.`;
+        return `${data[11].name}`;
       default:
         return '';
     }
@@ -110,6 +117,8 @@ const NationForm = () => {
       console.log(userList);
       //go to nations page
       navigate(`${baseUrl}/4`);
+    } else if (!userList.moon || !userList.race) {
+      navigate(`${baseUrl}`);
     }
   };
 
@@ -144,9 +153,7 @@ const NationForm = () => {
                   disabled
                 >{`Oceanic (Seaborn Only)`}</option>
               ) : (
-                <option
-                  value="Oceanic"
-                >{`Oceanic`}</option>
+                <option value="Oceanic">{`Oceanic`}</option>
               )}
             </select>
           </div>

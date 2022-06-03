@@ -21,6 +21,13 @@ const RaceForm = () => {
     })();
   }, [api]);
 
+  // prevent loading out of order
+  useEffect(() => {
+    if (userList.moon === "") {
+      navigate(`${baseUrl}`)
+    }
+  })
+
   console.log('fetched Data', fetchedData);
 
   const handleChange = (event) => {

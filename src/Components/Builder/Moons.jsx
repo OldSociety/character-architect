@@ -3,12 +3,16 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { listMoons } from '../../utils/api';
 
-
 import ErrorAlert from '../Layout/ErrorAlert.js';
 
 const starMap = require('../../Images/star-map.png');
 
-export const userList = {};
+export const userList = {
+  moon: '',
+  race: '',
+  homeland: '',
+  religion: '',
+};
 
 const MoonForm = () => {
   const [userData, setUserData] = useState('default');
@@ -20,6 +24,7 @@ const MoonForm = () => {
   const navigate = useNavigate();
 
   useEffect(fetchData, []);
+  console.log(userList)
 
   function fetchData() {
     const abortController = new AbortController();
