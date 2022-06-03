@@ -38,29 +38,149 @@ const NationForm = () => {
     // Changes text based on chosen option value
     switch (formData) {
       case 'Arxyk':
-        return `${data[0].description}.`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[0].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[0].description}`}</div>
+          </div>
+        )
       case 'Fairbourne':
-        return `${data[1].description}`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[1].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[1].description}`}</div>
+          </div>
+        )
       case 'Whitepine':
-        return `${data[2].description}`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[2].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[2].description}`}</div>
+          </div>
+        )
       case 'Uruban':
-        return `${data[3].description}`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[3].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[3].description}`}</div>
+          </div>
+        )
       case 'Ashahla':
-        return `${data[4].description}`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[4].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[4].description}`}</div>
+          </div>
+        )
       case 'Egress':
-        return `${data[5].description}`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[5].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[5].description}`}</div>
+          </div>
+        )
       case 'Medina':
-        return `${data[6].description}`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[6].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[6].description}`}</div>
+          </div>
+        )
       case 'Medun':
-        return `${data[7].description}`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[7].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[7].description}`}</div>
+          </div>
+        )
       case 'Karaj':
-        return `${data[8].description}`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[8].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[8].description}`}</div>
+          </div>
+        )
       case 'Zemér':
-        return `${data[9].description}`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[9].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[9].description}`}</div>
+          </div>
+        )
       case 'Seneka':
-        return `${data[10].description}`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[10].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[10].description}`}</div>
+          </div>
+        )
       case 'Oceanic':
-        return `I am from beneath the shores.`;
+        return (
+          <div className="">
+            <img
+              className={'1'}
+              src={data[11].entries[0].href.url}
+              alt="missingpicture"
+              width="500"
+            />
+            <div className="">{`${data[11].description}`}</div>
+          </div>
+        )
       default:
         return '';
     }
@@ -134,6 +254,7 @@ const NationForm = () => {
               onChange={handleChange}
               value={formData}
             >
+              
               <option value="">--Select an Option--</option>
               <option value="Arxyk">Arxyk</option>
               <option value="Fairbourne">Fairbourne</option>
