@@ -20,35 +20,47 @@ const NationForm = () => {
     })();
   }, [api]);
 
+  //Prevent loading out of order
+  useEffect(() => {
+    if (userList.moon === '' || userList.race === '') {
+      navigate(`${baseUrl}`);
+    }
+  });
+
   console.log('fetched Data', fetchedData);
 
   const handleChange = (event) => {
     setFormData(event.target.value);
+    console.log(userList);
   };
 
   const handleText = (optionText) => {
     // Changes text based on chosen option value
     switch (formData) {
+      case 'Arxyk':
+        return `${data[0].description}.`;
       case 'Fairbourne':
-        return `I am ${data[0].nationality}.`;
+        return `${data[1].description}`;
       case 'Whitepine':
-        return `${data[1].nationality}`;
+        return `${data[2].description}`;
       case 'Uruban':
-        return `I am ${data[2].nationality}.`;
+        return `${data[3].description}`;
       case 'Ashahla':
-        return `I am ${data[3].nationality}.`;
+        return `${data[4].description}`;
       case 'Egress':
-        return `I am ${data[4].nationality}.`;
+        return `${data[5].description}`;
       case 'Medina':
-        return `${data[5].nationality}.`;
+        return `${data[6].description}`;
       case 'Medun':
-        return `${data[6].nationality}`;
+        return `${data[7].description}`;
       case 'Karaj':
-        return `I am ${data[7].nationality}.`;
+        return `${data[8].description}`;
       case 'Zemér':
-        return `I am ${data[8].nationality}.`;
+        return `${data[9].description}`;
       case 'Seneka':
-        return `I am ${data[9].nationality}.`;
+        return `${data[10].description}`;
+      case 'Oceanic':
+        return `I am from beneath the shores.`;
       default:
         return '';
     }
@@ -57,26 +69,30 @@ const NationForm = () => {
   const handleUserData = (optionText) => {
     // Matches drop down form values with API data
     switch (formData) {
+      case 'Arxyk':
+        return `${data[0].name}`;
       case 'Fairbourne':
-        return data[0].nationality;
+        return `${data[1].name}`;
       case 'Whitepine':
-        return data[1].nationality;
+        return `${data[2].name}`;
       case 'Uruban':
-        return data[2].nationality;
+        return `${data[3].name}`;
       case 'Ashahla':
-        return data[3].nationality;
+        return `${data[4].name}`;
       case 'Egress':
-        return data[4].nationality;
+        return `${data[5].name}`;
       case 'Medina':
-        return data[5].nationality;
+        return `${data[6].name}`;
       case 'Medun':
-        return data[6].nationality;
+        return `${data[7].name}`;
       case 'Karaj':
-        return data[7].nationality;
+        return `${data[8].name}`;
       case 'Zemér':
-        return data[8].nationality;
+        return `${data[9].name}`;
       case 'Seneka':
-        return data[9].nationality;
+        return `${data[10].name}`;
+      case 'Oceanic':
+        return `${data[11].name}`;
       default:
         return '';
     }
@@ -85,22 +101,24 @@ const NationForm = () => {
   handleUserData();
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     // Check if user has selected an option and the stack isn't empty, add moon data
     if (formData !== 'default') {
-      userList.nation = handleUserData(formData);
-      //go to nations page
+      userList.homeland = handleUserData(formData);
+      //go to religions page
       console.log(userList);
-      navigate(`${baseUrl}/3`);
+      navigate(`${baseUrl}/4`);
     } //Check if user has selected an option but there is already moon in stack
     else if (formData !== 'default' && userList.key === 'nation') {
-      // replace moon with new choice
-      userList.nation = handleUserData(formData);
+      // replace race with new choice
+      userList.homeland = handleUserData(formData);
       console.log('Nation has been replaced.');
       console.log(userList);
       //go to nations page
-      navigate(`${baseUrl}/3`);
+      navigate(`${baseUrl}/4`);
+    } else if (!userList.moon || !userList.race) {
+      navigate(`${baseUrl}`);
     }
   };
 
@@ -109,7 +127,7 @@ const NationForm = () => {
       <div className="container col-10 col-lg-8">
         <form onSubmit={handleSubmit} className="d-flex row">
           <div className="col-12 col-lg-8">
-            <p>From which nation do you hail?</p>
+            <p>From which homeland do you hail?</p>
             <select
               name="moonText"
               id="moonText"
@@ -117,6 +135,7 @@ const NationForm = () => {
               value={formData}
             >
               <option value="">--Select an Option--</option>
+              <option value="Arxyk">Arxyk</option>
               <option value="Fairbourne">Fairbourne</option>
               <option value="Whitepine">Whitepine</option>
               <option value="Uruban">Uruban</option>
@@ -127,6 +146,15 @@ const NationForm = () => {
               <option value="Karaj">Karaj</option>
               <option value="Zemér">Zemér</option>
               <option value="Seneka">Seneka</option>
+              {userList.race !== ('Naga' || 'Sigri') ? (
+                <option
+                  value="Oceanic"
+                  title="Seaborn Only"
+                  disabled
+                >{`Oceanic (Seaborn Only)`}</option>
+              ) : (
+                <option value="Oceanic">{`Oceanic`}</option>
+              )}
             </select>
           </div>
           <div className="col-1"></div>
