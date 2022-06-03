@@ -7,6 +7,7 @@ import ErrorAlert from '../Layout/ErrorAlert.js';
 
 const starMap = require('../../Images/star-map.png');
 
+// INITIALIZE USER LIST
 export const userList = {
   moon: '',
   race: '',
@@ -23,8 +24,9 @@ const MoonForm = () => {
 
   const navigate = useNavigate();
 
+  // API CALL
   useEffect(fetchData, []);
-  console.log(userList)
+  console.log(userList);
 
   function fetchData() {
     const abortController = new AbortController();
@@ -35,6 +37,7 @@ const MoonForm = () => {
     return () => abortController.abort();
   }
 
+  // SUBMIT CONTROLLER
   const handleSubmit = (event) => {
     setUserData(event.target.value);
     event.preventDefault();
@@ -81,8 +84,9 @@ const MoonForm = () => {
       </div>
 
       <div className="container col-12 col-md-8 col-lg-5">
+        {/* ERROR HANDLING */}
         <ErrorAlert error={MoonsError} />
-
+        {/* CAROUSEL */}
         <div
           id="carouselExampleFade"
           className="carousel slide"
@@ -148,6 +152,7 @@ const MoonForm = () => {
               );
             })}
 
+            {/* CAROUSEL BUTTONS */}
             <button
               className="carousel-control-prev mb-5"
               type="button"
