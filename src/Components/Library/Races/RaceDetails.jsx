@@ -95,7 +95,7 @@ const RaceDetails = () => {
                       : null}
                   </div>
                   <div className="">
-                    {darkvision ? `Darkvision: ${darkvision} ft` : ``}
+                    {darkvision ? `Darkvision: ${darkvision} ft` : ` `}
                   </div>
                   <br />
                   <div className="">
