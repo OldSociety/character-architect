@@ -1,6 +1,6 @@
 import React from 'react';
-import Clock from '../Clock/Clock';
-import { Link } from 'react-router-dom';
+// import Clock from '../Clock/Clock';
+// import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const year = new Date().getFullYear();
