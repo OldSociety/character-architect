@@ -25,7 +25,8 @@ const RaceDetails = () => {
   }
 
   if (fetchedData) {
-    let { name, raceName, size, sanity, ability, speed, entries } = fetchedData;
+    let { name, raceName, size, sanity, darkvision, speed, entries } =
+      fetchedData;
 
     let itemList = [];
 
@@ -72,12 +73,6 @@ const RaceDetails = () => {
                       width="200"
                     />
                     <br />
-                    <span className="fw-bold">Ability Scores: </span>
-                    <ul>
-                      {Object.entries(ability[0]).map((stat, index) => {
-                        return <li key={index}>{`${stat[0]} +${stat[1]};`}</li>;
-                      })}
-                    </ul>
                   </div>
                   <div className="">
                     <span className="fw-bold">Size: </span>
@@ -98,6 +93,9 @@ const RaceDetails = () => {
                       : speed.swim
                       ? `${speed.walk} ft., swim equal to your walking speed.`
                       : null}
+                  </div>
+                  <div className="">
+                    {darkvision ? `Darkvision: ${darkvision} ft` : ``}
                   </div>
                   <br />
                   <div className="">
