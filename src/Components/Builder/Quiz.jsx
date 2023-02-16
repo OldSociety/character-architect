@@ -46,30 +46,41 @@ export default function App() {
 
   const [currentQuestion, setCurrentQuestions] = useState(0);
 
-  const [showScore, setShowScore] = useState(false)
-  const [mistakes, setMistakes] = useState(0)
+  const [showScore, setShowScore] = useState(false);
+  const [mistakes, setMistakes] = useState(0);
 
   const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect === false) {
-        setMistakes(mistakes + 1)
+      setMistakes(mistakes + 1);
     }
 
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length || mistakes < 3) {
-        setCurrentQuestions(nextQuestion);
+      setCurrentQuestions(nextQuestion);
     } else {
-        setShowScore(true)
+      setShowScore(true);
     }
-    
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    navigate(`/characters/builder`);
   };
 
   return (
     <div className="app">
-      {showScore ? (
-        <div className="score-section">
-          You scored {questions.length - 3}
-        </div>
-      ) : (
+      if ({showScore}){' '}
+      {
+        <>
+          <div className="score-section">You scored {questions.length - 3}</div>
+          <form onSubmit={handleSubmit} className="d-flex row">
+            <button type="submit" className="btn btn-outline-light">
+              Submit
+            </button>
+          </form>
+        </>
+      }{' '}
+      else{' '}
+      {
         <>
           <div className="question-section">
             <div className="question-count">
@@ -79,13 +90,15 @@ export default function App() {
           </div>
           <div className="answer-section">
             {questions[currentQuestion].answerOptions.map((answerOption) => (
-              <button onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}>
+              <button
+                onClick={() => handleAnswerButtonClick(answerOption.isCorrect)}
+              >
                 {answerOption.answerText}
               </button>
             ))}
           </div>
         </>
-      )}
+      }
     </div>
   );
 }
