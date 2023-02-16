@@ -31,15 +31,15 @@ const Welcome = () => {
           <img
             id="explore"
             src="https://i.pinimg.com/originals/47/d0/30/47d0308c57f48400b65f8a0899b376d9.png"
-            alt="maps"
+            alt="quiz"
             className="img-fluid"
           />
           <p />
-          {/* <Link to="/characters/maps"> */}
+          <Link to="/quiz">
           <button className="btn btn-outline-light" id="explore" type="button">
-            Coming Soon
+            Take the Quiz
           </button>
-          {/* </Link> */}
+          </Link>
         </div>
 
         {/* World Lore Wiki */}
