@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Start = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate('/characters/builder/quiz');
+    navigate('/characters/builder/1');
   };
 
   const navigate = useNavigate();
