@@ -17,6 +17,7 @@ import NationBuild from '../Builder/Nations';
 import RaceBuild from '../Builder/Races';
 import PantheonBuild from '../Builder/Pantheon';
 import EndForm from '../Builder/EndWarning';
+import Quiz from '../Builder/Quiz'
 
 // Library Componenets
 import Library from '../Library/Library';
@@ -67,6 +68,7 @@ const Layout = () => {
           <Route path="/characters/builder/2" element={<RaceBuild />} />
           <Route path="/characters/builder/3" element={<NationBuild />} />
           <Route path="/characters/builder/4" element={<PantheonBuild />} />
+          <Route path="/characters/builder/quiz" element={<Quiz />} />
           <Route path="/endform" element={<EndForm />} />
 
           {/* Lore Library Routing */}
