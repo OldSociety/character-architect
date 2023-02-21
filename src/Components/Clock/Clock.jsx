@@ -26,7 +26,7 @@ function Countdown() {
 
   return (
     <div>
-      <div>{days} d, {hours} h, {minutes} m, {seconds} s</div>
+      <div>{days}d {hours}h {minutes}m {seconds}s</div>
     </div>
   );
 }
