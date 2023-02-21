@@ -44,12 +44,13 @@ body {
   width: 200px;
 }
 
-.button {
+.btn {
   padding: 10px;
+  width: fit-content;
 }
 
 #explore {
-  filter: grayscale(0%);
+  filter: grayscale(100%);
 }
 
 .unique-font {
