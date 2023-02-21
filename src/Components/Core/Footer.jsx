@@ -1,5 +1,5 @@
 import React from 'react';
-// import Clock from '../Clock/Clock';
+import Clock from '../Clock/Clock';
 // import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -102,10 +102,10 @@ const Footer = () => {
           <div className="d-flex col-4 col-lg-3 text-end justify-content-end">
             <ul className="list-unstyled small text-muted">
               <li className="mb-lg-2 text-light align-items-center text-end">
-                {/* <h5 className="mt-2 mt-md-0">
+                <div className="mt-2 mt-md-0">
                   <Clock />
-                </h5>
-                until the next game */}
+                </div>
+                until the next game
               </li>
               <li className="mb-lg-2 text-light text-end">
                 License {''}

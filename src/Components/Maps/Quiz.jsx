@@ -11,8 +11,8 @@ export default function App() {
       questionText: 'Which is the Seraph of magic?',
       answerOptions: [
         { answerText: 'Cupid', isCorrect: false },
-        { answerText: 'Larimar', isCorrect: false },
-        { answerText: 'Nassenti', isCorrect: true },
+        { answerText: 'Nassenti', isCorrect: false },
+        { answerText: 'Larimar', isCorrect: true },
         { answerText: 'Miira', isCorrect: false },
       ],
     },
@@ -101,7 +101,7 @@ export default function App() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate(`/characters/builder`);
+    navigate(`/`);
   };
 
   return (

@@ -1,65 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-export const calculateTimeLeft = () => {
-  // Set target date for next game
-  let target = new Date('07/06/22 17:30');
+const SECONDS_IN_WEEK = 604800;
 
-  let difference = +target - +new Date();
-
-  let timeLeft = {};
-
-  if (difference > 0) {
-    // assign countdown time format
-    timeLeft = {
-      d: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      h: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      m: Math.floor((difference / 1000 / 60) % 60),
-      s: Math.floor((difference / 1000) % 60),
-    };
-  } else {
-    // auto-reset add 7 days to the current date
-    difference += 604799999
-    // assign time format
-    timeLeft = {
-      d: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      h: Math.floor(((difference / (1000 * 60 * 60)) % 24)),
-      m: Math.floor(((difference / 1000 / 60) % 60)),
-      s: Math.floor(((difference / 1000) % 60)),
-    };
-  }
-  return timeLeft;
-};
-
-const Clock = () => {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+function Countdown() {
+  const startTime = new Date("02/15/2023 17:45").getTime();
+  const [remainingTime, setRemainingTime] = useState(startTime);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
+    const interval = setInterval(() => {
+      const currentTime = new Date().getTime();
+      const timeDiff = currentTime - startTime;
+      const remaining = SECONDS_IN_WEEK - (timeDiff / 1000) % SECONDS_IN_WEEK;
+      setRemainingTime(remaining);
     }, 1000);
-    return () => clearTimeout(timer);
-  });
 
-  const timerComponents = [];
+    return () => {
+      clearInterval(interval);
+    };
+  }, [startTime]);
 
-  Object.keys(timeLeft).forEach((interval, index) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
-
-    timerComponents.push(
-      <span key={index}>
-        {timeLeft[interval]} {interval}{' '}
-      </span>,
-    );
-  });
+  const days = Math.floor(remainingTime / (24 * 60 * 60));
+  const hours = Math.floor((remainingTime % (24 * 60 * 60)) / (60 * 60));
+  const minutes = Math.floor((remainingTime % (60 * 60)) / 60);
+  const seconds = Math.floor(remainingTime % 60);
 
   return (
     <div>
-      {/* {timerComponents.length ? "TBD" : <p> TBD </p>} Temporarily suspend countdown to next game. */}
-      {timerComponents.length ? timerComponents : <p> {calculateTimeLeft} </p>}  {/* /// Reactivate countdown.*/}
+      <div>{days} d, {hours} h, {minutes} m, {seconds} s</div>
     </div>
   );
-};
+}
 
-export default Clock;
+export default Countdown;
