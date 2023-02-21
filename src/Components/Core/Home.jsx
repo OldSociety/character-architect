@@ -35,11 +35,11 @@ const Welcome = () => {
             className="img-fluid"
           />
           <p />
-          <Link to="/quiz">
+          {/* <Link to="/quiz"> */}
           <button className="btn btn-outline-light" id="explore" type="button">
             Take the Quiz
           </button>
-          </Link>
+          {/* </Link> */}
         </div>
 
         {/* World Lore Wiki */}
